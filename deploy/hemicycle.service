@@ -5,7 +5,7 @@ After=network.target
 
 [Service]
 Type=simple
-User=ubuntu
+User=hemicycle
 WorkingDirectory=/home/ubuntu/www/denis.me/hemicycle/server
 # river-brain/.env is deliberately NOT loaded here. It holds every secret on the
 # box — vault encryption key, bank credentials, mail password — and this service
@@ -29,7 +29,7 @@ ProtectSystem=strict
 ProtectHome=read-only
 PrivateTmp=yes
 CapabilityBoundingSet=
-ReadWritePaths=/home/ubuntu/www/denis.me/hemicycle/storage/ /var/log/
+ReadWritePaths=/home/ubuntu/www/denis.me/hemicycle/storage/
 Environment=PYTHONDONTWRITEBYTECODE=1
 RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
 

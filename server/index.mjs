@@ -839,15 +839,50 @@ async function buildCard(s) {
 
   await fs.mkdir(dir, { recursive: true });
 
-  // The SVG is the canonical artefact and is cheap to keep (12 KB vs ~880 KB
-  // for the raster set), so the whole corpus can be pre-generated. Rasters are
-  // derived from it only when a card is actually requested, and are disposable.
-  const svgPath = await ensureSvg(dir, s);
-  const out = await runJson(PY, [RASTERIZER, "--svg", svgPath]);
+  // In-process render backstop. A cairosvg raster peaks ~113 MB RSS; an uncached
+  // burst (a crawler fanning out over many /page/N at once, or a cache-cold
+  // deploy) could fork enough of them to blow MemoryMax and OOM the service.
+  // nginx rate-limits the entry, but this cap must not depend on a single layer:
+  // two renders at a time keeps latency low while bounding peak memory. Only the
+  // cold path is gated — the cached branch above returned already.
+  return withRenderSlot(async () => {
+    // The SVG is the canonical artefact and is cheap to keep (12 KB vs ~880 KB
+    // for the raster set), so the whole corpus can be pre-generated. Rasters are
+    // derived from it only when a card is actually requested, and are disposable.
+    const svgPath = await ensureSvg(dir, s);
+    const out = await runJson(PY, [RASTERIZER, "--svg", svgPath]);
 
-  const { text: tweet, source: tweetSource, reason } = await makeTweet(s, { noLlm: !LLM });
-  await fs.writeFile(marker, JSON.stringify({ assets: out, tweet, tweetSource }));
-  return { assets: withUrls(out, s, hash), tweet, tweetSource, reason, cached: false };
+    const { text: tweet, source: tweetSource, reason } = await makeTweet(s, { noLlm: !LLM });
+    await fs.writeFile(marker, JSON.stringify({ assets: out, tweet, tweetSource }));
+    return { assets: withUrls(out, s, hash), tweet, tweetSource, reason, cached: false };
+  });
+}
+
+// Bounded-concurrency gate for cairosvg renders (see buildCard). A counting
+// semaphore with a FIFO wait queue; permits are transferred straight to the
+// next waiter on release so the in-flight count never exceeds the cap.
+const RENDER_CONCURRENCY = 2;
+let renderActive = 0;
+const renderQueue = [];
+function acquireRenderSlot() {
+  if (renderActive < RENDER_CONCURRENCY) {
+    renderActive += 1;
+    return Promise.resolve();
+  }
+  return new Promise((resolve) => renderQueue.push(resolve));
+}
+function releaseRenderSlot() {
+  const next = renderQueue.shift();
+  if (next) next(); // hand the permit over; renderActive stays put
+  else renderActive -= 1;
+}
+async function withRenderSlot(fn) {
+  await acquireRenderSlot();
+  try {
+    return await fn();
+  } finally {
+    releaseRenderSlot();
+  }
 }
 
 /**

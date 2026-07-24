@@ -1,0 +1,8 @@
+# Render layer for the scrutin card.
+#
+# cairosvg pulls cairocffi/cffi and needs the system libs installed by
+# scripts/setup-venv.sh (libcairo2, libpango-1.0-0, librsvg2-2, libffi-dev).
+# Pillow does the real text measurement (PIL.ImageFont.getlength) and the
+# downscales to share/preview.
+cairosvg==2.9.0
+pillow==12.3.0

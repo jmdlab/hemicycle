@@ -1,0 +1,303 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource/noto-serif/400.css";
+@import "@fontsource/noto-serif/500.css";
+@import "@fontsource/noto-serif/400-italic.css";
+@import "../../shared/design-system.css";
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Hémicycle — editorial light theme.
+
+   Serif carries MEANING (title, summaries, captions, big numerals); sans
+   carries the FURNITURE (meta, labels, buttons, counts). Serif-everything
+   works for a page with no controls; this one has an input, twenty actions
+   and stacked figures, and Noto Serif at 13px in a button is mush.
+
+   Deliberate constraints, each measured rather than assumed:
+   · No oldstyle figures and no small caps — neither shipped font has `onum`
+     or `smcp`, so both would be browser-synthesised and look cheap.
+   · Counts are ALWAYS tabular: twenty stacked rows must align on the digit
+     column. Ligatures are off in data.
+   · Adopté/Rejeté ARE coloured, but with deep matte tones rather than the
+     Bootstrap green/red the incumbent sites ship — and never as a tinted box.
+   · No box-shadow anywhere, including focus states.
+   ───────────────────────────────────────────────────────────────────────── */
+
+:root {
+  color-scheme: light;
+
+  --font-serif: "Noto Serif", Georgia, "Times New Roman", serif;
+  --font-sans-ui: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+
+  /* Warm near-white: invisible as a colour, visible as a temperature. */
+  --bg: #fcfcfb;
+  --surface: #f4f3ef;
+  --ink: #14130f;    /* 18.11:1 — titles, summaries, "Adopté"      */
+  --ink-2: #4a4842;  /*  8.91:1 — secondary prose                  */
+  --ink-3: #6e6a61;  /*  5.25:1 — meta, dates, "Rejeté"            */
+  --rule: #e3e0d8;   /* decorative separators only (WCAG-exempt)   */
+  --control: #8f8a7f;/*  3.35:1 — input + outline borders: passes WCAG 1.4.11.
+                        The prettier #cfcbc1 hairline is 1.58:1 and FAILS for
+                        anything that identifies a control. */
+
+  /* Outcome signal. Deep and matte rather than the Bootstrap green/red every
+     French parliamentary-data site ships — but genuinely coloured, so the
+     pass/fail reads at a glance. Both pass AA on the background (5.18:1 and
+     5.86:1) and sit far enough from the body ink (3.49:1 / 3.09:1) to register
+     as hue rather than as another shade of text. */
+  --adopte: #197a52;
+  --rejete: #b03a2e;
+
+  --radius: 0.5rem;      /* 8px — rounded controls */
+  --radius-pill: 999px;
+}
+
+@theme inline {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Noto Serif", Georgia, "Times New Roman", serif;
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+  --color-border: var(--rule);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.625rem;
+  --radius-xl: 0.75rem;
+}
+
+html, body, #root { min-height: 100%; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;      /* 17px — Noto Serif's x-height already runs large */
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  overscroll-behavior-y: contain;
+}
+input, textarea, select, button { font-size: 16px; }
+
+/* Serif, with the feature string that actually exists in the binaries. */
+.font-heading { font-family: var(--font-serif); font-feature-settings: "kern" 1, "liga" 1; }
+/* Interface furniture. */
+.ui { font-family: var(--font-sans-ui); }
+/* Figures: lining + tabular, ligatures off. */
+.num { font-variant-numeric: tabular-nums; font-feature-settings: "kern" 1, "tnum" 1, "liga" 0; }
+
+/* ── controls ─────────────────────────────────────────────────────────── */
+
+.field {
+  font-family: var(--font-sans-ui);
+  /* ≥16px or iOS Safari auto-zooms the page when the field is focused. */
+  font-size: max(1rem, 16px);
+  height: 2.75rem;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--control);
+  border-radius: var(--radius);
+  padding-inline: 0.875rem;
+}
+.field::placeholder { color: var(--ink-3); }
+.field:focus { outline: none; border-color: var(--ink); }
+
+/* Exactly ONE filled button on the page. Everything else is text or hairline. */
+.btn-primary {
+  font: 500 0.8125rem/1 var(--font-sans-ui);
+  letter-spacing: 0.02em;
+  height: 2.75rem;
+  padding-inline: 1.25rem;
+  background: var(--ink);
+  color: var(--bg);
+  border: 0;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.btn-primary:hover:not(:disabled) { background: #2e2c26; }
+.btn-primary:disabled { opacity: 0.45; cursor: default; }
+.btn-primary:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+/* The per-row action, repeated twenty times: an underlined word reads as an
+   index; twenty filled or outlined buttons read as a form. */
+.btn-row {
+  font: 500 0.8125rem/1 var(--font-sans-ui);
+  color: var(--ink);
+  background: none;
+  border: 0;
+  /* 44px touch target (house rule) while the text itself stays small. */
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding-block: 0.75rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  text-decoration-color: var(--control);
+}
+.btn-row:hover:not(:disabled) { text-decoration-color: var(--ink); }
+.btn-row:disabled { color: var(--ink-3); cursor: default; }
+.btn-row:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+/* Hairline outline — only for the payoff actions (copy image / copy caption). */
+.btn-ghost {
+  font: 500 0.8125rem/1 var(--font-sans-ui);
+  height: 2.25rem;
+  padding-inline: 0.875rem;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--control);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.btn-ghost:hover:not(:disabled) { border-color: var(--ink); background: var(--surface); }
+.btn-ghost:disabled { opacity: 0.45; cursor: default; }
+.btn-ghost:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+.link-quiet { color: var(--ink-3); text-decoration: none; }
+.link-quiet:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+
+/* ── list rows ────────────────────────────────────────────────────────── */
+
+.row { position: relative; padding-block: 1.25rem; border-top: 1px solid var(--rule); }
+.row:first-child { border-top: 0; }
+.row:hover { background: var(--surface); margin-inline: -1rem; padding-inline: 1rem; border-radius: var(--radius); }
+
+/* The whole row is one control. Reset the button chrome so it is a layout box
+   that happens to be focusable and clickable, rather than a button that has to
+   be styled back into a row. */
+.row-hit {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.row-hit:disabled { cursor: default; opacity: 0.55; }
+.row-hit:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; border-radius: var(--radius); }
+.row:has(.row-hit:hover) { background: var(--surface); margin-inline: -1rem; padding-inline: 1rem; border-radius: var(--radius); }
+
+.row:hover.row-notable::before { left: 0; }
+
+/* Outcome pill: rounded and coloured, but never a tinted box (house rule) —
+   hairline border, coloured dot, coloured label, transparent background. */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4375rem;
+  font: 500 0.8125rem/1 var(--font-sans-ui);
+  padding: 0.25rem 0.625rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  white-space: nowrap;
+}
+.pill::before { content: ""; width: 0.375rem; height: 0.375rem; border-radius: 999px; background: currentColor; }
+.pill-adopte { color: var(--adopte); }
+.pill-rejete { color: var(--rejete); }
+
+/* ── detail overlay ──────────────────────────────────────────────────────
+   Push view on touch, modal on desktop. See DetailOverlay.tsx for why the two
+   idioms differ; everything below is just the drawing of that decision. */
+.overlay { position: fixed; inset: 0; z-index: 50; display: flex; }
+.overlay-scrim { position: absolute; inset: 0; background: color-mix(in oklab, var(--ink) 28%, transparent); }
+.overlay-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--bg);
+  outline: none;
+}
+.overlay-body { flex: 1; overflow-y: auto; overscroll-behavior: contain; }
+
+/* The bar holds both affordances; each platform hides the one it doesn't use,
+   so the markup stays single and the behaviour stays identical. */
+.overlay-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg);
+}
+.overlay-back,
+.overlay-close {
+  font: 500 0.8125rem/1 var(--font-sans-ui);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  padding: 0 0.25rem;
+  color: var(--ink-2);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.overlay-back:hover, .overlay-close:hover { color: var(--ink); }
+.overlay-back:focus-visible,
+.overlay-close:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; border-radius: var(--radius); }
+.overlay-close { font-size: 1rem; min-width: 2.75rem; justify-content: center; }
+
+@media (max-width: 639px) {
+  /* Push view: full-bleed, slides in from the right, back control only. */
+  .overlay-scrim { display: none; }
+  .overlay-panel { animation: overlay-push 0.22s cubic-bezier(0.32, 0.72, 0, 1); }
+  .overlay-close { display: none; }
+  @keyframes overlay-push { from { transform: translateX(100%); } }
+}
+
+@media (min-width: 640px) {
+  /* Modal: centred card over the scrim, close control only. */
+  .overlay { align-items: center; justify-content: center; padding: 2rem; }
+  .overlay-panel {
+    max-width: 48rem;
+    max-height: 100%;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg, 0.75rem);
+    /* Clip children to the radius: without this the top bar (a rectangle) draws
+       square corners over the rounded panel, so the top looked square while the
+       bottom was rounded. */
+    overflow: hidden;
+    box-shadow: 0 24px 60px -20px color-mix(in oklab, var(--ink) 35%, transparent);
+    animation: overlay-rise 0.18s ease-out;
+  }
+  .overlay-back { display: none; }
+  /* With the back control hidden, space-between would leave the single
+     remaining child at the START — the close control has to be told to sit
+     where the platform expects it. */
+  .overlay-bar { justify-content: flex-end; }
+  @keyframes overlay-rise { from { opacity: 0; transform: translateY(0.75rem); } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay-panel { animation: none; }
+}
+
+/* Filter chips. Pills, medium weight, sentence case — the house rule: no
+   uppercase, no bold. The active one inverts rather than tinting, so the
+   selection reads at a glance without adding a colour to the palette. */
+.chip {
+  font: 500 0.8125rem/1 var(--font-sans-ui);
+  display: inline-flex;
+  align-items: center;
+  /* 44px touch target (house rule) — the year filter is the home page's main
+     interaction, and 32px was under the minimum on a phone. */
+  min-height: 2.75rem;
+  padding-inline: 0.875rem;
+  color: var(--ink-2);
+  background: transparent;
+  border: 1px solid var(--control);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.chip:hover { color: var(--ink); border-color: var(--ink-3); }
+.chip:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.chip-on { color: var(--bg); background: var(--ink); border-color: var(--ink); }
+.chip-on:hover { color: var(--bg); border-color: var(--ink); }

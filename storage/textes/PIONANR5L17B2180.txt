@@ -1,0 +1,686 @@
+                                             N° 2180
+                                                    _____
+
+               ASSEMBLÉE NATIONALE
+                           CONSTITUTION DU 4 OCTOBRE 1958
+                                       DIX-SEPTIÈME LÉGISLATURE
+
+                Enregistré à la Présidence de l’Assemblée nationale le 2 décembre 2025.
+
+
+
+
+                   PROPOSITION DE LOI
+visant à renforcer la sécurité, la rétention administrative et la prévention des
+                               risques d’attentat,
+
+
+  (Renvoyée à la commission des lois constitutionnelles, de la législation et de l’administration générale de la
+République, à défaut de constitution d’une commission spéciale dans les délais prévus par les articles 30 et 31 du
+                                                 Règlement.)
+
+
+
+
+                                                présentée par
+M. Charles RODWELL, M. Michel BARNIER, M. Pieyre-Alexandre ANGLADE,
+M. Antoine ARMAND, M. Gabriel ATTAL, M. Thibault BAZIN, Mme Valérie
+BAZIN-MALGRAS, M. Olivier BECHT, M. Thierry BENOIT, Mme Anne
+BERGANTZ, M. Jean-Didier BERGER, M. Sylvain BERRIOS, M. Hervé
+BERVILLE, Mme Sylvie BONNET, Mme Émilie BONNIVARD, M. Jean-Yves
+BONY, Mme Élisabeth BORNE, M. Éric BOTHOREL, M. Ian BOUCARD,
+M. Florent BOUDIÉ, M. Hubert BRIGAND, M. Anthony BROSSE, Mme Danielle
+BRULEBOIS, M. Joël BRUNEAU, M. Fabrice BRUN, M. Stéphane BUCHOU,
+Mme Françoise BUFFET, M. Vincent CAURE, M. Lionel CAUSSE, M. Thomas
+CAZENAVE, M. Jean-René CAZENEUVE, M. Pierre CAZENEUVE, M. Yannick
+CHENEVARD, Mme Nathalie COGGIA, M. François CORMIER-BOULIGEON,
+Mme Josiane CORNELOUP, Mme Marie-Christine DALLOZ, M. Romain DAUBIÉ,
+                                  –2–
+
+
+Mme Julie DELPECH, M. Vincent DESCOEUR, M. Fabien DI FILIPPO,
+M. Benjamin DIRX, M. Julien DIVE, Mme Virginie DUBY-MULLER, M. Lionel
+DUPARAY, M. Marc FERRACCI, M. Jean-Marie FIÉVET, Mme Agnès FIRMIN LE
+BODO, M. Moerani FRÉBAULT, Mme Alix FRUCHON, M. Jean-Luc FUGIT,
+Mme Camille GALLIARD-MINIER, M. Thomas GASSILLOUD, Mme Anne
+GENETET, Mme Félicie GÉRARD, Mme Olga GIVERNET, Mme Olivia
+GRÉGOIRE, Mme Justine GRUET, M. Michel HERBILLON, M. Patrick HETZEL,
+M. Sébastien HUYGHE, Mme Catherine IBLED, M. Jean-Michel JACQUES,
+M. François JOLIVET, M. Philippe JUVIN, M. Guillaume KASBARIAN, M. Loïc
+KERVRAN, Mme Brigitte KLINKERT, M. Daniel LABARONNE, Mme Amélia
+LAKRAFI, Mme Sandrine LALANNE, M. Thomas LAM, M. Benoît LARROUQUIS,
+M. Michel LAUZZANA, Mme Sandrine LE FEUR, M. Didier LE GAC,
+Mme Constance LE GRIP, Mme Annaïg LE MEUR, Mme Christine LE NABOUR,
+Mme Nicole LE PEIH, Mme Marie LEBEC, M. Vincent LEDOUX, M. Corentin LE
+FUR, M. Didier LEMAIRE, M. Eric LIÉGEON, Mme Delphine LINGEMANN,
+Mme Brigitte LISO, Mme Lise MAGNIER, M. Sylvain MAILLARD, Mme Élisabeth
+DE MAISTRE, M. Bastien MARCHIVE, M. Christophe MARION, Mme Sandra
+MARSAUD, Mme Alexandra MARTIN, M. Denis MASSÉGLIA, M. Stéphane
+MAZARS, M. Laurent MAZAURY, Mme Graziella MELCHIOR, M. Ludovic
+MENDES, M. Nicolas METZDORF, M. Paul MIDY, Mme Laure MILLER,
+Mme Joséphine MISSOFFE, M. Christophe MONGARDIEN, M. Jean MOULLIERE,
+M. Christophe NAEGELEN, M. Karl OLIVE, Mme Agnès PANNIER-RUNACHER,
+Mme Sophie PANONACLE, Mme Astrid PANOSYAN-BOUVET, M. Jérémie
+PATRIER-LEITUS, M. Éric PAUGET, M. Christophe PLASSARD, M. Alexandre
+PORTIER,       Mme Marie-Agnès     POUSSIER-WINSBACK,         Mme Natalia
+POUZYREFF, M. Nicolas RAY, M. Franck RIESTER, Mme Véronique RIOTTON,
+Mme Marie-Pierre    RIXAIN,    M. Vincent  ROLLAND,     Mme Anne-Sophie
+RONCERET, M. Xavier ROSEREN, M. Jean-François ROUSSET, Mme Laetitia
+SAINT-PAUL, M. Mikaele SEO, M. Bertrand SORRE, Mme Violette SPILLEBOUT,
+M. Jean-Pierre TAITE, Mme Liliana TANGUY, M. Jean TERLIER, Mme Prisca
+THEVENOT, M. Jean-Louis THIÉRIOT, M. Stéphane TRAVERT, M. Nicolas
+TRYZNA, M. Antoine VERMOREL-MARQUES, Mme Annie VIDAL, Mme Corinne
+VIGNON, Mme Anne-Cécile VIOLLAND, M. Stéphane VIRY, M. Lionel VUIBERT,
+M. Laurent WAUQUIEZ, M. Christopher WEISSBERG, M. Éric WOERTH,
+Mme Caroline YADAN,
+                                 députés.
+                                    –3–
+
+                         EXPOSÉ DES MOTIFS
+
+       MESDAMES, MESSIEURS,
+
+     Le 22 février 2025, un homme est tué et sept personnes sont
+blessées à Mulhouse par un ressortissant étranger sous obligation de
+quitter le territoire français (OQTF), radicalisé et présentant des
+troubles psychiatriques, coupable d’apologie du terrorisme et arrivé à la
+fin de son délai de rétention administrative.
+
+      Ce nouvel attentat est le plus récent d’une longue série d’attaques
+ayant endeuillé des dizaines de familles ne serait-ce que depuis six ans,
+de Trappes à Villeurbanne, de Romans-sur-Isère à Rambouillet, ou encore
+d’Apt à La Grand-Combe. Parmi ces attaques, figure également le meurtre
+de Philippine Le Noir de Carlan le 21 septembre 2024, assassinée par un
+ressortissant marocain sous le coup d’une OQTF, libéré du centre de
+rétention administrative (CRA) de Metz, quelques jours avant la délivrance
+du laissez-passer consulaire qui aurait dû permettre son expulsion du
+territoire français.
+
+    Ces actes criminels ou terroristes commis en France par des
+individus présentant souvent des signes de radicalisation et de troubles
+psychiatriques, nous frappent par leur horreur absolue.
+
+     Ils encouragent les députés cosignataires de cette proposition de loi à
+se mobiliser pour contribuer à rétablir la sécurité des Français et à
+prévenir la réitération de ces actes criminels et terroristes sur le
+territoire français.
+
+     En effet, à la suite de l’attentat survenu à Mulhouse et face à la
+recrudescence ces dernières années en France d’attaques perpétrées par des
+individus présentant des troubles psychiatriques et des signes de
+radicalisation, de nouvelles mesures sont nécessaires pour protéger nos
+concitoyens, notamment pour contrer ces profils « hybrides », qui les
+rendent particulièrement dangereux et complexes à appréhender, avant tout
+passage à l’acte.
+
+     C’est pourquoi, en complément de l’ensemble des dispositifs votés
+depuis 2017 pour renforcer la sécurité des Français et la lutte contre le
+terrorisme en France, cette proposition de loi prévoit une nouvelle série
+de mesures législatives indispensables pour prévenir la réitération de
+ce type d’actes criminels et terroristes sur notre territoire.
+                                    –4–
+
+     Par ailleurs, à la suite de la décision du Conseil constitutionnel du
+7 août 2025, censurant plusieurs dispositions de la loi visant à faciliter le
+maintien en rétention des personnes condamnées pour des faits d’une
+particulière gravité et présentant de forts risques de récidive, portée par la
+sénatrice Jacqueline Eustache-Brinio au Sénat et par le député
+Olivier Marleix à l’Assemblée nationale, la présente proposition de loi
+comporte deux mesures cruciales pour renforcer et sécuriser le cadre
+légal de la rétention administrative des délinquants et criminels
+étrangers, afin de faciliter leur expulsion du territoire national.
+
+    Premièrement, cette proposition de loi comporte quatre articles
+visant à renforcer le suivi, la prévention et le contrôle des individus qui
+représentent une menace terroriste et qui sont porteurs de troubles
+mentaux et psychiatriques aggravés.
+
+     Dans ce cadre, il est tout d’abord proposé de créer une mesure
+administrative d’injonction d’examen psychiatrique pour les individus
+dont il existe des raisons sérieuses de penser qu’ils sont susceptibles de
+compromettre la sûreté des personnes ou de porter gravement atteinte à
+l’ordre et à la sécurité publics, à raison d’une radicalisation à caractère
+terroriste s’accompagnant de troubles mentaux. En cas de refus de
+l’individu de se soumettre à cette injonction, le dispositif proposé permettra
+au préfet de saisir le juge judiciaire pour l’autoriser à prononcer son
+admission provisoire en soins psychiatriques sans consentement, afin de
+procéder à l’examen psychiatrique prescrit. Le cas échéant, le préfet pourra
+alors prendre une mesure de soins sans consentement dans les conditions de
+droit commun prévues à l’article L. 3213-1 du code de la santé publique,
+sans avoir à attendre un passage à l’acte (article 1er).
+
+     Il est, ensuite, proposé d’étendre la rétention de sûreté judiciaire
+prévue aux articles 706-53-13 et suivants du code de procédure pénale aux
+individus condamnés à une peine d’emprisonnement supérieure ou
+égale à quinze ans pour des faits de terrorisme lorsqu’ils présentent, à
+l’issue de l’exécution de leur peine, une très forte dangerosité caractérisée
+par une probabilité élevée de récidive en lien avec un trouble grave de la
+personnalité (article 2). Par ailleurs, le régime de la prévention de la
+récidive terroriste (suivi socio-judiciaire à l’issue de la peine) sera étendu
+aux personnes condamnées pour des infractions de droit commun qui se
+radicalisent en détention (article 3).
+
+     Enfin, il est proposé de rendre légale la possibilité de communiquer les
+informations relatives aux personnes qui font l’objet d’une mesure de soins
+psychiatriques sans consentement et qui représentent une menace terroriste
+                                    –5–
+
+(notamment les autorisations de sortie et les levées de mesures de soins
+sans consentement) au préfet du lieu de domicile de ces personnes, alors
+que seul le préfet du lieu d’hospitalisation, qui n’est pas nécessairement le
+même, en est actuellement destinataire (article 4).
+
+     Deuxièmement, cette proposition de loi comporte deux articles
+visant à améliorer l’efficacité de nos dispositifs de prévention et de
+lutte contre les actes terroristes, notamment en renforçant le suivi et la
+surveillance des individus susceptibles de commettre un attentat sur le
+territoire français.
+
+     Dans ce cadre, il est ainsi proposé d’apporter des mesures
+correctives fondamentales à la loi du 30 octobre 2017 renforçant la
+sécurité intérieure et la lutte contre le terrorisme (loi SILT), afin de
+réduire les risques de rupture dans la continuité de la surveillance des
+personnes concernées : ouverture de la possibilité pour le ministère de
+l’intérieur d’assortir l’appel formé contre les jugements des tribunaux
+administratifs annulant le renouvellement d’une mesure individuelle de
+contrôle administratif et de surveillance (MICAS) d’une demande de sursis
+à exécution, sur laquelle la juridiction d’appel doit statuer dans un délai de
+72 heures ; possibilité pour le préfet de faire appel en cas de refus
+d’autorisation d’exploitation des documents saisis lors de visites
+domiciliaires (article 5).
+
+     Il est ensuite proposé de modifier la loi du 2 mars 2022 relative au
+choix du nom issu de la filiation, dite loi Vignal, afin de réserver la
+procédure simplifiée de changement de nom uniquement aux personnes
+majeures dont l’acte de naissance est détenu par un officier d’état civil
+français et pour celles disposant d’un acte de naissance à l’étranger de
+justifier être identifiée sur son acte de naissance étranger sous le même
+nom que celui qui fait l’objet de la demande. Ainsi, la modification devra
+d’abord être faite à l’étranger avant de venir en France, ce qui permettra de
+l’interdire à ceux pour lesquels la modification est interdite dans leur pays
+d’origine. Le dispositif proposé renforce la possibilité pour le procureur de
+la République de s’opposer à la demande de changement de nom pour les
+personnes condamnées à des faits d’une particulière gravité, notamment en
+matière terroriste, afin d’éviter des stratégies de dissimulation
+d’antécédents judiciaires par le recours à cette procédure simplifiée et sans
+publication de changement de nom ou de prénom (article 6).
+
+    Troisièmement, cette proposition de loi comporte deux articles
+visant à renforcer le cadre légal de la rétention administrative des
+criminels et délinquants étrangers, notamment à la suite de la décision du
+                                                    –6–
+
+Conseil constitutionnel relative à la proposition de loi visant à faciliter le
+maintien en rétention des personnes condamnées pour des faits d’une
+particulière gravité et présentant de forts risques de récidive, dite
+« Eustache-Brinio » (1).
+
+     Dans ce cadre, le dispositif proposé permet de rétablir la base légale du
+maintien en rétention de 180 à 210 jours pour les étrangers condamnés à
+une peine d’interdiction du territoire pour des actes terroristes ou qui font
+l’objet d’une décision d’expulsion fondée sur des considérations liées à des
+activités terroristes pénalement constatées (article 7).
+
+     Enfin, cette proposition de loi permettra d’allonger jusqu’à 210 jours la
+rétention administrative des étrangers qui font l’objet d’une décision
+d’éloignement et qui représentent une menace actuelle et d’une particulière
+gravité pour l’ordre public, à raison de faits d’atteintes aux personnes
+pénalement constatées dans le cadre d’une condamnation devenue
+définitive (article 8).
+
+    L’article 9 vise à assurer la recevabilité financière de la présente
+proposition de loi.
+
+
+
+
+(1) Par cette décision n° 2025-895 DC du 7 août 2025, le Conseil constitutionnel a censuré les
+dispositions permettant de prolonger jusqu’à 210 jours la rétention administrative de certains étrangers
+considérés comme dangereux, ainsi que les dispositions permettant de maintenir en rétention les étrangers
+remis en liberté par le juge le temps de l’appel du ministère public ou de l’administration. Il a par ailleurs
+validé les dispositions facilitant le relevé des empreintes digitales et la prise de photographies des
+étrangers placés en rétention ainsi que, sous une réserve d’interprétation, les dispositions relatives au
+placement en rétention des demandeurs d’asile.
+                                        –7–
+
+                              PROPOSITION DE LOI
+
+
+                                     Article 1er
+
+       I. – Le second alinéa de l’article L. 212-1 du code des relations entre le
+    public et l’administration est ainsi modifié :
+
+       1° À la première phrase, après le mot : « décisions » sont insérés les
+    mots : « et les avis » ;
+
+       2° À la seconde phrase, les mots : « de cette décision » sont supprimés.
+
+        II. – Après le chapitre IX du titre II du livre II du code de la sécurité
+    intérieure, il est inséré un chapitre IX bis ainsi rédigé :
+
+       « Chapitre IX bis : Injonction d’examen psychiatrique
+
+        « Art. L. 229-7. – I. – Aux seules fins de prévenir la commission
+    d’actes de terrorisme, le représentant de l’État dans le département ou, à
+    Paris, le préfet de police, peut faire obligation à une personne à l’égard de
+    laquelle il existe des raisons sérieuses de penser que son comportement
+    constitue une menace grave pour l’ordre et la sécurité publics, à raison de
+    son adhésion à des théories incitant ou faisant l’apologie d’actes de
+    terrorisme et d’agissements susceptibles d’être en tout ou partie liés à des
+    troubles mentaux identifiés par l’avis d’un psychiatre, de se soumettre à un
+    examen psychiatrique dans un délai qu’il fixe et qui ne peut être inférieur à
+    quinze jours, sauf urgence dûment justifiée.
+
+        « La décision du représentant de l’État énonce avec précision les
+    circonstances qui rendent l’examen indispensable.
+
+        « II. – L’examen psychiatrique est réalisé par un psychiatre choisi par
+    la personne concernée sur une liste arrêtée par le conseil départemental de
+    l’ordre. Ce psychiatre ne doit pas compter ou avoir compté l’intéressé
+    parmi sa patientèle au cours des dix dernières années.
+
+        « III. – La personne concernée peut demander au président du tribunal
+    administratif ou au magistrat qu’il délègue l’annulation de la décision dans
+    un délai de quarante-huit heures à compter de sa notification. Il est statué
+    sur la légalité de la décision au plus tard dans un délai de soixante-douze
+    heures à compter de la saisine du tribunal. Dans ce cas, la mesure ne peut
+    entrer en vigueur avant que le juge ait statué sur la demande.
+                                         –8–
+
+         « IV. – Sur saisine motivée du représentant de l’État dans le
+     département ou, à Paris, du préfet de police, le magistrat du siège du
+     tribunal judiciaire territorialement compétent peut, par une ordonnance
+     écrite et motivée, l’autoriser à prononcer l’admission provisoire en soins
+     psychiatriques sans consentement dans un établissement mentionné à
+     l’article L. 3222-1 du code de la santé publique, d’une personne n’ayant
+     pas déféré à la demande d’examen mentionnée au I. Cette admission
+     provisoire est autorisée à la seule fin de procéder à l’examen psychiatrique
+     prescrit au I et ne peut excéder une durée effective de vingt-quatre heures.
+
+        « Le magistrat du siège du tribunal judiciaire territorialement
+     compétent, saisi en ce sens, peut, par la même ordonnance, autoriser le
+     représentant de l’État dans le département ou, à Paris, le préfet de police à
+     requérir les services de police ou les unités de gendarmerie aux fins
+     d’exécution de la décision d’admission provisoire. Dans ce cas,
+     l’ordonnance mentionne l’adresse des lieux dans lesquels les opérations
+     peuvent être effectuées, ainsi que la faculté pour l’occupant des lieux de
+     faire appel à un conseil de son choix, sans que l’exercice de cette faculté
+     n’entraîne la suspension des opérations ainsi autorisées.
+
+         « L’ordonnance est exécutoire au seul vu de la minute. Elle est
+     notifiée sur place et l’acte de notification comporte mention des voies de
+     recours.
+
+        « Les opérations mentionnées au deuxième alinéa sont effectuées sous
+     le contrôle du magistrat qui les a autorisées, qui peut se déplacer sur les
+     lieux pour veiller au respect des dispositions légales. Ces opérations ne
+     peuvent être commencées avant 6 heures ni après 21 heures. Elles ne
+     peuvent, à peine de nullité, avoir un autre objet que l’exécution de la
+     décision d’admission provisoire en soins psychiatriques visée dans la
+     décision du magistrat du siège du tribunal judiciaire. Elles ne peuvent
+     concerner les lieux affectés à l’exercice d’un mandat parlementaire ou à
+     l’activité professionnelle des avocats, des magistrats ou des journalistes ni
+     les domiciles des personnes concernées.
+
+        « Il est dressé un procès-verbal mentionnant les dates et heures de
+     début et de fin des opérations et les conditions de leur déroulement. Ce
+     procès-verbal est notifié à l’intéressé. Le procès-verbal est transmis au
+     magistrat du siège du tribunal judiciaire, copie en ayant été remise à
+     l’intéressé.
+                                          –9–
+
+        « L’ordonnance est susceptible d’appel devant le premier président de
+     la cour d’appel ou son délégué, qui est saisi sans forme et statue dans un
+     délai de quarante-huit heures à compter de sa saisine.
+
+       « L’appel n’est pas suspensif.
+
+        « Le premier président de la cour d’appel ou son délégué peut, par
+     ordonnance motivée et sans avoir préalablement convoqué les parties,
+     rejeter les déclarations d’appel manifestement irrecevables.
+
+        « V. – Au vu du certificat médical établi par un psychiatre en
+     application du II ou du IV, faisant apparaitre que l’intéressé est atteint de
+     troubles mentaux compromettant la sureté des personnes ou portant
+     gravement atteinte à l’ordre et à la sécurité publics nécessitant des soins
+     psychiatriques, le représentant de l’État dans le département ou, à Paris, le
+     préfet de police peut prononcer l’admission en soins psychiatriques dans
+     les conditions prévues à l’article L. 3213-1 du code de la santé publique.
+
+       « Lorsque l’examen psychiatrique mentionné au IV conclut à l’absence
+     de nécessité de soins psychiatriques, il est mis fin à l’admission provisoire
+     sans délai. »
+
+                                       Article 2
+
+        Le titre XV du livre IV du code de procédure pénale est complété par
+     une section 6 ainsi rédigée :
+
+                                     « Section 6
+                       « De la rétention de sûreté terroriste
+
+         « Art. 706-25-23. – I. – À titre exceptionnel, les personnes dont il est
+     établi, à l’issue d’un réexamen de leur situation intervenant à la fin de
+     l’exécution de leur peine, qu’elles présentent une particulière dangerosité
+     caractérisée par une probabilité très élevée de récidive en raison d’une
+     adhésion persistante à une idéologie ou à des thèses incitant à la
+     commission d’actes de terrorisme et parce qu’elles souffrent d’un trouble
+     grave de la personnalité, peuvent faire l’objet à l’issue de cette peine d’une
+     rétention de sûreté terroriste selon les modalités prévues par le présent
+     chapitre, à la condition qu’elles aient été condamnées à une peine de
+     réclusion criminelle d’une durée égale ou supérieure à quinze ans pour les
+     crimes d’atteinte aux personnes mentionnés aux articles 421-1 à 421-6 du
+     code pénal.
+                                         – 10 –
+
+         « La rétention de sûreté terroriste consiste dans le placement de la
+     personne intéressée en centre socio-médico-judiciaire de sûreté dans lequel
+     lui est proposée, de façon permanente, une prise en charge médicale,
+     sociale et psychologique destinée à permettre la fin de cette mesure.
+
+         « II. – La rétention de sûreté terroriste ne peut toutefois être prononcée
+     que si la cour d’assises a expressément prévu dans sa décision de
+     condamnation que la personne pourra faire l’objet à la fin de sa peine d’un
+     réexamen de sa situation en vue d’une éventuelle rétention de sûreté
+     terroriste.
+
+         « Par exception, lorsque la cour d’assises n’a pas prévu que la
+     personne condamnée fera l’objet d’un réexamen de sa situation, le
+     procureur de la République antiterroriste peut, lorsque cette dernière
+     présente une particulière dangerosité telle que définie au premier alinéa
+     du I du présent article et que la durée de la peine accomplie par elles est au
+     moins égale à la durée de la peine restant à subir, saisir la commission
+     pluridisciplinaire des mesures de sûreté prévue par l’article 763-10, afin
+     d’évaluer sa dangerosité.
+
+         « Pour les condamnés à la réclusion à perpétuité, l’examen doit
+     intervenir lorsque le condamné a accompli dix-huit années de réclusion
+     criminelle ou vingt-deux années s’il est en état de récidive légale.
+
+         « La commission pluridisciplinaire des mesures de sûreté demande le
+     placement de la personne, pour une durée d’au moins six semaines, dans un
+     service spécialisé chargé de l’observation des personnes détenues aux fins
+     d’une évaluation pluridisciplinaire de dangerosité assortie d’une expertise
+     médicale réalisée par deux experts.
+
+        « Sur la base du rapport de la commission pluridisciplinaire des
+     mesures de sûreté, le procureur de la République antiterroriste peut saisir la
+     juridiction régionale de la rétention de sûreté qui peut décider que la
+     personne devra faire l’objet, à la fin de sa peine, d’un réexamen de sa
+     situation en vue d’une éventuelle rétention de sûreté terroriste. La décision
+     de la juridiction régionale de la rétention de sûreté doit être motivée. Elle
+     est prise à l’issue d’un débat contradictoire et, si le condamné le demande,
+     public, au cours duquel la personne condamnée est assistée par un avocat
+     choisi ou commis d’office. Elle est notifiée à la personne condamnée et
+     peut faire l’objet d’un recours devant la juridiction nationale de la rétention
+     de sûreté. La juridiction nationale statue par une décision motivée,
+     susceptible d’un pourvoi en cassation.
+                                         – 11 –
+
+         « Art. 706-25-24. – La situation des personnes mentionnées à
+     l’article 706-25-23 est examinée, au moins un an avant la date prévue pour
+     leur libération, par la commission pluridisciplinaire des mesures de sûreté
+     prévue par l’article 763-10, afin d’évaluer leur dangerosité, dans les
+     conditions prévues par l’article précédent.
+
+        « À cette fin, la commission demande le placement de la personne,
+     pour une durée d’au moins six semaines, dans un service spécialisé chargé
+     de l’observation des personnes détenues aux fins d’une évaluation
+     pluridisciplinaire de dangerosité assortie d’une expertise médicale réalisée
+     par deux experts.
+
+        « Si la commission conclut à la particulière dangerosité du condamné,
+     elle peut proposer, par un avis motivé, que celui-ci fasse l’objet d’une
+     rétention de sûreté terroriste dans le cas où :
+
+        « 1° Les obligations résultant de l’inscription dans le fichier judiciaire
+     national automatisé des auteurs d’infractions terroristes, ainsi que les
+     obligations résultant d’une injonction de soins ou d’un placement sous
+     surveillance électronique mobile, susceptibles d’être prononcés dans le
+     cadre d’un suivi socio-judiciaire ou d’une surveillance judiciaire,
+     apparaissent insuffisantes pour prévenir la commission des crimes
+     mentionnés à l’article 706-25-23 ;
+
+        « 2° Une mesure judiciaire de prévention de la récidive terroriste et de
+     réinsertion apparaît insuffisante ;
+
+      « 3° Cette rétention constitue l’unique moyen de prévenir la
+     commission, dont la probabilité est très élevée, d’un crime susmentionné.
+
+        « La commission vérifie également que la personne condamnée a
+     effectivement été mise en mesure de bénéficier, pendant l’exécution de sa
+     peine, d’une prise en charge médicale, sociale et psychologique adaptée au
+     trouble de la personnalité dont elle souffre.
+
+        « Si la commission estime que les conditions de la rétention de sûreté
+     terroriste ne sont pas remplies mais que le condamné paraît néanmoins
+     dangereux, elle renvoie le dossier au juge de l’application des peines pour
+     qu’il apprécie l’éventualité d’un placement sous surveillance judiciaire.
+
+        « Art. 706-25-25. – Les modalités prévues par les articles 706-53-15 à
+     706-53-22 du présent code sont applicables à la rétention de sûreté
+     terroriste.
+                                          – 12 –
+
+        « Pour l’application du quatrième alinéa de l’article 706-53-15 à la
+     rétention de sûreté terroriste, il y a lieu de lire : « 706-25-24 » au lieu de :
+     « 706-53-14 ».
+
+         « Pour l’application de l’article 706-53-19 à la rétention de sûreté
+     terroriste, il y a lieu de lire : « les infractions mentionnées à
+     l’article 706-25-23 » au lieu de : « les infractions mentionnées à
+     l’article 706-53-13 ».
+
+                                        Article 3
+
+        L’article 706-25-16 du code de procédure pénale est complété par un
+     V ainsi rédigé :
+
+         « V. – Peut également faire l’objet des mesures prévues au I, la
+     personne condamnée à une peine privative de liberté d’une durée
+     supérieure ou égale à dix ans pour une autre infraction, et dont il est établi,
+     à l’issue d’un examen de sa situation intervenant à la fin de l’exécution de
+     sa peine, que son comportement présente une particulière dangerosité
+     caractérisée par une probabilité très élevée de commission d’un acte de
+     terrorisme, à raison de son adhésion à des théories y incitant ou en faisant
+     l’apologie.
+
+        « Les dispositions des I à IV sont alors applicables. »
+
+                                        Article 4
+
+        Le code de la santé publique est ainsi modifié :
+
+         1° L’avant-dernier alinéa de l’article L. 3211-11-1 est complété par
+     une phrase ainsi rédigée : « Il en informe également, au plus tard
+     quarante-huit heures avant la date prévue pour la sortie non accompagnée,
+     le représentant de l’État dans le département » ;
+
+        2° À l’article L. 3211-12-7, les mots « en application des articles
+     L. 3212-5, L. 3212-8 et L. 3213-9 du présent code » sont remplacés par les
+     mots « en application des articles L. 3211-11-1, L. 3212-5, L. 3212-8 et
+     L. 3212-9 du présent code » ;
+
+        3° Le II de l’article L. 3212-5 est ainsi rétabli :
+
+        « II. – Le directeur de l’établissement d’accueil transmet sans délai au
+     représentant de l’État dans le département ou, à Paris, au préfet de police,
+                                        – 13 –
+
+    toute décision modifiant la forme de la prise en charge d’une personne
+    faisant l’objet d’une mesure de soins psychiatriques prise en application du
+    présent chapitre. »
+
+       4° L’article L. 3212-9 est complété par un alinéa ainsi rédigé :
+
+        « En toute hypothèse, dans les vingt-quatre heures qui suivent la levée
+    de la mesure de soins psychiatriques, le directeur de l’établissement en
+    informe le représentant de l’État dans le département ou, à Paris, le préfet
+    de police. »
+
+                                      Article 5
+
+       Le code de la sécurité intérieure est ainsi modifié :
+
+        1° Après le huitième alinéa de l’article L. 228-2, il est inséré un alinéa
+    ainsi rédigé :
+
+        « Lorsqu’une demande de sursis à exécution d’un jugement annulant
+    une décision prise sur le fondement de la procédure mentionnée à l’alinéa
+    précédent est présentée à l’appui d’un appel formé contre ce même
+    jugement dans un délai de quarante-huit heures à compter de sa
+    notification, la juridiction saisie statue sur la demande de sursis dans un
+    délai de 72 heures à compter de sa saisine. La mesure annulée demeure en
+    vigueur jusqu’à l’expiration du délai durant lequel le ministre de l’intérieur
+    peut solliciter le sursis à exécution du jugement ou, dans le cas où cette
+    demande est présentée, jusqu’à ce qu’il y soit statué ».
+
+        2° Après le septième alinéa de l’article L. 228-4, il est inséré un alinéa
+    ainsi rédigé :
+
+        « Lorsqu’une demande de sursis à exécution d’un jugement annulant
+    une décision prise sur le fondement de la procédure mentionnée à l’alinéa
+    précédent est présentée à l’appui d’un appel formé contre ce même
+    jugement dans un délai de quarante-huit heures à compter de sa
+    notification, la juridiction saisie statue sur la demande de sursis dans un
+    délai de 72 heures à compter de sa saisine. La mesure annulée demeure en
+    vigueur jusqu’à l’expiration du délai durant lequel le ministre de l’intérieur
+    peut solliciter le sursis à exécution du jugement ou, dans le cas où cette
+    demande est présentée, jusqu’à ce qu’il y soit statué ».
+
+        3° Avant le dernier alinéa de l’article L. 228-5, il est inséré un alinéa
+    ainsi rédigé :
+                                          – 14 –
+
+         « Lorsqu’une demande de sursis à exécution d’un jugement annulant
+     une décision prise sur le fondement de la procédure mentionnée à l’alinéa
+     précédent est présentée à l’appui d’un appel formé contre ce même
+     jugement dans un délai de quarante-huit heures à compter de sa
+     notification, la juridiction saisie statue sur la demande de sursis dans un
+     délai de 72 heures à compter de sa saisine. La mesure annulée demeure en
+     vigueur jusqu’à l’expiration du délai durant lequel le ministre de l’intérieur
+     peut solliciter le sursis à exécution du jugement ou, dans le cas où cette
+     demande est présentée, jusqu’à ce qu’il y soit statué ».
+
+        4° Le II de l’article L. 229-5 est ainsi modifié :
+
+        a) À la fin du troisième alinéa, les mots : « ayant autorisé l’exploitation
+     des documents et données saisis » sont supprimés ;
+
+        b) À la première phrase du quatrième alinéa, les mots : « autorisant
+     l’exploitation des documents et données saisis » sont supprimés.
+
+                                       Article 6
+
+        I. – Le code civil est ainsi modifié :
+
+        1° L’article 60 est ainsi modifié :
+
+         a) À la première phrase du premier alinéa, après le mot : « personne »,
+     sont insérés les mots : « dont l’acte de naissance est détenu par un officier
+     d’état civil français » ;
+
+        b) Après le premier alinéa, sont insérés deux alinéas ainsi rédigés :
+
+         « Lorsque la demande concerne un majeur ou un mineur de plus de
+     treize ans, elle comprend le bulletin n° 3 mentionné à l’article 777 du code
+     de procédure pénale.
+
+         « Lorsque la personne dispose d’un acte de naissance étranger, elle
+     justifie auprès de l’officier de l’état civil, dans des conditions fixées par
+     décret en Conseil d’État, que le prénom mentionné dans son acte de
+     naissance étranger est identique à celui qui fait l’objet de la demande. » ;
+
+        c) À la première phrase du dernier alinéa, après le mot : « famille »,
+     sont insérés les mots : « ou lorsque le bulletin n° 3 produit par le
+     demandeur fait apparaître une condamnation pour l’une des infractions
+     mentionnées au titre II du livre IV du code pénal, aux articles L. 224-1 et
+                                         – 15 –
+
+     L. 225-7 du code de la sécurité intérieure ainsi qu’à l’article 706-47 du
+     code de procédure pénale, » ;
+
+        2° L’article 61-3-1 est ainsi modifié :
+
+         a) À la première phrase du premier alinéa, après le mot : « majeure »,
+     sont insérés les mots : « dont l’acte de naissance est détenu par un officier
+     d’état civil français » ;
+
+       b) Après le premier alinéa, il est inséré un alinéa ainsi rédigé :
+
+        « Lorsque la personne dispose d’un acte de naissance étranger, elle
+     justifie auprès de l’officier de l’état civil, dans des conditions fixées par
+     décret en Conseil d’État, que le nom mentionné dans son acte de naissance
+     étranger est identique à celui qui fait l’objet de la demande. La demande
+     comprend le bulletin n° 3 mentionné à l’article 777 du code de procédure
+     pénale. » ;
+
+         c) À la première phrase du quatrième alinéa, après le mot :
+     « difficultés », sont insérés les mots : « ou lorsque le bulletin n° 3 produit
+     par le demandeur fait apparaître une condamnation pour l’une des
+     infractions mentionnées au titre II du livre IV du code pénal, aux articles
+     L. 224-1 et L. 225-7 du code de la sécurité intérieure ainsi qu’à
+     l’article 706-47 du code de procédure pénale, ».
+
+       II. – Le code de procédure pénale est ainsi modifié :
+
+       1° La dernière phrase du premier alinéa de l’article 706-53-8, est
+     complétée par les mots : « et des changements d’état civil dont il a eu
+     connaissance au vu du répertoire national d’identification des personnes
+     physiques conformément à l’article R. 53-8-3 du présent code » ;
+
+       2° La dernière phrase du premier alinéa de l’article 706-25-10, est
+     complétée par les mots : « et des changements d’état civil dont il a eu
+     connaissance au vu du répertoire national d’identification des personnes
+     physiques conformément à l’article R. 50-32 du présent code, ».
+
+       3° Le deuxième alinéa de l’article 706-25-10 est supprimé.
+
+       4° Après le second alinéa de l’article 706-25-12, il est inséré l’alinéa
+     suivant :
+
+       « Le procureur de la République et le juge d’instruction peuvent
+     également procéder d’office. »
+                                         – 16 –
+
+                                       Article 7
+
+        L’article L. 742-7 du code de l’entrée et du séjour des étrangers et du
+    droit d’asile est ainsi modifié :
+
+       1° À la première phrase, les mots : « conditions prévues à l’article
+    L742-5 » sont remplacés par les mots : « cas prévus aux 2° et 3° de l’article
+    L. 742-4 » ;
+
+       2° La seconde phrase est supprimée ;
+
+       3° Il est ajouté un alinéa ainsi rédigé :
+
+       « Si le juge ordonne la prolongation de la rétention, celle-ci court pour
+    une nouvelle période d’une durée maximale de trente jours. La durée
+    maximale de la rétention n’excède alors pas deux cent dix jours. »
+
+                                       Article 8
+
+       Après le premier alinéa de l’article L. 742-6 du code de l’entrée et du
+    séjour des étrangers et du droit d’asile, il est inséré un alinéa ainsi rédigé :
+
+        « À titre exceptionnel, le premier alinéa est également applicable à
+    l’étranger qui fait l’objet d’une décision d’éloignement et qui représente
+    une menace actuelle et d’une particulière gravité pour l’ordre public, à
+    raison de faits d’atteintes aux personnes pénalement constatées dans le
+    cadre d’une condamnation devenue définitive. »
+
+                                       Article 9
+
+        I. – La charge pour l’État est compensée à due concurrence par la
+    création d’une taxe additionnelle à l’accise sur les tabacs prévue au
+    chapitre IV du titre Ier du livre III du code des impositions sur les biens et
+    services.
+
+        II. – La charge pour les organismes de sécurité sociale est compensée à
+    due concurrence par la majoration de l’accise sur les tabacs prévue au
+    chapitre IV du titre Ier du livre III du code des impositions sur les biens et
+    services.
+

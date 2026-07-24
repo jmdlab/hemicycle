@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#fcfcfb" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Hémicycle — comprendre ce que l’Assemblée a voté</title>
+  <meta name="description" content="Chaque vote de l’Assemblée nationale expliqué en français simple, à partir du texte de loi. Sans parti pris." />
+  <link rel="canonical" href="https://hemicycle.app/" />
+
+  <!-- Share previews. Crawlers do not run JavaScript, so a single-page app that
+       sets these at runtime shows a bare link on X, WhatsApp and LinkedIn — on
+       a product whose whole purpose is being shared. These are the static
+       fallbacks for the home page; individual ballots are served their own tags
+       by the bot route in server/index.mjs. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hémicycle" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:url" content="https://hemicycle.app/" />
+  <meta property="og:title" content="Hémicycle — comprendre ce que l’Assemblée a voté" />
+  <meta property="og:description" content="Chaque vote de l’Assemblée nationale expliqué en français simple, à partir du texte de loi. Sans parti pris." />
+  <meta property="og:image" content="https://hemicycle.app/share.png" />
+  <meta property="og:image:width" content="2048" />
+  <meta property="og:image:height" content="1152" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hémicycle — comprendre ce que l’Assemblée a voté" />
+  <meta name="twitter:description" content="Chaque vote de l’Assemblée nationale expliqué en français simple, à partir du texte de loi." />
+  <meta name="twitter:image" content="https://hemicycle.app/share.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <!-- Entity graph. @id anchors (#website / #org) are referenced by every
+       per-ballot article served to crawlers (server/index.mjs OG route). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://hemicycle.app/#website",
+        "url": "https://hemicycle.app/",
+        "name": "Hémicycle",
+        "alternateName": "Hémicycle — les votes de l’Assemblée nationale expliqués",
+        "description": "Chaque vote de l’Assemblée nationale expliqué en français simple, à partir du texte de loi. Sans parti pris.",
+        "inLanguage": "fr-FR",
+        "publisher": { "@id": "https://hemicycle.app/#org" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://hemicycle.app/#org",
+        "name": "Hémicycle",
+        "url": "https://hemicycle.app/",
+        "logo": { "@type": "ImageObject", "url": "https://hemicycle.app/favicon.svg" },
+        "description": "Service indépendant et sans parti pris qui explique en français simple chaque scrutin de l’Assemblée nationale, à partir des données publiques de data.assemblee-nationale.fr."
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <noscript>
+    <div style="max-width:40rem;margin:4rem auto;padding:0 1.5rem;font-family:Georgia,serif;line-height:1.6;color:#2b2a28">
+      <h1 style="font-size:1.75rem">Hémicycle</h1>
+      <p>Ce site a besoin de JavaScript pour afficher les votes de l’Assemblée en clair.</p>
+      <p>Les données brutes restent consultables sur
+        <a href="https://data.assemblee-nationale.fr" style="color:#2b2a28">data.assemblee-nationale.fr</a>.</p>
+    </div>
+  </noscript>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

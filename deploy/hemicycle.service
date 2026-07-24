@@ -1,0 +1,37 @@
+# /etc/systemd/system/hemicycle.service
+[Unit]
+Description=Hémicycle — Assemblée nationale vote → 16:9 card + neutral caption
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/www/denis.me/hemicycle/server
+# river-brain/.env is deliberately NOT loaded here. It holds every secret on the
+# box — vault encryption key, bank credentials, mail password — and this service
+# is public. It needs none of them: server/.env carries PORT only; the renderer
+# path, storage and model are code defaults. The headless Claude CLI reads no
+# env var (it authenticates from ~/.claude).
+EnvironmentFile=-/home/ubuntu/www/denis.me/hemicycle/server/.env
+ExecStart=/usr/bin/node index.mjs
+Restart=on-failure
+RestartSec=5
+StandardOutput=append:/var/log/hemicycle.log
+StandardError=append:/var/log/hemicycle.log
+
+# Memory caps — cairosvg peaks ~250MB rasterising 4K; 1G gives headroom.
+MemoryHigh=700M
+MemoryMax=1G
+
+# Security hardening.
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=read-only
+PrivateTmp=yes
+CapabilityBoundingSet=
+ReadWritePaths=/home/ubuntu/www/denis.me/hemicycle/storage/ /var/log/
+Environment=PYTHONDONTWRITEBYTECODE=1
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+[Install]
+WantedBy=multi-user.target

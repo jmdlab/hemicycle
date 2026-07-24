@@ -1,0 +1,4 @@
+# hemicycle.app — explication publique des scrutins de l'Assemblée nationale.
+User-agent: *
+Allow: /
+Sitemap: https://hemicycle.app/sitemap.xml

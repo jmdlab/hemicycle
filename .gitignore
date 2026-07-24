@@ -1,0 +1,24 @@
+# secrets — jamais dans git
+server/.env
+*.env
+
+# runtime / churn
+logs/
+node_modules/
+__pycache__/
+render/__pycache__/
+dist/node_modules/
+
+# gros artefacts régénérables par cron (rasters de cartes)
+storage/rasters/
+
+# index députés — régénérés chaque nuit par build-deputes.mjs depuis storage/raw
+storage/deputes/
+storage/index/deputes.json
+
+# dumps bruts AN — re-téléchargés chaque nuit par refresh-data.mjs ;
+# contiennent email/adresse/naissance des députés (open data, mais
+# inutile de le publier) — JAMAIS en git (décision JM 2026-07-24)
+storage/raw/
+# cartes SVG/PNG régénérées par pregenerate.mjs — dé-trackées, la règle manquait
+storage/cards/

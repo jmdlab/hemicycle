@@ -1,0 +1,214 @@
+                                             N° 2491
+                                                    _____
+
+               ASSEMBLÉE NATIONALE
+                           CONSTITUTION DU 4 OCTOBRE 1958
+                                       DIX-SEPTIÈME LÉGISLATURE
+
+                 Enregistré à la Présidence de l’Assemblée nationale le 17 février 2026.
+
+
+
+
+                   PROPOSITION DE LOI
+   visant à simplifier la gestion de la commande publique par les acheteurs
+                     publics et les opérateurs économiques,
+
+
+  (Renvoyée à la commission des lois constitutionnelles, de la législation et de l’administration générale de la
+République, à défaut de constitution d’une commission spéciale dans les délais prévus par les articles 30 et 31 du
+                                                 Règlement.)
+
+
+
+
+                                                présentée par
+M. Thomas LAM, M. Paul CHRISTOPHE, M. Xavier ALBERTINI, M. Henri
+ALFANDARI, Mme Béatrice BELLAMY, M. Thierry BENOIT, M. Sylvain
+BERRIOS, M. Benoît BLANCHARD, M. Bertrand BOUYX, M. Jean-Michel
+BRARD, Mme Nathalie COLIN-OESTERLÉ, M. Michel CRIAUD, M. Philippe
+FAIT, Mme Agnès FIRMIN LE BODO, Mme Félicie GÉRARD, M. François
+GERNIGON, M. Pierre HENRIET, M. François JOLIVET, M. Loïc KERVRAN,
+M. Didier LEMAIRE, Mme Lise MAGNIER, M. Laurent MARCANGELI, M. Jean
+MOULLIERE, M. Jérémie PATRIER-LEITUS, Mme Béatrice PIRON, M. Christophe
+PLASSARD, M. Jean-François PORTARRIEU, Mme Marie-Agnès POUSSIER-
+WINSBACK, Mme Isabelle RAUCH, M. Xavier ROSEREN, Mme Laetitia SAINT-
+PAUL, M. Vincent THIÉBAUT, M. Frédéric VALLETOUX, Mme Anne-Cécile
+VIOLLAND,
+       –2–
+
+
+députés et députées.
+                                               –3–
+
+                                 EXPOSÉ DES MOTIFS
+
+          MESDAMES, MESSIEURS,
+
+    La commande publique représente près de 14 % du PIB français,
+soit 400 milliards d’euros (1). À ce titre, elle constitue un levier
+stratégique pour soutenir l’emploi, orienter l’activité économique et
+traduire concrètement les priorités de l’action publique.
+
+     La commande publique est principalement portée par les
+collectivités territoriales, qui représentaient, en 2023, 80 % de l’ensemble
+des marchés publics, contre seulement 8 % pour l’État et 12 % pour les
+entreprises publiques et les opérateurs de réseaux (2). Ce poids leur confère
+un rôle structurant et central dans l’orientation et la mise en œuvre de
+l’achat public sur l’ensemble du territoire.
+
+     La commande publique repose sur une exigence de bonne
+utilisation des deniers publics, chaque euro devant être engagé de
+manière efficiente. Cette exigence trouve son fondement dans les
+principes fondamentaux du droit de la commande publique, à valeur
+constitutionnelle, inscrits à l’article L. 3 du code de la commande publique.
+
+    Dans le contexte budgétaire actuel, cette exigence s’impose avec
+une acuité particulière.
+
+    Pourtant, le cadre juridique de la commande publique est marqué
+par une complexité excessive ainsi que par des rigidités qui nuisent à
+son efficacité. Il en résulte une double difficulté :
+
+     – D’une part, les petites et moyennes entreprises ainsi que les
+acteurs économiques locaux rencontrent des difficultés d’accès à la
+commande publique, notamment en raison de la complexité des
+procédures et des contraintes administratives et financières. Ainsi, si les
+très petites entreprises (TPE) et petites et moyennes entreprises (PME)
+représentent plus de 99 % du tissu économique, elles n’obtiennent
+qu’environ 60 % des marchés publics en volume et 30 % seulement en
+valeur (3).
+
+
+1    Cour des comptes européenne, rapport de la Commission d'enquête du Sénat sur les coûts et les
+modalités effectifs de la commande publique et la mesure de leur effet d'entraînement sur l'économie
+française, juillet 2025
+2    Rapport de la Commission d'enquête du Sénat sur les coûts et les modalités effectifs de la
+commande publique et la mesure de leur effet d'entraînement sur l'économie française, juillet 2025
+3    Observatoire économique de la commande publique, 2023
+                                     –4–
+
+      – D’autre part, le cadre juridique tend, dans les faits, à favoriser
+les opérateurs économiques de grande taille. Les collectivités
+territoriales, qui ne disposent pas toujours de l’ingénierie nécessaire,
+peuvent se trouver désavantagées dans la conduite de leurs achats. Dans un
+rapport publié en 2023, l’Inspection générale des finances estimait que les
+collectivités pourraient réaliser jusqu’à 10 % d’économies sur leurs achats,
+soit environ cinq milliards d’euros, en renforçant la rationalisation et la
+professionnalisation de la fonction achat.
+
+      Cette situation n’est pas seulement préjudiciable pour les petites et
+moyennes entreprises, vecteurs de croissance et de cohésion
+territoriale, mais elle limite également la capacité des collectivités à
+tirer pleinement parti de la diversité du tissu économique local,
+notamment en termes d’innovation, de compétitivité et de développement
+territorial.
+
+    Face à ces constats, il apparaît nécessaire de faire évoluer le cadre
+de la commande publique afin qu’il réponde mieux aux réalités
+économiques et opérationnelles des territoires. La présente proposition
+de loi s’inscrit dans cette perspective en apportant des réponses
+pragmatiques à trois enjeux majeurs : la rigidité de certains dispositifs
+contractuels, l’accès des petites et moyennes entreprises à la commande
+publique, et le renforcement de la transparence de l’achat public.
+
+     L’article 1er de la proposition de loi permet à l’acheteur d’inscrire,
+au sein d’un accord-cadre, une clause de non-exclusivité. Il sécurise
+également le recours à un ou plusieurs opérateurs économiques tiers en cas
+de défaillance du ou des titulaires de l’accord-cadre. Si les accords-cadres
+jouent un rôle structurant dans la commande publique, leur caractère
+strictement exclusif peut, dans certains cas, limiter la capacité des acheteurs
+publics à optimiser leurs conditions d’achat.
+
+     L’article 2 prévoit de porter à 30 % le taux d’avance obligatoire
+versé aux très petites, petites et moyennes entreprises dans le cadre des
+marchés publics. Actuellement le code de la commande publique prévoit
+un taux minimal de 30 % pour les marchés publics passés par l’État, et de
+10 % pour ceux passés par les établissements publics administratifs de
+l’État, et par les collectivités territoriales, leurs établissements publics et
+groupements, dans certaines conditions. Cette mesure vise à améliorer la
+trésorerie des très petites, petites et moyennes entreprises, pour lesquelles
+les coûts d’approvisionnement, de main-d’œuvre et de mobilisation des
+moyens nécessaires à l’exécution du marché constituent un frein majeur à
+                                    –5–
+
+l’accès à la commande publique. Elle permettra ainsi d’améliorer le soutien
+aux acteurs économiques locaux.
+
+     L’article 3 instaure un dispositif de labellisation « achat public
+local et responsable » destiné à améliorer l’information des acheteurs
+publics vis-à-vis des centrales d’achat et de renforcer la transparence
+de l’achat public. En s’appuyant sur des critères objectifs, ce label
+permettra aux collectivités territoriales de mieux apprécier l’impact
+économique local de leurs choix d’achat et constituera ainsi un outil d’aide
+à la décision destiné à favoriser une commande publique plus lisible, plus
+efficace et mieux ancrée dans les territoires.
+
+    L’article 4 gage la présente proposition de loi.
+                                         –6–
+
+                              PROPOSITION DE LOI
+
+
+                                      Article 1er
+
+      Le chapitre V du titre II du livre Ier de la deuxième partie du code de la
+    commande publique est complété par un article L. 2125-2 ainsi rédigé :
+
+        « Art. L. 2125-2. – I. – Un accord-cadre peut comporter une clause de
+    non-exclusivité. Cette clause définit les conditions dans lesquelles
+    l’acheteur peut recourir à un ou plusieurs opérateurs économiques tiers.
+    Elle détaille notamment le périmètre des prestations concernées ainsi que
+    leur montant estimatif.
+
+       « II. – En cas d’incapacité des titulaires de l’accord-cadre à satisfaire
+    aux engagements prévus au contrat, l’acheteur peut recourir à des
+    opérateurs économiques tiers aux mêmes fins dans les conditions de droit
+    commun. »
+
+                                       Article 2
+
+        L’article L. 2191- 2 du code de la commande publique est complété
+    par un alinéa ainsi rédigé :
+
+        « Le montant minimal de l’avance ne peut être inférieur à 30 % du
+    montant initial toutes taxes comprises du marché lorsque son titulaire est
+    une petite ou moyenne entreprise ou son sous-traitant admis au paiement
+    direct. »
+
+                                       Article 3
+
+        La sous-section 1 de la section 1 du chapitre III du titre Ier du livre Ier
+    de la deuxième partie du code de la commande publique est complétée par
+    un article L. 2113-5-1 ainsi rédigé :
+
+        « Art. L. 2113-5-1. – Il est institué un label dénommé « achat public
+    local et responsable ».
+
+       « Ce label est attribué aux acheteurs publics mentionnés à l’article
+    L. 2113-2 qui satisfont à des critères garantissant la transparence de leur
+    fonctionnement, la qualité de leur offre et la contribution de leur activité au
+    développement économique local.
+                                         –7–
+
+       « Les modalités d’application du présent article sont fixées par
+    décret. »
+
+                                      Article 4
+
+        I. – La charge pour l’État est compensée à due concurrence par la
+    création d’une taxe additionnelle à l’accise sur les tabacs prévue au
+    chapitre IV du titre Ier du livre III du code des impositions sur les biens et
+    services.
+
+        II. – La charge pour les collectivités territoriales est compensée à due
+    concurrence par la majoration de la dotation globale de fonctionnement et,
+    corrélativement pour l’État, par la création d’une taxe additionnelle à
+    l’accise sur les tabacs prévue au chapitre IV du titre Ier du livre III du code
+    des impositions sur les biens et services.
+
+        III. – La charge pour les organismes de sécurité sociale est compensée
+    à due concurrence par la majoration de l’accise sur les tabacs prévue au
+    chapitre IV du titre Ier du livre III du code des impositions sur les biens et
+    services.
+

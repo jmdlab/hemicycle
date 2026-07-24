@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Hémicycle mark: white half-ring on black, the card's vote graph reduced
+       to its silhouette. Two hairline cuts split the ring into three seat
+       blocks — visible at 32px+, harmlessly fused at 16px. -->
+  <rect width="64" height="64" rx="14" fill="#000000"/>
+  <path d="M 8 42 A 24 24 0 0 1 56 42 L 44 42 A 12 12 0 0 0 20 42 Z" fill="#ffffff"/>
+  <g stroke="#000000" stroke-width="2.6">
+    <line x1="32" y1="42" x2="20" y2="21.2"/>
+    <line x1="32" y1="42" x2="44" y2="21.2"/>
+  </g>
+</svg>

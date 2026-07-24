@@ -1,0 +1,563 @@
+                                                N° 2107
+                                                       _____
+
+                  ASSEMBLÉE NATIONALE
+                              CONSTITUTION DU 4 OCTOBRE 1958
+                                          DIX-SEPTIÈME LÉGISLATURE
+
+                   Enregistré à la Présidence de l’Assemblée nationale le 18 novembre 2025.
+
+
+
+
+                      PROPOSITION DE LOI
+    visant à protéger les mineurs des risques auxquels les expose l’utilisation des
+                                  réseaux sociaux,
+
+
+(Renvoyée à la commission des affaires culturelles et de l’éducation, à défaut de constitution d’une commission spéciale
+                           dans les délais prévus par les articles 30 et 31 du Règlement.)
+
+
+
+
+                                                   présentée par
+   Mme Laure MILLER, M. Gabriel ATTAL, M. Pieyre-Alexandre ANGLADE,
+   M. Antoine ARMAND, M. Olivier BECHT, M. Hervé BERVILLE, Mme Élisabeth
+   BORNE, M. Florent BOUDIÉ, M. Anthony BROSSE, Mme Danielle BRULEBOIS,
+   M. Stéphane BUCHOU, Mme Françoise BUFFET, Mme Céline CALVEZ,
+   M. Vincent CAURE, M. Lionel CAUSSE, M. Thomas CAZENAVE, M. Jean-René
+   CAZENEUVE, M. Pierre CAZENEUVE, M. Yannick CHENEVARD, Mme Nathalie
+   COGGIA, M. François CORMIER-BOULIGEON, Mme Julie DELPECH,
+   M. Benjamin DIRX, Mme Nicole DUBRÉ-CHIRAT, M. Marc FERRACCI, M. Jean-
+   Marie FIÉVET, M. Moerani FRÉBAULT, M. Jean-Luc FUGIT, Mme Camille
+   GALLIARD-MINIER, M. Thomas GASSILLOUD, Mme Anne GENETET,
+   Mme Olga GIVERNET, M. Guillaume GOUFFIER VALENTE, Mme Olivia
+   GRÉGOIRE, M. Sébastien HUYGHE, Mme Catherine IBLED, M. Jean-Michel
+                                  –2–
+
+
+JACQUES, Mme Brigitte KLINKERT, M. Daniel LABARONNE, Mme Amélia
+LAKRAFI, Mme Sandrine LALANNE, M. Benoît LARROUQUIS, M. Michel
+LAUZZANA, Mme Sandrine LE FEUR, M. Didier LE GAC, Mme Constance LE
+GRIP, Mme Annaïg LE MEUR, Mme Christine LE NABOUR, Mme Nicole LE PEIH,
+Mme Marie LEBEC, M. Vincent LEDOUX, Mme Brigitte LISO, M. Sylvain
+MAILLARD, M. Bastien MARCHIVE, M. Christophe MARION, Mme Sandra
+MARSAUD, M. Denis MASSÉGLIA, M. Stéphane MAZARS, Mme Graziella
+MELCHIOR, M. Ludovic MENDES, M. Nicolas METZDORF, M. Paul MIDY,
+Mme Joséphine MISSOFFE, M. Christophe MONGARDIEN, M. Karl OLIVE,
+Mme Agnès PANNIER-RUNACHER, Mme Sophie PANONACLE, Mme Astrid
+PANOSYAN-BOUVET, Mme Natalia POUZYREFF, M. Franck RIESTER,
+Mme Véronique RIOTTON, Mme Marie-Pierre RIXAIN, M. Charles RODWELL,
+Mme Anne-Sophie RONCERET, M. Jean-François ROUSSET, M. Mikaele SEO,
+M. Charles SITZENSTUHL, M. Bertrand SORRE, Mme Violette SPILLEBOUT,
+Mme Liliana TANGUY, M. Jean TERLIER, Mme Prisca THEVENOT, M. Stéphane
+TRAVERT, Mme Annie VIDAL, Mme Corinne VIGNON, M. Christopher
+WEISSBERG, M. Éric WOERTH, Mme Caroline YADAN, M. Christian BAPTISTE,
+M. Michel BARNIER, Mme Anne BERGANTZ, M. Bertrand BOUYX,
+Mme Nathalie COLIN-OESTERLÉ, Mme Josiane CORNELOUP, M. Mickaël
+COSSON, M. Charles DE COURSON, Mme Élisabeth DE MAISTRE,
+Mme Constance DE PÉLICHY, Mme Virginie DUBY-MULLER, M. Lionel
+DUPARAY, M. Philippe FAIT, M. Olivier FALORNI, Mme Alix FRUCHON,
+Mme Perrine GOULET, Mme Justine GRUET, M. Michel HERBILLON,
+Mme Sandrine JOSSO, M. Philippe JUVIN, M. Thomas LAM, M. Pascal LECAMP,
+M. Eric LIÉGEON, Mme Delphine LINGEMANN, Mme Lise MAGNIER,
+M. Laurent MAZAURY, Mme Louise MOREL, M. Yannick NEUDER, M. Didier
+PADEY, Mme Maud PETIT, Mme Béatrice PIRON, M. Alexandre PORTIER,
+Mme Marie-Agnès POUSSIER-WINSBACK, M. Nicolas RAY, Mme Mereana REID
+ARBELOT, M. Xavier ROSEREN, M. Olivier SERVA, M. David TAUPIAC,
+M. Nicolas THIERRY, M. Antoine VERMOREL-MARQUES, M. Lionel VUIBERT,
+                           députées et députés.
+                                                  –3–
+
+                                    EXPOSÉ DES MOTIFS
+
+          MESDAMES, MESSIEURS,
+
+        Le 11 septembre 2025 a été rendu public le rapport de la
+commission d’enquête de l’Assemblée nationale sur les effets
+psychologiques de TikTok sur les mineurs, adopté à l’unanimité sept jours
+plus tôt.
+
+        Ce rapport, intitulé : « Quand le divertissement vire au cauchemar :
+sortir nos enfants du piège algorithmique de TikTok » (1), dresse un constat
+extrêmement alarmant quant à la manière dont le réseau social chinois
+expose nos enfants à des contenus particulièrement dangereux pour leur
+santé mentale.
+
+        Après 6 mois de travaux, près d’une centaine d’heures
+d’auditions (2) et l’analyse de 31 000 témoignages recueillis dans le cadre
+d’une consultation publique inédite, le diagnostic posé est sans appel : les
+réseaux sociaux, et TikTok en particulier, sont très largement consultés par
+les jeunes qui y passent de plus en plus de temps, y compris une grande
+part de ceux dont l’âge est inférieur aux propres conditions d’utilisation des
+plateformes. Plus grave, TikTok fait non seulement preuve d’une
+négligence volontaire dans la modération des contenus diffusés et le
+contrôle de l’âge réel de ses utilisateurs, mais il a en plus construit un
+algorithme particulièrement efficace et dévastateur qui peut avoir un effet
+délétère sur la santé mentale, notamment sur celle des plus jeunes dont le
+cerveau est en pleine construction et qui ont une capacité de recul moindre,
+en enfermant les usagers dans des spirales de contenus violents, choquants,
+faisant la promotion de l’automutilation ou du suicide, etc.
+
+        La Commission d’enquête a aussi établi qu’il n’existe parmi les
+principaux réseaux sociaux aucun qui puisse être qualifié d’éthique. Si
+TikTok est le plus « performant » dans sa capacité à capter l’attention de
+ses utilisateurs, et particulièrement les plus jeunes, tous poursuivent le
+même objectif, avec plus ou moins d’efficacité et plus ou moins de bonne
+foi dans les actions qu’ils mettent en œuvre pour limiter leurs effets
+néfastes sur la santé mentale des jeunes.
+
+
+1     https://www.assemblee-nationale.fr/dyn/17/rapports/cetiktok/l17b1770-ti_rapport-enquete
+2     Adolescents et familles de victimes, sociologues, psychologues, psychiatres, médecins,
+informaticiens, journalistes, chercheurs et associations spécialisées, responsables politiques
+d’administrations françaises et européennes en poste ou ayant eu des responsabilités en lien avec le sujet,
+influenceurs.
+                                     –4–
+
+        Face à ces constats qui sont détaillés de manière très complète dans
+le rapport de la Commission d’enquête, celle-ci a émis 43
+recommandations dont une dizaine nécessitent pour leur mise en œuvre une
+évolution de la loi. C’est l’objet de cette proposition de loi.
+
+       La nécessité d’une régulation au niveau européen
+
+        Cette proposition de loi ne propose pas d’apporter de solution à la
+question de la régulation des réseaux sociaux, notamment au niveau des
+contenus qu’ils diffusent ou des données qu’ils traitent. Cette thématique,
+fondamentale et qui doit bien sûr être traitée avec la plus grande célérité,
+relève en effet strictement du droit européen.
+
+        Ainsi, si le Règlement général sur la protection des données
+de 2018, ou encore le Digital Services Act de 2024, ont constitué des
+avancées importantes vers une meilleure régulation des réseaux sociaux, ils
+restent encore aujourd’hui perfectibles et la France, à la pointe au niveau
+européen sur ces thématiques, doit continuer de mener ce combat pour des
+réseaux plus éthiques.
+
+        Cependant, le mener au niveau strictement national serait une
+stratégie vouée à l’échec, comme nous avons malheureusement pu le
+constater avec le sort réservé à la loi n° 566 du 7 juillet 2023 visant à
+instaurer une majorité numérique et à lutter contre la haine en ligne, qui,
+bien qu’adoptée en bonne et due forme en France, n’a pu être mise en
+application du fait de sa non-conformité avec le droit européen.
+
+       La possibilité d’agir au niveau national
+
+        Si l’évolution de la législation européenne repose sur des
+compromis qui mettent par définition du temps à se construire, l’urgence
+nous impose d’agir rapidement et de mettre en œuvre au niveau national
+toutes les mesures réalistes et applicables qui permettront de mieux
+protéger les mineurs face aux dangers auxquels les exposent les réseaux
+sociaux. C’est la raison pour laquelle les mesures proposées dans ce texte
+portent sur un champ d’action beaucoup plus large que la seule question
+des plateformes.
+
+        La sensibilisation, la prévention, la limitation de la place des écrans
+dans les établissements scolaires ou encore, à moyen terme, la pénalisation
+de comportements qui peuvent mettre en danger les mineurs sont des
+leviers d’action qui pourront permettre de protéger efficacement, et dans
+notre champ de compétence, les mineurs face aux réseaux sociaux.
+                                    –5–
+
+       Une proposition de loi pour les victimes d’hier, d’aujourd’hui et
+pour celles que nous voulons éviter demain
+
+        Marie, Charlize, Emma, Penelope, Lilou et toutes les autres
+victimes de TikTok et des autres réseaux sociaux, c’est à elles qu’est dédié
+ce texte et pour elles que nous devons mener ce combat, au-delà de nos
+appartenances politiques.
+
+       L’audition des membres du collectif Algos Victima, qui a déposé
+un recours contre TikTok, a marqué un temps fort de la Commission
+d’enquête sur les effets psychologiques de TikTok sur les mineurs. C’est à
+eux que revient le mérite d’avoir porté dans le débat public cette
+problématique majeure. C’est à nous aujourd’hui de mettre en œuvre les
+mesures qui permettront d’éviter que les drames qu’ils ont vécus ne se
+reproduisent.
+
+       L’article 1er vise à intégrer une nouvelle section à la loi
+n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique
+(LCEN) intitulée : « Protection des mineurs en ligne », au sein de laquelle
+deux objectifs sont poursuivis :
+
+        Le premier est l’interdiction d’accès aux réseaux sociaux pour les
+moins de 15 ans et la suspension des comptes déjà existants de mineurs de
+moins de 15 ans. Cet article prévoit donc aussi par cohérence l’obligation
+pour les plateformes de mettre en œuvre des dispositifs afin de contrôler
+l’âge de leurs utilisateurs conformes à un référentiel fixé par l’Arcom. Cet
+article reprend ainsi en partie l’article 4 de la loi n° 566 du 7 juillet 2023
+visant à instaurer une majorité numérique et à lutter contre la haine en
+ligne, dite « Loi Marcangeli », qui prévoyait un dispositif proche, lequel
+n’avait jamais pu être appliqué du fait de sa non-conformité avec la
+règlementation européenne. Cependant, la publication le 14 juillet 2025 des
+lignes directrices de la Commission européenne relatives à la protection des
+mineurs dans le cadre de la législation sur les services numériques marque
+une évolution majeure de la position de la Commission européenne qui
+ouvre désormais la voie à une législation nationale sur l’âge d’accès aux
+réseaux sociaux.
+
+        Le second est la mise en place d’un « couvre-feu numérique » pour
+les mineurs entre 15 et 18 ans, lequel constituera non seulement un moyen
+efficace de limiter l’utilisation des écrans pendant les heures de repos et de
+préserver le sommeil des adolescents, mais permettra également de créer un
+repère clair et uniforme pour tous les parents, facilitant ainsi l’encadrement
+des usages numériques de leurs enfants.
+                                     –6–
+
+        Un consensus scientifique se dégage en effet sur les conséquences
+extrêmement graves de l’utilisation des réseaux sociaux sur le sommeil des
+jeunes alors même qu’il revêt une importance particulière chez les
+adolescents, période où le cerveau et le corps connaissent des
+transformations majeures.
+
+       Il s’agit par cet article de mettre en œuvre les recommandations
+n° 2 et 32 du rapport de la Commission d’enquête sur les effets
+psychologiques de TikTok sur les mineurs.
+
+       L’article 2 impose aux personnes dont l’activité consiste à fournir
+des services d’hébergement de concourir à la lutte contre la diffusion des
+contenus constituant de la propagande ou de la publicité en faveur de
+moyens de se donner la mort.
+
+         En effet, alors que l’article 6 de la LCEN établit des obligations
+pour les plateformes de lutter contre les contenus illicites, la liste des
+infractions concernées est à ce jour incomplète puisqu’elle ne comprend
+pas celle mentionnée à l’article 223-14 du code pénal, à savoir la
+propagande ou la publicité en faveur de moyens de se donner la mort. Ce
+type de contenu, aux effets potentiellement dévastateurs, n’est ainsi pas
+toujours traité avec la diligence requise, alors même qu’il expose les
+utilisateurs les plus vulnérables, et en particulier les mineurs, à des risques
+majeurs. Cet article vise donc à compléter la LCEN pour élargir le champ
+des obligations des plateformes pour protéger leurs utilisateurs, et
+notamment les plus jeunes.
+
+        Cet article a aussi pour but de renforcer les peines complémentaires
+introduites par la loi n° 2024-449 du 21 mai 2024 visant à sécuriser et à
+réguler l’espace numérique (SREN) permettant de suspendre les comptes
+d’accès à des plateformes en ligne utilisés afin de commettre certaines
+infractions, non seulement pour étendre les durées de suspension, mais
+aussi pour renforcer l’amende pour les fournisseurs qui ne procéderaient
+pas au blocage du compte problématique.
+
+        Cet article vise enfin à étendre le champ des délits pour laquelle
+cette peine peut être encourue à la propagande ou la publicité, quel qu’en
+soit le mode, en faveur de produits, d’objets ou de méthodes préconisés
+comme moyens de se donner la mort.
+
+       Il s’agit par cet article de mettre en œuvre les recommandations
+n° 9 et 37 du rapport de la Commission d’enquête sur les effets
+psychologiques de TikTok sur les mineurs.
+                                    –7–
+
+       L’article 3 propose d’insérer deux nouveaux articles au code de la
+santé publique afin de mieux informer la population sur les risques d’un
+usage incontrôlé des réseaux sociaux, notamment chez les plus jeunes.
+
+        En effet, si les études scientifiques sont encore insuffisantes pour
+établir les conséquences psychologiques exactes de l’usage des réseaux
+sociaux sur les jeunes, les plateformes reniant elles-mêmes à faire preuve
+de transparence par rapport à leurs propres études internes, le rapport de la
+Commission d’enquête sur les effets psychologiques de TikTok sur les
+mineurs a montré qu’un consensus scientifique émergeait tout de même à
+ce sujet. Une grande majorité des spécialistes évoquent ainsi des problèmes
+de dépendance, de sédentarité, d’amplification des vulnérabilités
+psychologiques existantes, de manque de sommeil, d’irritabilité, d’anxiété,
+de déficits cognitifs, de difficultés d’apprentissage, etc. Au même titre que
+nous l’avons déjà fait dans de nombreux domaines dont l’impact sur la
+santé est établi, cet article propose dans un premier temps, ne serait-ce que
+par principe de précaution, d’imposer la présence d’une information à
+caractère sanitaire sur les messages publicitaires pour des réseaux sociaux.
+
+        Cet article vise dans un second temps à imposer sur les emballages
+des smartphones et autres terminaux connectés à internet la mention :
+« déconseillé aux mineurs de moins de 13 ans », et ce, en cohérence avec
+les recommandations de la commission d’experts sur l’impact de
+l’exposition des jeunes aux écrans, afin de sensibiliser les parents sur les
+balises d’âge fixées par cette commission dans un contexte de pression
+sociale très forte sur l’équipement des jeunes en smartphones de plus en
+plus tôt.
+
+        En vertu de la directive (UE) 2015/1535 du Parlement européen et
+du Conseil du 9 septembre 2015 prévoyant une procédure d’information
+dans le domaine des réglementations techniques et des règles relatives aux
+services de la société de l’information, ces mesures devront être notifiées à
+la Commission européenne.
+
+       Il s’agit par cet article de mettre en œuvre les recommandations
+n° 16 et 39 du rapport de la Commission d’enquête sur les effets
+psychologiques de TikTok sur les mineurs.
+
+        L’article 4 vise à compléter la définition législative de l’éducation
+au numérique afin d’y intégrer explicitement le sujet des conséquences
+potentielles de l’utilisation d’outils numériques, en particulier les réseaux
+sociaux, sur la santé mentale. Il s’agit notamment de sensibiliser les enfants
+dès l’école primaire sur le fonctionnement des algorithmes et les
+                                    –8–
+
+conséquences psychologiques qu’ils peuvent avoir (exposition à des
+contenus choquants, phénomène de « terriers de lapins », etc.).
+
+       Il s’agit par cet article de mettre en œuvre la recommandation n° 16
+du rapport de la Commission d’enquête sur les effets psychologiques de
+TikTok sur les mineurs.
+
+        L’article 5 propose qu’un rapport soit remis au Parlement 3 ans
+après la promulgation de cette loi afin d’évaluer le niveau de respect des
+plateformes du droit européen et le niveau de dangerosité potentielle qu’ils
+représenteront à cette date pour les mineurs, afin d’avoir une base solide et
+récente afin d’évaluer la possibilité de faire évoluer la limite légale d’âge
+d’accès aux réseaux sociaux.
+
+       Il s’agit par cet article de mettre en œuvre la recommandation n° 31
+du rapport de la Commission d’enquête sur les effets psychologiques de
+TikTok sur les mineurs.
+
+        L’article 6 vise à étendre aux lycées l’interdiction de l’utilisation
+des téléphones portables, dans les mêmes conditions que dans les autres
+établissements scolaires.
+
+        Cette interdiction dans les collèges a en effet été à l’origine du
+dispositif « portable en pause » dont les premiers résultats sont à ce jour
+très encourageants sur l’amélioration de l’ambiance dans les établissements
+ou le renforcement de la socialisation des élèves. L’étendre au lycée,
+d’autant plus lorsque les élèves auront déjà intégré cette habitude au cours
+de leurs années de collège, pourra permettre d’élargir les bénéfices de ces
+temps sans écran pour les jeunes.
+
+       Il s’agit par cet article de mettre en œuvre la recommandation n° 34
+du rapport de la Commission d’enquête sur les effets psychologiques de
+TikTok sur les mineurs.
+
+        L’article 7 a pour objectif d’inscrire dans le code pénal un délit de
+négligence numérique. Il s’agit ainsi de laisser la possibilité au juge de
+sanctionner des parents qui exposeraient de façon manifestement abusive et
+non contrôlée leurs enfants, et notamment les plus jeunes, à des écrans.
+Dans la mesure où cette inscription ne peut intervenir qu’après une
+sensibilisation réelle et effective des parents aux dangers potentiels de
+l’exposition des plus jeunes aux écrans, il est proposé que cette inscription
+intervienne 3 ans après la promulgation de la loi.
+                                   –9–
+
+        Pour rappel, la commission d’experts sur l’impact de l’exposition
+des jeunes aux écrans préconisait dans son rapport de 2024 aucune
+exposition pour les moins de 3 ans, une exposition fortement déconseillée
+jusqu’à 6 ans puis entre 6 et 11 ans une exposition modérée et contrôlée.
+
+       Il s’agit par cet article de mettre en œuvre la recommandation n° 43
+du rapport de la commission d’enquête sur les effets psychologiques de
+TikTok sur les mineurs.
+                                        – 10 –
+
+                              PROPOSITION DE LOI
+
+
+                                     Article 1er
+
+        Après la section 3 du chapitre II du titre Ier de la loi n° 2004-575 du
+    21 juin 2004 pour la confiance dans l’économie numérique, est insérée une
+    section 3 bis ainsi rédigée :
+
+                                  « Section 3 bis
+                        « Protection des mineurs en ligne
+
+        « Art. 6-9. – I. – Les fournisseurs de services de réseaux sociaux en
+    ligne exerçant leur activité en France refusent l’inscription à leurs services
+    des mineurs de quinze ans. Ils suspendent également, dans les meilleurs
+    délais, les comptes déjà créés et détenus par des mineurs de quinze ans.
+
+        « Afin de vérifier l’âge des utilisateurs finaux, les fournisseurs de
+    services de réseaux sociaux en ligne utilisent des solutions techniques
+    conformes à un référentiel élaboré par l’Autorité de régulation de la
+    communication audiovisuelle et numérique, après consultation de la
+    Commission nationale de l’informatique et des libertés.
+
+        « II. – Lorsqu’elle constate qu’un fournisseur de services de réseaux
+    sociaux en ligne n’a pas mis en œuvre de solution technique conforme au
+    référentiel mentionné au I pour vérifier l’âge des utilisateurs finaux,
+    l’Autorité de régulation de la communication audiovisuelle et numérique
+    adresse à ce fournisseur, par tout moyen propre à en établir la date de
+    réception, une mise en demeure de prendre toutes les mesures requises pour
+    satisfaire aux obligations prévues au I. Le fournisseur dispose d’un délai de
+    quinze jours à compter de la mise en demeure pour présenter ses
+    observations.
+
+        « À l’expiration de ce délai, en cas d’inexécution de la mise en
+    demeure, le président de l’Autorité de régulation de la communication
+    audiovisuelle et numérique peut saisir le président du tribunal judiciaire de
+    Paris aux fins d’ordonner au fournisseur de mettre en œuvre une solution
+    technique conforme.
+
+        « Le fait pour un fournisseur de services de réseaux sociaux en ligne
+    de ne pas satisfaire aux obligations prévues au même I est puni d’une
+    amende ne pouvant excéder 3 % de son chiffre d’affaires mondial pour
+    l’exercice précédent.
+                                         – 11 –
+
+         « III. – Les obligations prévues au I ne s’appliquent ni aux
+     encyclopédies en ligne à but non lucratif ni aux répertoires éducatifs ou
+     scientifiques à but non lucratif.
+
+        « IV. – Les modalités d’application du présent article sont fixées par
+     un décret en Conseil d’État, pris après avis de la Commission nationale de
+     l’informatique et des libertés.
+
+        « Art. 6-10. – I. – Les fournisseurs de services de réseaux sociaux en
+     ligne exerçant leur activité en France désactivent de manière automatique
+     l’accès aux comptes des mineurs entre 22 heures et 8 heures.
+
+        « Afin de vérifier l’âge des utilisateurs finaux, les fournisseurs de
+     services de réseaux sociaux en ligne utilisent des solutions techniques
+     conformes au référentiel mentionné au I de l’article 6-9.
+
+        « II. – Lorsqu’elle constate qu’un fournisseur de services de réseaux
+     sociaux en ligne n’a pas mis en œuvre les dispositions prévues au présent I,
+     l’Autorité de régulation de la communication audiovisuelle et numérique
+     adresse à ce fournisseur, par tout moyen propre à en établir la date de
+     réception, une mise en demeure de prendre toutes les mesures requises pour
+     satisfaire aux obligations prévues au I. Le fournisseur dispose d’un délai de
+     quinze jours à compter de la mise en demeure pour présenter ses
+     observations.
+
+        « À l’expiration de ce délai, en cas d’inexécution de la mise en
+     demeure, le président de l’Autorité de régulation de la communication
+     audiovisuelle et numérique peut saisir le président du tribunal judiciaire de
+     Paris aux fins d’ordonner au fournisseur de mettre en œuvre une solution
+     technique conforme.
+
+        « Le fait pour un fournisseur de services de réseaux sociaux en ligne
+     de ne pas satisfaire aux obligations prévues au même I est puni d’une
+     amende ne pouvant excéder 3 % de son chiffre d’affaires mondial pour
+     l’exercice précédent.
+
+        « III. – Les obligations prévues au I ne s’appliquent ni aux
+     encyclopédies en ligne à but non lucratif ni aux répertoires éducatifs ou
+     scientifiques à but non lucratif.
+
+        « IV. – Les modalités d’application du présent article sont fixées par
+     un décret en Conseil d’État, pris après avis de la Commission nationale de
+     l’informatique et des libertés. »
+                                        – 12 –
+
+                                      Article 2
+
+       I. – L’article 131-35-1 du code pénal est ainsi modifié :
+
+       1° Le I est ainsi modifié :
+
+       a) Le deuxième alinéa est ainsi modifié :
+
+       – les mots : « six mois » sont remplacés par les mots : « un an » ;
+
+       – les mots : « un an » sont remplacés par les mots : « deux ans » ;
+
+      b) À l’avant-dernier alinéa, le montant : « 75 000 » est remplacé par le
+    montant : « 150 000 » ;
+
+        3° Au 6° du II, après la référence : « 223-13, », est insérée la
+    référence : « 223-14, ».
+
+       II. – Au A du IV de l’article 6 de la loi n° 2004-575 du 21 juin 2004
+    pour la confiance dans l’économie numérique, après la référence :
+    « 223-13, », est insérée la référence : « 223-14, ».
+
+                                      Article 3
+
+        Le chapitre III du titre III du livre Ier de la deuxième partie du code la
+    santé publique est complété par deux articles L. 2133-3 et L. 2133-4 ainsi
+    rédigés :
+
+        « Art. L. 2133-3. – Les messages publicitaires en faveur de services de
+    réseaux sociaux en ligne définis à l’article 6 de la loi n° 2004-575 du
+    21 juin 2004 pour la confiance dans l’économie numérique doivent
+    contenir une information à caractère sanitaire. Dans le cas des messages
+    publicitaires sur internet, télévisés ou radiodiffusés, cette obligation ne
+    s’applique qu’aux messages émis et diffusés à partir du territoire français et
+    reçus sur ce territoire. La même obligation d’information s’impose à toute
+    promotion, destinée au public, par voie d’imprimés et de publications
+    périodiques édités par les producteurs ou distributeurs de ces services.
+
+        « Le non-respect de cette obligation d’information par les annonceurs
+    et promoteurs est puni de 37 500 euros d’amende. Le montant de cette
+    amende peut être porté à 30 % des dépenses consacrées à l’émission et à la
+    diffusion des messages mentionnés au premier alinéa ou à la réalisation et à
+    la distribution des imprimés et publications mentionnés au même premier
+    alinéa.
+                                        – 13 –
+
+       « Les modalités d’application du présent article sont déterminées par
+    décret en Conseil d’État. »
+
+        « Art. L. 2133-4. – Les unités de conditionnement, emballages
+    extérieurs, suremballages et boîtes de téléphones mobile et autres
+    équipements terminaux de communications électroniques connectés à
+    internet comportent un message de prévention visant à informer les
+    consommateurs que ces produits sont déconseillés aux mineurs de moins de
+    treize ans.
+
+       « Les modalités d’application et de contrôle des dispositions prévues
+    au premier alinéa sont déterminées par décret en Conseil d’État.
+
+        « Le non-respect des dispositions prévues au premier alinéa est puni
+    de 37 500 euros d’amende. Les personnes physiques ou morales reconnues
+    coupables encourent également la peine complémentaire de confiscation
+    des produits dont l’unité de conditionnement, l’emballage extérieur, le
+    suremballage ou la boîte méconnaît les dispositions prévues au premier
+    alinéa.
+
+       « La récidive est punie d’une amende de 200 000 euros. »
+
+                                     Article 4
+
+        Le deuxième alinéa de l’article L. 312-9 du code de l’éducation est
+    ainsi rédigé :
+
+       « Cette formation comporte également :
+
+        « – une sensibilisation sur l’interdiction du harcèlement commis dans
+    l’espace numérique, la manière de s’en protéger et les sanctions encourues
+    en la matière ;
+
+      « – une sensibilisation à l’impact environnemental des outils
+    numériques ainsi qu’un volet relatif à la sobriété numérique ;
+
+       « – une sensibilisation aux enjeux de protection de la santé mentale liés
+    à l’usage des outils numériques, et notamment aux conséquences
+    psychologiques d’une utilisation de services de réseaux sociaux en ligne. »
+                                       – 14 –
+
+                                     Article 5
+
+          Dans un délai de trois ans à compter de la promulgation de la présente
+    loi, le Gouvernement remet au Parlement un rapport évaluant, sur les trois
+    années précédant cette remise, le respect par les services de réseaux
+    sociaux en ligne de leurs obligations résultant du règlement
+    (UE) 2022/2065 du Parlement européen et du Conseil du 19 octobre 2022
+    relatif à un marché unique des services numériques et modifiant la
+    directive 2000/31/CE, et la persistance éventuelle de risques pour les
+    mineurs dans l’utilisation de ces services.
+
+                                     Article 6
+
+       L’article L. 511-5 du code de l’éducation est ainsi modifié :
+
+        1° Au premier alinéa, les mots : « et les collèges » sont remplacés par
+    les mots : « , les collèges et les lycées » ;
+
+       2° Le deuxième alinéa est supprimé.
+
+                                     Article 7
+
+        I. – L’article 227-17 du code pénal est complété par un alinéa ainsi
+    rédigé :
+
+       « Une négligence grave dans la protection de la santé et de la sécurité
+    de son enfant mineur en raison d’un usage excessif, inadapté ou non
+    surveillé des outils numériques par ce dernier est constitutive du délit
+    mentionné au premier alinéa. Le degré de gravité de la négligence est
+    notamment apprécié au regard de l’âge de l’enfant. »
+
+        II. – Les dispositions du présent article entrent en vigueur dans un
+    délai de trois ans à compter de la promulgation de la présente loi.
+

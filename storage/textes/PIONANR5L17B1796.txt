@@ -1,0 +1,327 @@
+                                             N° 1796
+                                                    _____
+
+               ASSEMBLÉE NATIONALE
+                           CONSTITUTION DU 4 OCTOBRE 1958
+                                       DIX-SEPTIÈME LÉGISLATURE
+
+                Enregistré à la Présidence de l’Assemblée nationale le 16 septembre 2025.
+
+
+
+
+                   PROPOSITION DE LOI
+        visant à moderniser la gestion du patrimoine immobilier de l’État,
+
+
+(Renvoyée à la commission des finances, de l’économie générale et du contrôle budgétaire, à défaut de constitution
+            d’une commission spéciale dans les délais prévus par les articles 30 et 31 du Règlement.)
+
+
+
+
+                                                présentée par
+M. Thomas CAZENAVE, M. François JOLIVET, M. Jean-Paul MATTEI,
+Mme Christine PIRÈS BEAUNE, Mme Olivia GRÉGOIRE, M. Henri ALFANDARI,
+M. Antoine ARMAND, M. Jean-Pierre BATAILLE, Mme Béatrice BELLAMY,
+M. Hervé BERVILLE, M. Philippe BONNECARRÈRE, M. Ian BOUCARD,
+M. Florent BOUDIÉ, M. Bertrand BOUYX, M. Anthony BROSSE, M. Joël
+BRUNEAU, M. Vincent CAURE, M. Lionel CAUSSE, M. Jean-René CAZENEUVE,
+M. Paul CHRISTOPHE, Mme Sylvie DEZARNAUD, Mme Nicole DUBRÉ-
+CHIRAT, Mme Stella DUPONT, M. Olivier FALORNI, Mme Agnès FIRMIN LE
+BODO, M. Jean-Luc FUGIT, Mme Félicie GÉRARD, Mme Olga GIVERNET,
+M. Guillaume GOUFFIER VALENTE, M. Pierre HENRIET, M. Sacha HOULIÉ,
+M. Sébastien HUYGHE, M. Jean-Michel JACQUES, M. Daniel LABARONNE,
+M. Xavier LACOMBE, M. Thomas LAM, M. Jean LAUSSUCQ, Mme Sandrine LE
+FEUR, Mme Anne LE HÉNANFF, Mme Annaïg LE MEUR, M. Vincent LEDOUX,
+                                  –2–
+
+
+M. Didier LEMAIRE, Mme Delphine LINGEMANN, Mme Lise MAGNIER,
+M. Christophe MARION, M. Denis MASSÉGLIA, M. Jean MOULLIERE,
+Mme Naïma MOUTCHOU, Mme Sophie PANTEL, M. Jérémie PATRIER-LEITUS,
+M. Christophe    PLASSARD,     Mme Marie-Agnès    POUSSIER-WINSBACK,
+Mme Isabelle RAUCH, M. Nicolas RAY, Mme Anne-Sophie RONCERET, M. Xavier
+ROSEREN, M. Freddy SERTIN, M. Charles SITZENSTUHL, Mme Violette
+SPILLEBOUT, M. Stéphane TRAVERT, M. Frédéric VALLETOUX, Mme Annie
+VIDAL, Mme Corinne VIGNON, Mme Anne-Cécile VIOLLAND, M. Stéphane
+VIRY, M. Lionel VUIBERT, M. Jean-Luc WARSMANN, M. Éric WOERTH,
+M. Pieyre-Alexandre ANGLADE, M. Gabriel ATTAL, M. Olivier BECHT, M. Éric
+BOTHOREL, Mme Maud BREGEON, Mme Danielle BRULEBOIS, M. Stéphane
+BUCHOU, Mme Françoise BUFFET, Mme Céline CALVEZ, M. Pierre
+CAZENEUVE, M. Yannick CHENEVARD, M. François CORMIER-BOULIGEON,
+Mme Julie DELPECH, M. Benjamin DIRX, M. Jean-Marie FIÉVET, M. Moerani
+FRÉBAULT, Mme Camille GALLIARD-MINIER, M. Thomas GASSILLOUD,
+Mme Anne GENETET, Mme Emmanuelle HOFFMAN, M. Guillaume KASBARIAN,
+Mme Brigitte KLINKERT, Mme Amélia LAKRAFI, M. Michel LAUZZANA,
+M. Didier LE GAC, Mme Constance LE GRIP, Mme Christine LE NABOUR,
+Mme Nicole LE PEIH, Mme Marie LEBEC, M. Roland LESCURE, Mme Pauline
+LEVASSEUR, Mme Brigitte LISO, M. Sylvain MAILLARD, M. Bastien
+MARCHIVE, Mme Sandra MARSAUD, M. Stéphane MAZARS, Mme Graziella
+MELCHIOR, M. Ludovic MENDES, M. Nicolas METZDORF, M. Paul MIDY,
+Mme Laure MILLER, Mme Joséphine MISSOFFE, M. Karl OLIVE, Mme Sophie
+PANONACLE, Mme Natalia POUZYREFF, M. Franck RIESTER, Mme Véronique
+RIOTTON, Mme Stéphanie RIST, Mme Marie-Pierre RIXAIN, M. Charles
+RODWELL, M. Jean-François ROUSSET, M. Mikaele SEO, M. Bertrand SORRE,
+Mme Liliana TANGUY, M. Jean TERLIER, Mme Prisca THEVENOT, M. Stéphane
+VOJETTA, Mme Caroline YADAN, Mme Marie-José ALLEMAND, M. Joël
+AVIRAGNET, M. Fabrice BARUSSEAU, Mme Béatrice BELLAY, M. Paul
+CHRISTOPHLE, M. Pierrick COURBON, Mme Fanny DOMBRE COSTE, M. Inaki
+ECHANIZ, M. Romain ESKENAZI, M. Guillaume GAROT, M. Emmanuel
+GRÉGOIRE, Mme Chantal JOURDAN, M. Gérard LESEUL, M. Laurent LHARDIT,
+M. Jacques OBERTI, Mme Anna PIC, M. Dominique POTIER, Mme Valérie ROSSI,
+Mme Claudia ROUAUX, Mme Sandrine RUNEL, M. Hervé SAULIGNAC,
+M. Jiovanny WILLIAM, Mme Catherine IBLED, M. Marc FERRACCI,
+Mme Sandrine      LALANNE,     Mme Colette   CAPDEVIELLE,      M. Benoît
+LARROUQUIS,
+                           députés et députées.
+                                    –3–
+
+                         EXPOSÉ DES MOTIFS
+
+       MESDAMES, MESSIEURS,
+
+        Le patrimoine immobilier de l’État représente 96 millions de mètres
+carrés, dont 23 millions de mètres carrés de bureaux. Ce parc, par son
+ampleur, est à la croisée de deux exigences majeures : la réduction de
+l’empreinte environnementale de l’action publique et l’amélioration
+continue de la performance de l’État.
+
+       Dans un contexte marqué par la nécessité de réduire les dépenses
+publiques et de répondre aux engagements climatiques, il est désormais
+indispensable d’engager une réforme profonde du modèle de gestion
+immobilière de l’État. L’enjeu est double : réduire les surfaces occupées et
+moderniser les espaces, pour atteindre l’objectif de réduction de 25 % du
+parc immobilier d’ici 2032, tout en améliorant les conditions d’accueil des
+usagers et de travail des agents publics.
+
+         Comme l’a relevé la Cour des comptes dans son rapport consacré à
+la politique immobilière de l’État, le modèle actuel n’incite aucunement les
+administrations à optimiser leur occupation des locaux. Le rapport met
+également en évidence un retard important dans la mise aux normes des
+bâtiments de l’État, notamment en ce qui concerne la transition
+énergétique, l’accessibilité et le désamiantage.
+
+       Ce retard est attribué à un sous-investissement chronique dans la
+maintenance et l’entretien du patrimoine immobilier public.
+
+        Cette proposition de loi vise ainsi à créer une foncière de l’État,
+établissement public à caractère industriel et commercial, chargée d’exercer
+pleinement les responsabilités de propriétaire sur un portefeuille d’actifs
+immobiliers transférés en pleine propriété par l’État. Elle incarnera une
+fonction “État-propriétaire”, distincte de celle de l’État-occupant, afin
+d’assurer une gestion rationnelle, professionnelle et durable du patrimoine
+immobilier public.
+
+        Le modèle de foncière, largement éprouvé à l’étranger (Allemagne,
+Royaume-Uni, Italie, Finlande…), est également recommandé par le
+Conseil Immobilier de l’État depuis plusieurs années. Il permet de
+centraliser les moyens et les compétences, de mutualiser les
+investissements, et d’instaurer une relation locative contractuelle entre
+l’État-propriétaire et l’État-occupant.
+                                     –4–
+
+        Le texte encadre les modalités de transfert des biens à la foncière,
+ainsi que les principes de fonctionnement de l’établissement :
+
+     – responsabilisation du propriétaire, chargé de la mise aux normes, de
+la rénovation et de la valorisation des biens,
+
+     – engagement contractuel des occupants, via le paiement d’un loyer et
+la formalisation des usages,
+
+     – gouvernance claire, reposant sur un conseil d’administration présidé
+par la directrice ou le directeur de la direction de l’immobilier de l’État.
+
+        La foncière disposera également de capacités d’intervention pour
+transformer ou céder des biens obsolètes ou sous-utilisés, et contribuer
+ainsi à l’effort national de création de logements. Elle incarnera une
+nouvelle dynamique : réduire les surfaces, moderniser les locaux, rendre
+plus sobre et plus lisible l’empreinte immobilière de l’État.
+
+        L’article 1er de la présente proposition de loi crée donc les
+fondements juridiques et opérationnels d’une réforme ambitieuse et
+structurante, qui vise à faire de l’État un propriétaire exemplaire, au service
+de l’intérêt général, de la performance publique et de la transition
+écologique.
+                                        –5–
+
+                              PROPOSITION DE LOI
+
+
+                                     Article 1er
+
+       I. – Le I de l’article L. 3211-13-1 du code général de la propriété des
+    personnes publiques est ainsi modifié :
+
+        1° Au premier alinéa, après les mots « filiale mentionnée au 5° de cet
+    article, » sont insérés les mots : « aux sociétés dont l’établissement public
+    créé en application de l’article à l’article unique de la loi n° du   détient
+    directement ou indirectement l’intégralité du capital, » ;
+
+       2° Au troisième alinéa, après les mots « s’applique » sont insérés les
+    mots : « à l’établissement public national créé par l’article unique de la loi
+    n° du       , et ».
+
+       II. – Le code de l’urbanisme est ainsi modifié :
+
+       1° L’article L. 213-1 est complété par un alinéa ainsi rédigé :
+
+        « l° les transferts en pleine propriété des immeubles appartenant à
+    l’État réalisés conformément à l’article unique de la loi n° du     , ainsi
+    que les transferts réalisés entre l’établissement public mentionné par cet
+    article et une société dont il détient directement ou indirectement
+    l’intégralité du capital. » ;
+
+        2° Avant le dernier alinéa de l’article L. 240-2, il est inséré un alinéa
+    ainsi rédigé :
+
+        « – aux transferts en pleine propriété des immeubles appartenant à
+    l’État réalisés conformément à l’article unique de la loi n° du     , ainsi
+    que les transferts réalisés entre l’établissement public mentionné par cet
+    article et une société dont elle détient directement ou indirectement
+    l’intégralité du capital. ».
+
+        III. – Des biens immobiliers relevant du domaine privé ou du domaine
+    public de l’État peuvent être transférés en pleine propriété à l’établissement
+    public créé en application du premier alinéa du II du présent article. Ces
+    transferts s’effectuent à titre gratuit. Un décret fixe la liste des biens
+    transférés et arrête la date de leur transfert.
+                                          –6–
+
+        IV. – La société anonyme Agence de gestion de l’immobilier de l’État
+     est transformée en un établissement public national à caractère industriel et
+     commercial placé sous la tutelle du ministre chargé des domaines.
+
+       Cet établissement a pour mission de :
+
+        1° Gérer, entretenir et rénover les biens immobiliers dont il est
+     propriétaire afin d’optimiser leurs usages et de contribuer aux objectifs de
+     l’État en matière de transition écologique ;
+
+        2° Mettre ces biens immobiliers à disposition des services de l’État,
+     des collectivités territoriales, des établissements publics de l’État ou de tout
+     organisme public ou privé ;
+
+       3° Acquérir des biens et droits immobiliers de toute nature ;
+
+       4° Valoriser les biens et droits immobiliers qu’il détient par tous
+     moyens. Dans le cadre de la valorisation du domaine privé, il pourra les
+     céder, lorsque ceux-ci ne sont plus utiles à l’État ;
+
+       5° Réaliser tous travaux et opérations d’aménagement, de
+     développement, de promotion, de construction, de restructuration ou de
+     démolition ;
+
+       6° Réaliser toutes prestations, notamment d’études, services ou
+     conseils, au profit de tout organisme public, dans le champ de ses missions.
+
+         L’établissement public met les biens dont la propriété lui a été
+     transférée par l’État à disposition de ce dernier, des collectivités
+     territoriales, des établissements publics de l’État ou de tout organisme
+     public ou privé, dans les conditions prévues par un ou plusieurs contrats de
+     bail ou conventions d’occupation du domaine public.
+
+        Cet établissement public peut créer des filiales ou prendre des
+     participations dans des sociétés, groupements ou organismes dont l’objet
+     concourt à la réalisation des missions définies aux 1° à 6° du présent IV,
+     après accord préalable du ministre de tutelle.
+
+       Il est autorisé à conclure des marchés de partenariat, dans les
+     conditions prévues par le livre II de la deuxième partie du code de la
+     commande publique.
+
+       L’établissement public est administré par un conseil d’administration
+     qui arrête les orientations stratégiques de l’établissement et exerce le
+                                           –7–
+
+     contrôle permanent de sa gestion. Il est composé de représentants de l’État,
+     de personnalités qualifiées et de représentants du personnel de
+     l’établissement. Son président est le directeur de l’immobilier de l’État.
+
+       L’établissement public est dirigé par un directeur général qui est
+     responsable de sa gestion.
+
+       Les ressources de l’établissement public sont constituées par :
+
+        1° Les subventions de l’État, des collectivités territoriales et de toutes
+     autres personnes publiques et privées ;
+
+       2° Les emprunts de toute nature, y compris les crédits-baux ;
+
+       3° Le produit d’opérations commerciales ;
+
+       4° Les dons et legs ;
+
+       5° Le revenu des biens meubles et immeubles ;
+
+       6° Le produit des placements ;
+
+       7° Le produit des aliénations ;
+
+        8° D’une manière générale, toute autre recette provenant de l’exercice
+     de ses activités.
+
+        L’établissement public est soumis au contrôle économique et financier
+     de l’État.
+
+        La transformation de la société Agence de gestion de l’immobilier de
+     l’État en établissement public n’emporte ni création de personne morale
+     nouvelle, ni cessation d’activité. Les biens, droits, obligations, contrats et
+     autorisations de toute nature de l’établissement public sont ceux de cette
+     société au moment de la transformation de sa forme juridique. Cette
+     transformation ne permet aucune remise en cause de ses biens, droits,
+     obligations, contrats et autorisations et n’a, en particulier, aucune incidence
+     sur les contrats conclus avec des tiers par la société Agence de gestion de
+     l’immobilier de l’État pour la gestion de l’immobilier de l’État et les
+     sociétés qui lui sont liées au sens des articles L. 233-1 à L. 233-4 du code
+     de commerce.
+
+       V. – Ne donnent lieu au paiement d’aucun impôt, droit ou taxe, ni
+     d’aucune contribution ou frais perçus au profit du Trésor :
+                                          –8–
+
+       1° Les transferts de propriété mentionnés au III ;
+
+       2° Les opérations résultant de la transformation prévue au IV ;
+
+        3° Les transferts de propriété effectués entre l’établissement public
+     créé en application du IV et une société dont il détient directement ou
+     indirectement l’intégralité du capital.
+
+        VI. – L’établissement public mentionné au IV du présent article est
+     substitué de plein droit à l’État pour les droits et obligations afférents à la
+     gestion, à l’entretien et à l’exploitation des biens qui lui sont transférés en
+     application du III du présent article à compter de la date de leur transfert.
+     Le décret visé au même III précise les modalités d’application de cette
+     substitution et liste le cas échéant les contrats qui en sont exclus.
+
+       V. – Nonobstant toute disposition contraire, l’établissement public
+     mentionné au premier alinéa du IV du présent article ainsi que ses filiales
+     peuvent conclure des emprunts de toute nature, y compris des crédits-baux
+     immobiliers.
+
+        VIII. – L’établissement public mentionné au premier alinéa du IV ainsi
+     que ses filiales émettent un avis conforme à l’inscription d’un ou plusieurs
+     de leurs biens sur la liste mentionnée au 2° du II de l’article L. 3211-7 du
+     code général de la propriété des personnes publiques, dans des conditions
+     prévues par décret en Conseil d’État.
+
+       IX. – Un décret en Conseil d’État fixe les modalités d’application du
+     présent article, notamment le nom et la composition du conseil
+     d’administration de l’établissement public mentionné au III ainsi que la
+     date de la transformation de la société anonyme Agence de gestion de
+     l’immobilier de l’État, qui doit intervenir au plus tard le 1er janvier 2026.
+
+                                       Article 2
+
+         I. – La perte de recettes pour l’État est compensée à due concurrence
+     par la création d’une taxe additionnelle à l’accise sur les tabacs prévue au
+     chapitre IV du titre Ier du livre III du code des impositions sur les biens et
+     services.
+
+         II. – La charge pour l’État est compensée à due concurrence par la
+     création d’une taxe additionnelle à l’accise sur les tabacs prévue au
+     chapitre IV du titre Ier du livre III du code des impositions sur les biens et
+     services.
+

@@ -27,3 +27,7 @@ storage/index/
 storage/raw/
 # cartes SVG/PNG régénérées par pregenerate.mjs — dé-trackées, la règle manquait
 storage/cards/
+
+# artefacts dérivés régénérés chaque nuit (même raison que storage/index/)
+storage/share.png
+storage/sitemap.xml

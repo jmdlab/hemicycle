@@ -12,9 +12,14 @@ dist/node_modules/
 # gros artefacts régénérables par cron (rasters de cartes)
 storage/rasters/
 
-# index députés — régénérés chaque nuit par build-deputes.mjs depuis storage/raw
+# index dérivés — TOUS régénérés chaque nuit par daily.mjs (refresh-data,
+# build-textes-index, build-delegations, build-deputes). Les garder en git est
+# nocif : meta.json.generatedAt change chaque nuit, donc un checkout/reset les
+# réverte à une version périmée et casse la fraîcheur live (le probe QA
+# hemicycle-freshness lit meta.json) jusqu'au prochain cron. Données dérivées =
+# reconstruites, jamais versionnées. Un déploiement neuf lance daily.mjs.
 storage/deputes/
-storage/index/deputes.json
+storage/index/
 
 # dumps bruts AN — re-téléchargés chaque nuit par refresh-data.mjs ;
 # contiennent email/adresse/naissance des députés (open data, mais

@@ -14,6 +14,7 @@ import { SearchForm } from "@/components/SearchForm";
 import { BillPage } from "@/components/BillPage";
 import { DeputePage } from "@/components/DeputePage";
 import { DeputesIndex } from "@/components/DeputesIndex";
+import Intersession from "@/components/Intersession";
 
 /** A single high-confidence hit skips the picker: number/reference = one action. */
 const AUTO_PICK_SCORE = 0.85;
@@ -265,6 +266,8 @@ export default function App() {
           )}
         </DetailOverlay>
       ) : null}
+
+      <Intersession stats={stats} />
 
       <main className="mx-auto w-full max-w-[40rem] px-6 pb-24 pt-12 sm:px-8 sm:pt-16">
         <header>

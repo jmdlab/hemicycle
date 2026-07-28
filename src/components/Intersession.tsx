@@ -76,11 +76,11 @@ export default function Intersession({ stats }: { stats: Stats | null }) {
       role="status"
       className="border-b border-[color:var(--rule)] bg-[color:var(--surface)]"
     >
-      <div className="mx-auto w-full max-w-[40rem] px-6 py-3 sm:px-8">
-        <p className="font-heading text-[0.9375rem] leading-[1.4] text-[color:var(--ink)]">
+      <div className="mx-auto w-full max-w-[40rem] px-6 py-6 sm:px-8 sm:py-8">
+        <p className="font-heading text-[1.375rem] leading-[1.2] tracking-[-0.01em] text-[color:var(--ink)] sm:text-[1.625rem]">
           L’Assemblée nationale ne siège pas — {semaines} semaines sans aucun vote.
         </p>
-        <p className="mt-1 text-[0.8125rem] leading-[1.55] text-[color:var(--ink-2)]">
+        <p className="mt-3 max-w-[62ch] text-[0.9375rem] leading-[1.6] text-[color:var(--ink-2)] sm:text-base">
           Dernier scrutin le {fmtLong.format(dDernier)}, à la clôture de la session
           extraordinaire. La session ordinaire reprend le{" "}
           {fmtCourt.format(reprise)} (dans {joursRestants} jours), comme le prévoit

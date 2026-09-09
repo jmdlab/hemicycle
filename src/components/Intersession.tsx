@@ -76,7 +76,7 @@ export default function Intersession({ stats }: { stats: Stats | null }) {
       role="status"
       className="border-b border-[color:var(--rule)] bg-[color:var(--surface)]"
     >
-      <div className="mx-auto w-full max-w-[40rem] px-6 py-6 sm:px-8 sm:py-8">
+      <div className="mx-auto w-full max-w-[56rem] px-6 py-6 sm:px-8 sm:py-8">
         <p className="font-heading text-[1.375rem] leading-[1.2] tracking-[-0.01em] text-[color:var(--ink)] sm:text-[1.625rem]">
           L’Assemblée nationale ne siège pas — {semaines} semaines sans aucun vote.
         </p>

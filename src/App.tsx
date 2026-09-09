@@ -269,7 +269,7 @@ export default function App() {
 
       <Intersession stats={stats} />
 
-      <main className="mx-auto w-full max-w-[40rem] px-6 pb-24 pt-12 sm:px-8 sm:pt-16">
+      <main className="mx-auto w-full max-w-[56rem] px-6 pb-24 pt-12 sm:px-8 sm:pt-16">
         <header>
           <h1 className="font-heading text-[1.75rem] leading-[1.15] tracking-[-0.01em] text-[color:var(--ink)]">
             Hémicycle

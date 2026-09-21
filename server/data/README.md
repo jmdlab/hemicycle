@@ -46,7 +46,7 @@ differs — a nightly run typically touches a handful of files.
 Cron:
 
 ```
-17 4 * * * cd /home/ubuntu/www/denis.me/scrutin && mkdir -p logs && /usr/bin/node scripts/refresh-data.mjs >> logs/refresh.log 2>&1
+17 4 * * * cd <REPO_ROOT> && mkdir -p logs && node scripts/refresh-data.mjs >> logs/refresh.log 2>&1
 ```
 
 A long-running API process does **not** need restarting afterwards: `loadIndex`
@@ -180,6 +180,6 @@ as "nobody voted".
 
 ## Note for whoever owns the repo root
 
-`storage/` is **not** covered by `denis.me/.gitignore` — it holds ~80 MB of
+`storage/` must stay gitignored — it holds ~80 MB of
 regenerated derived data (8 434 normalized files, a 5.5 MB index, 40 MB of
-ZIPs). It should be ignored; it is fully rebuildable with one command.
+ZIPs) and is fully rebuildable with one command.

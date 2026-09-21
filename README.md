@@ -42,7 +42,7 @@ L'URL est mise à jour avec `history.replaceState` (pas de routeur).
 | `src/lib/types.ts` | types de la machine à états + du contrat API |
 | `src/lib/api.ts` | client HTTP, normalisation, codes d'erreur, timeout |
 | `src/lib/clipboard.ts` | copie image (Safari) et texte |
-| `src/lib/Button.tsx`, `src/lib/cn.ts` | vendorés depuis `denis.me/filtre` |
+| `src/lib/Button.tsx`, `src/lib/cn.ts` | vendorés depuis un autre projet de l'auteur |
 
 ### Les trois pièges connus
 
@@ -96,7 +96,7 @@ lieu d'un écran blanc. Toute requête est coupée à 120 s via `AbortController
 
 ## Cron
 
-Deux jobs, un lock partagé (`/var/lock/hemicycle-conseq.lock`) pour qu'ils ne
+Deux jobs, un lock partagé (fichier de verrou commun, chemin propre au déploiement) pour qu'ils ne
 lisent jamais les textes en même temps :
 
 - **06:25 UTC, quotidien** — `scripts/daily.mjs` (open data AN, index des
@@ -109,7 +109,7 @@ lisent jamais les textes en même temps :
   ancrage). Le cache par document est l'état : un ref en cache est sauté, un
   échec est journalisé et retenté au lot suivant. Concurrence 1, pause entre
   items, lot borné (`--limit`, 25 par défaut), exécuté sous
-  `/usr/local/bin/bounded`. Cède la place au daily (`flock -n`). Log :
+  un limiteur de mémoire et de durée. Cède la place au daily (`flock -n`). Log :
   `logs/backfill-consequences.log`.
 
 Ordre de grandeur réel : les ~8 400 scrutins reposent sur ~74 documents
@@ -121,7 +121,7 @@ la section. Le backfill est donc un filet (nouveaux textes, fenêtres élargies,
 
 ```bash
 npm install
-npm run dev      # proxy /api/hemicycle et /storage → 127.0.0.1:3206
+npm run dev      # proxy /api/hemicycle et /storage → service local (port : variable `PORT`)
 npm run build    # tsc (strict) && vite build → dist/
 ```
 
@@ -130,7 +130,7 @@ TypeScript tourne en `strict` avec `noUnusedLocals`, `noUnusedParameters` et
 
 ## Design
 
-Tokens uniquement — `shared/design-system.css` via `src/index.css`. Zéro couleur,
+Tokens uniquement — la feuille de jetons de design importée par `src/index.css`. Zéro couleur,
 espacement, ombre ou bordure en dur. Toujours le `<Button>` vendoré, jamais un
 `<button>` brut. Pastilles en `font-medium`, casse de phrase, sans fond teinté.
 Grands nombres en `font-heading` (Noto Serif), jamais en `font-mono`. Scroll

@@ -23,7 +23,7 @@ storage/index/
 
 # dumps bruts AN — re-téléchargés chaque nuit par refresh-data.mjs ;
 # contiennent email/adresse/naissance des députés (open data, mais
-# inutile de le publier) — JAMAIS en git (décision JM 2026-07-24)
+# inutile de le publier) — JAMAIS en git (règle du projet)
 storage/raw/
 # cartes SVG/PNG régénérées par pregenerate.mjs — dé-trackées, la règle manquait
 storage/cards/

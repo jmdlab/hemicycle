@@ -237,14 +237,13 @@ export function LatestList({ onPick, busy }: Props) {
                         abstentions={s.abstentions}
                       />
                     </p>
-                    <p
-                      className={
-                        (follow ? "mt-1 " : "mt-2 ") +
-                        "ui text-[0.8125rem] leading-[1.4] tracking-[0.01em] text-[color:var(--ink-2)]"
-                      }
-                    >
-                      Plus de détails <span aria-hidden>→</span>
-                    </p>
+                    {/* A folded row stays one click target; repeating the link
+                        under each of 60 amendments only made the column longer. */}
+                    {follow ? null : (
+                      <p className="mt-2 ui text-[0.8125rem] leading-[1.4] tracking-[0.01em] text-[color:var(--ink-2)]">
+                        Plus de détails <span aria-hidden>→</span>
+                      </p>
+                    )}
                   </div>
                 </button>
               </li>

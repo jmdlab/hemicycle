@@ -203,6 +203,7 @@ function normalizeCandidate(raw: unknown): Candidate | null {
     abstentions: num(c.abstentions),
     score: num(c.score),
     sourceUrl: str(c.sourceUrl),
+    dossierRef: typeof c.dossierRef === "string" && c.dossierRef ? c.dossierRef : null,
     resume: typeof c.resume === "string" && c.resume.trim() ? c.resume.trim() : null,
     detail: typeof c.detail === "string" && c.detail.trim() ? c.detail.trim() : null,
     contextDetail:

@@ -1,4 +1,10 @@
-import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 import type { Candidate, YearFacet } from "@/lib/types";
 import { fetchLatest } from "@/lib/api";
 import { SortStatus, VoteCountsInline, formatDate, formatNumber } from "./Meta";
@@ -80,7 +86,10 @@ export function LatestList({ onPick, busy }: Props) {
         // shows up.
         setRows((prev) => {
           const seen = new Set((prev ?? []).map((c) => c.numero));
-          return [...(prev ?? []), ...r.scrutins.filter((c) => !seen.has(c.numero))];
+          return [
+            ...(prev ?? []),
+            ...r.scrutins.filter((c) => !seen.has(c.numero)),
+          ];
         });
         setTotal(r.total);
       })
@@ -127,12 +136,20 @@ export function LatestList({ onPick, busy }: Props) {
 
       {/* Years, newest first — the same order as the list they filter. */}
       {years.length > 1 ? (
-        <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Filtrer par année">
+        <div
+          className="mt-3 flex flex-wrap gap-2"
+          role="group"
+          aria-label="Filtrer par année"
+        >
           <FilterChip active={year === null} onClick={() => setYear(null)}>
             Toutes
           </FilterChip>
           {years.map((y) => (
-            <FilterChip key={y.annee} active={year === y.annee} onClick={() => setYear(y.annee)}>
+            <FilterChip
+              key={y.annee}
+              active={year === y.annee}
+              onClick={() => setYear(y.annee)}
+            >
               {y.annee}
             </FilterChip>
           ))}
@@ -150,50 +167,89 @@ export function LatestList({ onPick, busy }: Props) {
         </ul>
       ) : (
         <ul className="mt-4">
-          {rows.map((s) => (
-            <li key={s.numero} className="row">
-              {/* The whole row is the control. A separate "Voir" button made the
+          {rows.map((s, i) => {
+            // Same text as the row above (newest first, so that one is the most
+            // recent vote on it): show only what tells this vote apart. Computed
+            // over the whole loaded list, so a group cut by a page boundary
+            // stays folded when the next page is appended.
+            const prev = i > 0 ? rows[i - 1] : undefined;
+            const follow = !!s.dossierRef && prev?.dossierRef === s.dossierRef;
+            return (
+              <li key={s.numero} className={follow ? "row row-follow" : "row"}>
+                {/* The whole row is the control. A separate "Voir" button made the
                   affordance a 60px target next to 60ch of text that looked
                   clickable and was not. */}
-              <button type="button" className="row-hit" disabled={busy} onClick={() => onPick(s)}>
-                <div className="min-w-0 flex-1">
-                  <p className="max-w-[58ch] text-base leading-[1.45] text-[color:var(--ink)]">
-                    {s.resume ?? s.titre}
-                  </p>
-                  {/* What the text actually changes, and for whom — the title
+                <button
+                  type="button"
+                  className="row-hit"
+                  disabled={busy}
+                  onClick={() => onPick(s)}
+                >
+                  <div
+                    className={
+                      follow ? "min-w-0 flex-1 pl-6" : "min-w-0 flex-1"
+                    }
+                  >
+                    {follow ? null : (
+                      <p className="max-w-[58ch] text-base leading-[1.45] text-[color:var(--ink)]">
+                        {s.resume ?? s.titre}
+                      </p>
+                    )}
+                    {/* What the text actually changes, and for whom — the title
                       alone names a subject without saying what is in it. */}
-                  {s.detail ? (
-                    <p className="mt-1 max-w-[62ch] text-[0.9375rem] leading-[1.5] text-[color:var(--ink-2)]">
-                      {s.detail}
-                    </p>
-                  ) : s.contextDetail ? (
-                    // Procedural ballot: the description belongs to the parent
-                    // text, so say so rather than letting it read as this vote's.
-                    <p className="mt-1 max-w-[62ch] text-[0.9375rem] leading-[1.5] text-[color:var(--ink-2)]">
-                      <span className="ui text-[0.75rem] text-[color:var(--ink-3)]">
-                        Texte concerné —{" "}
-                      </span>
-                      {s.contextDetail}
-                    </p>
-                  ) : null}
-                  <p className="ui mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.8125rem] leading-[1.4] tracking-[0.01em] text-[color:var(--ink-3)]">
-                    <span className="num">n° {s.numero}</span>
-                    <span aria-hidden>·</span>
-                    <span>{formatDate(s.date)}</span>
-                    {/* Separator tied to the pill: SortStatus renders nothing
+                    {s.detail ? (
+                      <p
+                        className={
+                          follow
+                            ? "max-w-[62ch] text-[0.8125rem] leading-[1.5] text-[color:var(--ink-2)]"
+                            : "mt-1 max-w-[62ch] text-[0.9375rem] leading-[1.5] text-[color:var(--ink-2)]"
+                        }
+                      >
+                        {s.detail}
+                      </p>
+                    ) : follow ? null : s.contextDetail ? (
+                      // Procedural ballot: the description belongs to the parent
+                      // text, so say so rather than letting it read as this vote's.
+                      <p className="mt-1 max-w-[62ch] text-[0.9375rem] leading-[1.5] text-[color:var(--ink-2)]">
+                        <span className="ui text-[0.75rem] text-[color:var(--ink-3)]">
+                          Texte concerné —{" "}
+                        </span>
+                        {s.contextDetail}
+                      </p>
+                    ) : null}
+                    <p
+                      className={
+                        (follow ? (s.detail ? "mt-1 " : "") : "mt-2 ") +
+                        "ui flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.8125rem] leading-[1.4] tracking-[0.01em] text-[color:var(--ink-3)]"
+                      }
+                    >
+                      <span className="num">n° {s.numero}</span>
+                      <span aria-hidden>·</span>
+                      <span>{formatDate(s.date)}</span>
+                      {/* Separator tied to the pill: SortStatus renders nothing
                         for an unknown result, which would leave "date · · 245". */}
-                    {s.sort ? <span aria-hidden>·</span> : null}
-                    <SortStatus sort={s.sort} />
-                    <span aria-hidden>·</span>
-                    <VoteCountsInline pour={s.pour} contre={s.contre} abstentions={s.abstentions} />
-                  </p>
-                  <p className="ui mt-2 text-[0.8125rem] leading-[1.4] tracking-[0.01em] text-[color:var(--ink-2)]">
-                    Plus de détails <span aria-hidden>→</span>
-                  </p>
-                </div>
-              </button>
-            </li>
-          ))}
+                      {s.sort ? <span aria-hidden>·</span> : null}
+                      <SortStatus sort={s.sort} />
+                      <span aria-hidden>·</span>
+                      <VoteCountsInline
+                        pour={s.pour}
+                        contre={s.contre}
+                        abstentions={s.abstentions}
+                      />
+                    </p>
+                    <p
+                      className={
+                        (follow ? "mt-1 " : "mt-2 ") +
+                        "ui text-[0.8125rem] leading-[1.4] tracking-[0.01em] text-[color:var(--ink-2)]"
+                      }
+                    >
+                      Plus de détails <span aria-hidden>→</span>
+                    </p>
+                  </div>
+                </button>
+              </li>
+            );
+          })}
         </ul>
       )}
 

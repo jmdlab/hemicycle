@@ -23,6 +23,8 @@ export interface Candidate {
   /** 0 → 1 confidence. `>= 0.85` with a single candidate auto-advances. */
   score: number;
   sourceUrl: string;
+  /** Dossier législatif du scrutin ; sert à replier les votes d'un même texte dans la liste. */
+  dossierRef?: string | null;
   /** Plain-French one-liner. Null while the batch is still being computed. */
   resume?: string | null;
   /** What the text concretely changes, and for whom. Descriptive only. */

@@ -162,6 +162,8 @@ input, textarea, select, button { font-size: 16px; }
 
 .row { position: relative; padding-block: 1.25rem; border-top: 1px solid var(--rule); }
 .row:first-child { border-top: 0; }
+/* Earlier vote on the same text as the row above: tucked under it, no rule. */
+.row.row-follow { border-top: 0; padding-block: 0.5rem; }
 .row:hover { background: var(--surface); margin-inline: -1rem; padding-inline: 1rem; border-radius: var(--radius); }
 
 /* The whole row is one control. Reset the button chrome so it is a layout box

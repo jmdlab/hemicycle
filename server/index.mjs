@@ -227,6 +227,7 @@ app.get("/api/hemicycle/latest", async (req, res) => {
           pour: d.pour,
           contre: d.contre,
           abstentions: d.abstentions,
+          dossierRef: d.dossierRef ?? null,
           sourceUrl: d.sourceUrl ?? `${AN_LIST_URL}/${d.numero}`,
           resume: s?.resume ?? plainSummary(f, d),
           detail: s?.detail ?? plainDetail(f, d),

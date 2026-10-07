@@ -21,3 +21,17 @@ et un dépliant ou une page du texte pour le détail. Recherche et pages de scru
 ## Pièges
 - Pas de conteneur défilant dans une carte. Vérifier sur téléphone (420 px) par capture.
 - Les scrutins sans `dossierRef` (motions, déclarations) restent des cartes seules.
+
+## État (07/10/2026, fin de session)
+Décision de JM (07/10, 15:26 PDT) : « si c'est le même texte, garde le dernier vote en normal et indente les previous
+ones en plus petit sans le titre ». Remplace la « piste » ci-dessus (pas de dépliant, pas de compteur).
+- Fait : `LatestList.tsx` replie tout scrutin dont le `dossierRef` est celui de la ligne du dessus (le plus récent
+  garde sa carte ; les autres : retrait, petit, sans titre, avec ligne `detail`, n°, date, sort, décompte, lien).
+  Calculé sur toute la liste chargée : un groupe coupé par la pagination reste correct (aucun titre répété).
+  `dossierRef` ajouté à l'API `/latest` (`server/index.mjs`), au type `Candidate` et à `normalizeCandidate`.
+- Non fait, exprès : `CandidateList` (résultats de recherche) inchangé — autre composant, triée par score, pas par texte.
+  Les filtres par année utilisent bien `LatestList` (couvert). Pas de filtre « par sujet » dans la liste.
+- Reste long : 25 à 68 votes d'un même texte le même jour = toujours une longue colonne (≈ 107 px par vote replié).
+  Proposition (non faite) : retirer « Plus de détails → » des lignes repliées (toute la ligne reste cliquable), ce qui
+  gagne ~1/4 de hauteur.
+- Pas de déploiement fait. Captures : `~/data/staging/hemicycle-liste/liste-{420,1280}.png`.

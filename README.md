@@ -102,6 +102,16 @@ lisent jamais les textes en même temps :
 - **06:25 UTC, quotidien** — `scripts/daily.mjs` (open data AN, index des
   textes, députés, sitemap, délégations, lecture des nouveaux textes, SVG).
   Prend le lock en mode attente (`flock -w 7200`).
+- **Toutes les 15 min, 06:00–00:45 UTC (Paris 07:00–01:45 en hiver), puis à h:05
+  de 01 à 05 UTC** — `scripts/poll.mjs` : trois requêtes HEAD sans cache
+  (`Cache-Control: no-cache`, le cache de l'AN sert sinon une copie vieille de
+  plusieurs heures). Rien de changé → une ligne de log, fin. Une archive a
+  bougé → `daily.mjs` en entier, puis une ligne par nouveau scrutin dans
+  `logs/delais-an.jsonl` (date du vote, `Last-Modified` de l'archive AN, vu par
+  le poll, servi par le site). L'open data ne donne que la date du vote, pas
+  l'heure : le délai de l'AN se mesure au jour, le nôtre à la minute. État pour
+  la QA : `storage/index/poll.json`. Lock : attente ≤ 10 min le jour
+  (`flock -w 600`), `flock -n` la nuit (cède à tests-nuit). Log : `logs/poll.log`.
 - **:40 des heures impaires UTC** — `scripts/backfill-consequences.mjs` :
   balaie l'index COMPLET (pas seulement la fenêtre `SCRUTIN_SINCE` du daily)
   et lit les textes dont « Ce que le texte change » manque encore, via le même

@@ -30,21 +30,8 @@ import { buildSearchIndex } from '../server/data/search.mjs';
 import { buildLawIndex } from '../server/data/law.mjs';
 import { verify } from '../server/data/qa.mjs';
 import { extractBill } from '../server/data/text.mjs';
+import { SOURCES, NO_CACHE } from '../server/data/sources.mjs';
 
-const BASE = 'https://data.assemblee-nationale.fr/static/openData/repository/17';
-const SOURCES = [
-  { key: 'scrutins', file: 'Scrutins.json.zip', url: `${BASE}/loi/scrutins/Scrutins.json.zip` },
-  {
-    key: 'dossiers',
-    file: 'Dossiers_Legislatifs.json.zip',
-    url: `${BASE}/loi/dossiers_legislatifs/Dossiers_Legislatifs.json.zip`,
-  },
-  {
-    key: 'organes',
-    file: 'AMO10_deputes_actifs_mandats_actifs_organes.json.zip',
-    url: `${BASE}/amo/deputes_actifs_mandats_actifs_organes/AMO10_deputes_actifs_mandats_actifs_organes.json.zip`,
-  },
-];
 
 const argv = new Set(process.argv.slice(2));
 const FORCE = argv.has('--force');
@@ -74,7 +61,7 @@ async function sync(source, manifest) {
 
   if (exists && cached && !FORCE) {
     try {
-      const head = await fetch(source.url, { method: 'HEAD' });
+      const head = await fetch(source.url, { method: 'HEAD', headers: NO_CACHE });
       const etag = head.headers.get('etag');
       const lastModified = head.headers.get('last-modified');
       if ((etag && etag === cached.etag) || (lastModified && lastModified === cached.lastModified)) {
@@ -86,7 +73,7 @@ async function sync(source, manifest) {
     }
   }
 
-  const res = await fetch(source.url);
+  const res = await fetch(source.url, { headers: NO_CACHE });
   if (!res.ok) throw new Error(`${source.url} -> HTTP ${res.status}`);
   const buf = Buffer.from(await res.arrayBuffer());
 

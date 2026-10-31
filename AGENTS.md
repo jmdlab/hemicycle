@@ -53,6 +53,7 @@ must stay a **single action**: never add a confirmation screen for a confident m
 | `scripts/daily.mjs` | The whole freshness pipeline, single cron entry point |
 | `scripts/backfill-consequences.mjs` | Catch-up reader for bills missing their "what changes" section |
 | `scripts/{refresh-data,build-*,pregenerate}.mjs` | Pipeline steps called by `daily.mjs` |
+| `scripts/poll.mjs` | Cheap change check every 15 min; runs `daily.mjs` when the AN archives moved |
 | `scripts/prune-rasters.mjs` | Raster cache pruning |
 | `scripts/setup-venv.sh`, `scripts/fonts.sh` | One-time render environment setup |
 | `deploy.sh`, `deploy/` | Deploy script; unit, hardening drop-ins, proxy snippets |
@@ -106,6 +107,7 @@ See `server/.env.example`.
 | Job | Schedule (UTC) | Script | Lock | Log |
 |---|---|---|---|---|
 | Daily freshness pipeline | `25 6 * * *` | `scripts/daily.mjs` | shared lock, **waiting** (`flock -w`) | `logs/daily.log` |
+| Fast poll (15 min by day) | `*/15 0,6-23 * * *` + `5 1-5 * * *` | `scripts/poll.mjs`: 3 uncached HEADs, runs `daily.mjs` only when an archive changed; logs AN delay to `logs/delais-an.jsonl` | same lock, waits ≤10 min by day (`flock -w 600`), `flock -n` at night | `logs/poll.log` |
 | Backfill | `40 1-23/2 * * *` | `scripts/backfill-consequences.mjs`, run under a memory/time limiter | same lock, **non-blocking** (`flock -n`): yields to the daily | `logs/backfill-consequences.log` |
 | Raster pruning | `40 4 * * 0` | `scripts/prune-rasters.mjs` | none | `logs/prune.log` |
 | Raw-source cold backup | monthly | deployment-specific; not part of this repository | — | — |

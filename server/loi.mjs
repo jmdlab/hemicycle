@@ -9,11 +9,13 @@
  */
 
 import fssync from "node:fs";
+import path from "node:path";
 
 import { loadIndex, PATHS } from "./data/index.mjs";
 import { buildBillSlugMap } from "./data/slug.mjs";
 import { extractBill } from "./data/text.mjs";
-import { readScrutin } from "./data/store.mjs";
+import { readScrutin, readJson } from "./data/store.mjs";
+import { mainLevee, voteSort } from "./data/amendements.mjs";
 import { SITE, frDate, shorten, clipWord, esc, tag, metaName, ldJson } from "./seo.mjs";
 
 /* ── bills.json, memoised on mtime like every other index ───────────────── */
@@ -61,6 +63,85 @@ function displayTitle(docs, key) {
   }
   const raw = best ?? key;
   return raw.charAt(0).toUpperCase() + raw.slice(1);
+}
+
+/* ── votes à main levée ─────────────────────────────────────────────────── *
+ * Floor amendments of the dossier decided without a public scrutin (server/data/amendements.mjs).
+ * Every scrutin of the legislature counts as cover, not only this bill's: a number named the same
+ * day by another text's scrutin hides the amendment, never the reverse. Memoised on the mtimes of
+ * the dossier file, the search index and the scrutins manifest. */
+const AMENDEMENTS_DIR = path.join(PATHS.storage, "amendements");
+const DLR_RE = /^DLR[0-9A-Z]+$/;
+const ML_CAP = 60;
+/** Lag allowed between a scrutin and the archive that carries it. Unmeasured (the open data gives the vote's
+ * day, not its hour), so generous: a wider margin only delays the section, it never mislabels a vote. */
+const ML_MARGIN_MS = 6 * 3_600_000;
+const mlCache = new Map(); // dossierRef → { key, value }
+let roster = { mtime: -1, byRef: new Map() };
+
+function mtimeOf(file) {
+  try { return fssync.statSync(file).mtimeMs; } catch { return -1; }
+}
+
+function rosterByRef() {
+  const file = path.join(PATHS.index, "deputes.json");
+  const mtime = mtimeOf(file);
+  if (mtime !== roster.mtime) {
+    const deps = readJson(file, { deputes: [] }).deputes ?? [];
+    roster = { mtime, byRef: new Map(deps.map((d) => [d.acteurRef, d])) };
+  }
+  return roster.byRef;
+}
+
+function auteurOf(a, byRef) {
+  const dep = a.auteurRef ? byRef.get(a.auteurRef) : null;
+  const nom = dep ? `${dep.prenom} ${dep.nom}` : null;
+  if (a.auteurType === "Gouvernement") return { nom: "Gouvernement", groupe: null, slug: null };
+  if (a.auteurType === "Rapporteur") return { nom: nom ? `${nom}, rapporteur` : "Rapporteur", groupe: null, slug: dep?.slug ?? null };
+  return { nom, groupe: dep?.groupe?.abbrev ?? null, slug: dep?.slug ?? null };
+}
+
+export function mainLeveeFor(dossierRef) {
+  if (!dossierRef || !DLR_RE.test(dossierRef)) return null;
+  const file = path.join(AMENDEMENTS_DIR, `${dossierRef}.json`);
+  const key = `${mtimeOf(file)}|${mtimeOf(PATHS.searchIndex)}|${mtimeOf(PATHS.cacheManifest)}|${mtimeOf(path.join(PATHS.index, "deputes.json"))}`;
+  const hit = mlCache.get(dossierRef);
+  if (hit?.key === key) return hit.value;
+
+  let value = null;
+  const data = readJson(file, null);
+  if (data?.amendements) {
+    // Margin before the scrutins archive time: a scrutin held minutes before it may not be in it yet.
+    // The scrutins joined come from the search index: the cut-off never runs past the index build, even when a
+    // fresher archive was downloaded and the index step then failed.
+    const ix = loadIndex();
+    const notAfter =
+      Math.min(Date.parse(readJson(PATHS.cacheManifest, {}).scrutins?.lastModified ?? ""), Date.parse(ix.builtAt ?? "")) -
+      ML_MARGIN_MS;
+    if (Number.isFinite(notAfter)) {
+      const list = mainLevee(data.amendements, ix.docs ?? [], { notAfter });
+      const byRef = rosterByRef();
+      value = {
+        total: list.length,
+        adoptes: list.filter((a) => voteSort(a.sort) === "adopté").length,
+        rejetes: list.filter((a) => voteSort(a.sort) === "rejeté").length,
+        jusquau: new Date(notAfter).toISOString(),
+        amendements: list.slice(0, ML_CAP).map((a) => ({
+          uid: a.uid,
+          numero: a.numero,
+          numeroLong: a.numeroLong ?? String(a.numero),
+          sousAmendement: !!a.sousAmendement,
+          article: a.article ? a.article.toLowerCase() : null, // « APRÈS ART. 4 » → « après art. 4 », SPA and crawler alike
+          sort: voteSort(a.sort),
+          date: a.dateSort,
+          auteur: auteurOf(a, byRef),
+        })),
+      };
+    }
+  }
+  if (mlCache.size > 200) mlCache.clear();
+  mlCache.set(dossierRef, { key, value });
+  return value;
 }
 
 /* ── assembling one bill ────────────────────────────────────────────────── */
@@ -112,6 +193,7 @@ function billData(slug) {
     titre,
     type,
     dossierRef: rec?.dossierRef ?? null,
+    mainLevee: mainLeveeFor(rec?.dossierRef ?? docs.find((d) => d.dossierRef)?.dossierRef),
     dossierTitre: rec?.dossierTitre ?? null,
     loi,
     total: docs.length,
@@ -187,6 +269,11 @@ export function registerLoiRoutes(app, log) {
     const capNote = bill.total > bill.scrutins.length
       ? `<p>${bill.total - bill.scrutins.length} autres scrutins de procédure ne sont pas listés ici.</p>`
       : "";
+    const ml = bill.mainLevee;
+    const mlHtml = ml && ml.total > 0
+      ? `<h2>Votes à main levée</h2><p>Vote à main levée — pas de détail par député. ${ml.total} amendement${ml.total > 1 ? "s" : ""} décidé${ml.total > 1 ? "s" : ""} sans scrutin public (${ml.adoptes} adopté${ml.adoptes > 1 ? "s" : ""}, ${ml.rejetes} rejeté${ml.rejetes > 1 ? "s" : ""}).</p><ul>${ml.amendements.map((a) =>
+          `<li>${a.sousAmendement ? "Sous-amendement" : "Amendement"} n° ${esc(a.numeroLong)}${a.article ? ` (${esc(a.article)})` : ""}${a.auteur?.nom ? ` de ${esc(a.auteur.nom)}${a.auteur.groupe ? ` (${esc(a.auteur.groupe)})` : ""}` : ""} — ${esc(a.sort)} le ${esc(frDate(a.date.slice(0, 10)))}</li>`).join("")}</ul>${ml.total > ml.amendements.length ? `<p>${ml.total - ml.amendements.length} autres ne sont pas listés ici.</p>` : ""}`
+      : "";
     const loiHtml = bill.loi
       ? `<p>Texte promulgué : loi n° ${esc(bill.loi.codeLoi)}${bill.loi.dateLoi ? ` du ${esc(frDate(bill.loi.dateLoi))}` : ""}${/^https?:\/\//i.test(bill.loi.urlLegifrance ?? "") ? ` — <a href="${esc(bill.loi.urlLegifrance)}" rel="nofollow">texte sur Légifrance</a>` : ""}.</p>`
       : "";
@@ -246,6 +333,7 @@ ${loiHtml}
 <h2>Tous les scrutins sur ce texte</h2>
 <ul>${rowsHtml}</ul>
 ${capNote}
+${mlHtml}
 ${autresHtml}
 <p><a href="${esc(url)}">Voir la fiche complète sur Hémicycle</a></p>
 </article>

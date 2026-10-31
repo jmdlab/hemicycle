@@ -100,12 +100,15 @@ Deux jobs, un lock partagé (fichier de verrou commun, chemin propre au déploie
 lisent jamais les textes en même temps :
 
 - **06:25 UTC, quotidien** — `scripts/daily.mjs` (open data AN, index des
-  textes, députés, sitemap, délégations, lecture des nouveaux textes, SVG).
+  textes, députés, sitemap, délégations, amendements de séance, lecture des
+  nouveaux textes, SVG).
   Prend le lock en mode attente (`flock -w 7200`).
 - **Toutes les 15 min, 06:00–00:45 UTC (Paris 07:00–01:45 en hiver), puis à h:05
   de 01 à 05 UTC** — `scripts/poll.mjs` : trois requêtes HEAD sans cache
   (`Cache-Control: no-cache`, le cache de l'AN sert sinon une copie vieille de
-  plusieurs heures). Rien de changé → une ligne de log, fin. Une archive a
+  plusieurs heures). Rien de changé → mise à jour des amendements de séance
+  (`scripts/refresh-amendements.mjs`, son propre HEAD, rien si l'archive n'a pas
+  bougé), une ligne de log, fin. Une archive a
   bougé → `daily.mjs` en entier, puis une ligne par nouveau scrutin dans
   `logs/delais-an.jsonl` (date du vote, `Last-Modified` de l'archive AN, vu par
   le poll, servi par le site). L'open data ne donne que la date du vote, pas

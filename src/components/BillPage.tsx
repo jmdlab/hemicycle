@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ApiError, fetchBillPage, isAbort } from "@/lib/api";
-import type { BillPageData, BillScrutinRow } from "@/lib/types";
+import type { BillMainLevee, BillPageData, BillScrutinRow } from "@/lib/types";
 import { SortStatus, formatDate } from "./Meta";
 
 type Props = {
@@ -9,6 +9,8 @@ type Props = {
   onOpenScrutin: (numero: number) => void;
   /** Open another bill page. */
   onOpenLoi: (slug: string) => void;
+  /** Open a deputy page (amendment authors). */
+  onOpenDepute: (slug: string) => void;
 };
 
 type State =
@@ -39,7 +41,12 @@ function Skeleton() {
  * The page leads with the answer (the solemn vote, when there is one), then
  * lists the ballots — solemn first, then the most recent procedural votes.
  */
-export function BillPage({ slug, onOpenScrutin, onOpenLoi }: Props) {
+export function BillPage({
+  slug,
+  onOpenScrutin,
+  onOpenLoi,
+  onOpenDepute,
+}: Props) {
   const [state, setState] = useState<State>({ k: "loading" });
 
   useEffect(() => {
@@ -66,7 +73,10 @@ export function BillPage({ slug, onOpenScrutin, onOpenLoi }: Props) {
 
   useEffect(() => {
     const previous = document.title;
-    document.title = state.k === "ready" ? `${state.bill.titre} — Hémicycle` : "Texte de loi — Hémicycle";
+    document.title =
+      state.k === "ready"
+        ? `${state.bill.titre} — Hémicycle`
+        : "Texte de loi — Hémicycle";
     return () => {
       document.title = previous;
     };
@@ -81,18 +91,108 @@ export function BillPage({ slug, onOpenScrutin, onOpenLoi }: Props) {
           <h1 className="font-heading text-[1.75rem] leading-[1.15] tracking-[-0.01em] text-[color:var(--ink)]">
             Texte de loi
           </h1>
-          <p className="mt-3 max-w-[62ch] leading-[1.6] text-[color:var(--ink-2)]">{state.message}</p>
+          <p className="mt-3 max-w-[62ch] leading-[1.6] text-[color:var(--ink-2)]">
+            {state.message}
+          </p>
         </section>
       ) : null}
 
       {state.k === "ready" ? (
-        <Body bill={state.bill} onOpenScrutin={onOpenScrutin} onOpenLoi={onOpenLoi} />
+        <Body
+          bill={state.bill}
+          onOpenScrutin={onOpenScrutin}
+          onOpenLoi={onOpenLoi}
+          onOpenDepute={onOpenDepute}
+        />
       ) : null}
     </main>
   );
 }
 
-function ScrutinRow({ s, onOpen }: { s: BillScrutinRow; onOpen: (n: number) => void }) {
+function MainLeveeSection({
+  ml,
+  onOpenDepute,
+}: {
+  ml: BillMainLevee;
+  onOpenDepute: (slug: string) => void;
+}) {
+  return (
+    <section className="mt-10" aria-labelledby="main-levee">
+      <h2
+        id="main-levee"
+        className="ui text-[0.8125rem] font-medium leading-[1.2] tracking-[0.02em] text-[color:var(--ink-2)]"
+      >
+        Votes à main levée
+      </h2>
+      <p className="mt-3 leading-[1.5] text-[color:var(--ink)]">
+        Vote à main levée — pas de détail par député.
+      </p>
+      <p className="ui num mt-1 text-[0.8125rem] text-[color:var(--ink-3)]">
+        {ml.total} amendement{ml.total > 1 ? "s" : ""} en séance · {ml.adoptes}{" "}
+        adopté{ml.adoptes > 1 ? "s" : ""}, {ml.rejetes} rejeté
+        {ml.rejetes > 1 ? "s" : ""} · décisions connues au{" "}
+        {formatDate(ml.jusquau)}
+      </p>
+      <ul className="mt-3">
+        {ml.amendements.map((a) => {
+          const slug = a.auteur.slug;
+          return (
+          <li key={a.uid} className="row py-3">
+            <span className="block leading-[1.45] text-[color:var(--ink)]">
+              {a.sousAmendement ? "Sous-amendement" : "Amendement"} n°{" "}
+              <span className="num">{a.numeroLong}</span>
+              {a.article ? ` · ${a.article}` : ""}
+            </span>
+            <span className="ui mt-1 flex flex-wrap items-center gap-x-2 text-[0.8125rem] text-[color:var(--ink-3)]">
+              {a.auteur.nom ? (
+                <>
+                  <span>
+                    {slug ? (
+                      <a
+                        className="link-quiet underline underline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[color:var(--ink)]"
+                        href={`/depute/${slug}`}
+                        onClick={(e) => {
+                          // Ctrl/Cmd/Shift-click and middle-click keep the browser's own behaviour (new tab).
+                          if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+                          e.preventDefault();
+                          onOpenDepute(slug);
+                        }}
+                      >
+                        {a.auteur.nom}
+                      </a>
+                    ) : (
+                      a.auteur.nom
+                    )}
+                    {a.auteur.groupe ? ` (${a.auteur.groupe})` : null}
+                  </span>
+                  <span aria-hidden>·</span>
+                </>
+              ) : null}
+              <span>{formatDate(a.date)}</span>
+              <span aria-hidden>·</span>
+              <SortStatus sort={a.sort} />
+            </span>
+          </li>
+          );
+        })}
+      </ul>
+      {ml.total > ml.amendements.length ? (
+        <p className="ui mt-3 text-[0.8125rem] text-[color:var(--ink-3)]">
+          {ml.total - ml.amendements.length} autres amendements votés à main
+          levée ne sont pas listés ici.
+        </p>
+      ) : null}
+    </section>
+  );
+}
+
+function ScrutinRow({
+  s,
+  onOpen,
+}: {
+  s: BillScrutinRow;
+  onOpen: (n: number) => void;
+}) {
   return (
     <li className="row">
       <a
@@ -103,7 +203,9 @@ function ScrutinRow({ s, onOpen }: { s: BillScrutinRow; onOpen: (n: number) => v
         }}
         className="block py-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[color:var(--ink)]"
       >
-        <span className="block leading-[1.45] text-[color:var(--ink)]">{s.titre}</span>
+        <span className="block leading-[1.45] text-[color:var(--ink)]">
+          {s.titre}
+        </span>
         <span className="ui mt-1 flex flex-wrap items-center gap-x-2 text-[0.8125rem] text-[color:var(--ink-3)]">
           <span className="num">n° {s.numero}</span>
           <span aria-hidden>·</span>
@@ -134,16 +236,20 @@ function Body({
   bill,
   onOpenScrutin,
   onOpenLoi,
+  onOpenDepute,
 }: {
   bill: BillPageData;
   onOpenScrutin: (n: number) => void;
   onOpenLoi: (slug: string) => void;
+  onOpenDepute: (slug: string) => void;
 }) {
   const f = bill.final;
   return (
     <>
       <header className="mt-6">
-        <p className="ui text-[0.8125rem] tracking-[0.02em] text-[color:var(--ink-3)]">{bill.type}</p>
+        <p className="ui text-[0.8125rem] tracking-[0.02em] text-[color:var(--ink-3)]">
+          {bill.type}
+        </p>
         <h1 className="font-heading mt-1 max-w-[30ch] text-[1.75rem] leading-[1.15] tracking-[-0.015em] text-[color:var(--ink)] sm:text-[2.125rem]">
           {bill.titre}
         </h1>
@@ -155,7 +261,8 @@ function Body({
             <>
               <span aria-hidden>·</span>
               <span>
-                {formatDate(bill.dateRange[0])} → {formatDate(bill.dateRange[1] ?? bill.dateRange[0])}
+                {formatDate(bill.dateRange[0])} →{" "}
+                {formatDate(bill.dateRange[1] ?? bill.dateRange[0])}
               </span>
             </>
           ) : null}
@@ -169,8 +276,8 @@ function Body({
             <SortStatus sort={f.sort} />
             <span>
               le {formatDate(f.date)}
-              {f.reading ? ` (${f.reading})` : ""} — {f.pour} pour, {f.contre} contre, {f.abstentions}{" "}
-              abstentions
+              {f.reading ? ` (${f.reading})` : ""} — {f.pour} pour, {f.contre}{" "}
+              contre, {f.abstentions} abstentions
             </span>
           </p>
           <p className="mt-2">
@@ -188,8 +295,8 @@ function Body({
         </section>
       ) : (
         <p className="mt-8 max-w-[62ch] leading-[1.6] text-[color:var(--ink-2)]">
-          Pas encore de vote solennel sur l’ensemble du texte — les scrutins ci-dessous portent sur des
-          amendements, des articles ou des motions.
+          Pas encore de vote solennel sur l’ensemble du texte — les scrutins
+          ci-dessous portent sur des amendements, des articles ou des motions.
         </p>
       )}
 
@@ -224,10 +331,15 @@ function Body({
         </ul>
         {bill.total > bill.scrutins.length ? (
           <p className="ui mt-3 text-[0.8125rem] text-[color:var(--ink-3)]">
-            {bill.total - bill.scrutins.length} autres scrutins de procédure ne sont pas listés ici.
+            {bill.total - bill.scrutins.length} autres scrutins de procédure ne
+            sont pas listés ici.
           </p>
         ) : null}
       </section>
+
+      {bill.mainLevee && bill.mainLevee.total > 0 ? (
+        <MainLeveeSection ml={bill.mainLevee} onOpenDepute={onOpenDepute} />
+      ) : null}
 
       {bill.autres.length > 0 ? (
         <section className="mt-12 border-t border-[color:var(--rule)] pt-6">

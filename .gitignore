@@ -19,6 +19,8 @@ storage/rasters/
 # hemicycle-freshness lit meta.json) jusqu'au prochain cron. Données dérivées =
 # reconstruites, jamais versionnées. Un déploiement neuf lance daily.mjs.
 storage/deputes/
+# amendements de séance (scripts/refresh-amendements.mjs), régénérés depuis l'open data
+storage/amendements/
 storage/index/
 
 # dumps bruts AN — re-téléchargés chaque nuit par refresh-data.mjs ;

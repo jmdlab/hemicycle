@@ -253,7 +253,7 @@ export default function App() {
           {route.k === "scrutin" ? (
             <ScrutinPage numero={route.numero} onOpenLoi={openLoi} />
           ) : route.k === "loi" ? (
-            <BillPage slug={route.slug} onOpenScrutin={openScrutin} onOpenLoi={openLoi} />
+            <BillPage slug={route.slug} onOpenScrutin={openScrutin} onOpenLoi={openLoi} onOpenDepute={openDepute} />
           ) : route.k === "depute" ? (
             <DeputePage
               slug={route.slug}

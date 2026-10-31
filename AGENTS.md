@@ -54,6 +54,8 @@ must stay a **single action**: never add a confirmation screen for a confident m
 | `scripts/backfill-consequences.mjs` | Catch-up reader for bills missing their "what changes" section |
 | `scripts/{refresh-data,build-*,pregenerate}.mjs` | Pipeline steps called by `daily.mjs` |
 | `scripts/poll.mjs` | Cheap change check every 15 min; runs `daily.mjs` when the AN archives moved |
+| `scripts/refresh-amendements.mjs` | Floor amendments from `Amendements.json.zip` by HTTP Range (central directory + changed entries only) → `storage/amendements/<DLR>.json` (gitignored) |
+| `server/data/amendements.mjs` | Zip helpers and `mainLevee()`: amendments adopted/rejected in séance that no public scrutin names = show-of-hands votes, shown on bill pages |
 | `scripts/prune-rasters.mjs` | Raster cache pruning |
 | `scripts/setup-venv.sh`, `scripts/fonts.sh` | One-time render environment setup |
 | `deploy.sh`, `deploy/` | Deploy script; unit, hardening drop-ins, proxy snippets |
@@ -107,13 +109,13 @@ See `server/.env.example`.
 | Job | Schedule (UTC) | Script | Lock | Log |
 |---|---|---|---|---|
 | Daily freshness pipeline | `25 6 * * *` | `scripts/daily.mjs` | shared lock, **waiting** (`flock -w`) | `logs/daily.log` |
-| Fast poll (15 min by day) | `*/15 0,6-23 * * *` + `5 1-5 * * *` | `scripts/poll.mjs`: 3 uncached HEADs, runs `daily.mjs` only when an archive changed; logs AN delay to `logs/delais-an.jsonl` | same lock, waits ≤10 min by day (`flock -w 600`), `flock -n` at night | `logs/poll.log` |
+| Fast poll (15 min by day) | `*/15 0,6-23 * * *` + `5 1-5 * * *` | `scripts/poll.mjs`: 3 uncached HEADs, runs `daily.mjs` only when an archive changed, else `refresh-amendements` (its own HEAD, no-op when unchanged); logs AN delay to `logs/delais-an.jsonl` | same lock, waits ≤10 min by day (`flock -w 600`), `flock -n` at night | `logs/poll.log` |
 | Backfill | `40 1-23/2 * * *` | `scripts/backfill-consequences.mjs`, run under a memory/time limiter | same lock, **non-blocking** (`flock -n`): yields to the daily | `logs/backfill-consequences.log` |
 | Raster pruning | `40 4 * * 0` | `scripts/prune-rasters.mjs` | none | `logs/prune.log` |
 | Raw-source cold backup | monthly | deployment-specific; not part of this repository | — | — |
 
 - The daily runs, in order: open data → bill index → members → sitemap → delegations →
-  bill reading (concurrency 2) → SVG pre-generation (concurrency 3).
+  amendments (non-fatal) → bill reading (concurrency 2) → SVG pre-generation (concurrency 3).
 - The backfill sweeps the **whole** index, not just the daily window, concurrency 1,
   bounded batch (`--limit`, default 25). It is a safety net, not a permanent workload.
 - The shared lock exists so the two jobs never read bills at the same time.
@@ -154,7 +156,8 @@ And four operational ones:
 - An untracked `pnpm-lock.yaml` sits beside the tracked `package-lock.json`; `deploy.sh` uses npm.
 - The raw backup and its schedule live outside this repository, so a clone alone does not
   reveal them.
-- No automated tests; correctness rests on the runtime QA and `render/check_overflow.py`.
+- Tests: `node --test tests/*.test.mjs` (poll change detection, amendments zip reader and show-of-hands join on real PLF 2027
+  cases). Rendering correctness still rests on the runtime QA and `render/check_overflow.py`.
 
 ## How to update this file
 Hand-written. Route count: `grep -cE "^app\.(get|post)" server/index.mjs`. Schedules are

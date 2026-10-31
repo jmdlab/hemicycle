@@ -2,7 +2,7 @@
 /**
  * Fast poll of the AN open data (cron every 15 min by day, hourly at night).
  *
- * A run with nothing new costs three HEAD requests and exits. When an archive's
+ * A run with nothing new costs four HEAD requests (three archives + amendments) and exits. When an archive's
  * ETag / Last-Modified moved, it runs the whole daily pipeline (daily.mjs), so a
  * scrutin published by the AN is on hemicycle.app at the next quarter hour.
  *
@@ -24,6 +24,7 @@ import { promisify } from 'node:util';
 
 import { PATHS, readJson, writeJsonAtomic } from '../server/data/store.mjs';
 import { SOURCES, NO_CACHE, freshUrl, isNewer } from '../server/data/sources.mjs';
+import { refresh as refreshAmendements } from './refresh-amendements.mjs';
 
 const execFileP = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -92,6 +93,12 @@ async function main() {
   }
 
   if (changed.length === 0) {
+    // The amendments archive moves on its own schedule; its script does its own HEAD and is a no-op otherwise.
+    try {
+      await refreshAmendements({ deadline: 5 * 60_000 }); // bounded: poll holds the shared cron lock
+    } catch (err) {
+      log(`✗ amendements : ${err.message}`);
+    }
     writeJsonAtomic(POLL_STATE, nextState);
     log(`· rien de neuf${failed.length ? ` (HEAD en échec : ${failed.join(', ')})` : ''}`);
     return 0;

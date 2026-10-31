@@ -304,8 +304,31 @@ export interface BillPageData {
   } | null;
   /** Solemn votes first, then most recent procedural ballots (capped). */
   scrutins: BillScrutinRow[];
+  /** Floor amendments decided by show of hands (no public scrutin names them); null when unknown. */
+  mainLevee: BillMainLevee | null;
   /** Other recent bills — internal navigation. */
   autres: Array<{ slug: string; titre: string }>;
+}
+
+/** Amendments voted by show of hands: no per-deputy record exists. */
+export interface BillMainLevee {
+  total: number;
+  adoptes: number;
+  rejetes: number;
+  /** Decisions after this instant are left out: their scrutin may not be published yet. */
+  jusquau: string;
+  /** Newest first, capped. */
+  amendements: Array<{
+    numero: number;
+    uid: string;
+    numeroLong: string;
+    sousAmendement: boolean;
+    article: string | null;
+    sort: Sort;
+    /** Decision time (ISO, with offset). */
+    date: string;
+    auteur: { nom: string | null; groupe: string | null; slug: string | null };
+  }>;
 }
 
 /* ── Deputy pages (`GET /api/hemicycle/depute/:slug`, `/deputes`) ──────────── */

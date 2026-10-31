@@ -64,6 +64,10 @@ const okSitemap = await step('sitemap', 'build-sitemap.mjs');
 // what stops the page from calling a participation rate a presence rate.
 const okDeleg = await step('délégations', 'build-delegations.mjs');
 
+// Floor amendments, for the « vote à main levée » list on bill pages. Range reads of the AN archive,
+// one HEAD when it did not move. Not fatal: a bill page without that list is still correct.
+await step('amendements', 'refresh-amendements.mjs', [], 3_600_000); // a cold start reads most of the 350 MB archive
+
 // Read the bills. Idempotent and keyed by document, so the steady-state cost is
 // the one or two new texts of the day, not the 73 of the year. Deliberately NOT
 // fatal: a page without its "texte en clair" is still a correct page, whereas

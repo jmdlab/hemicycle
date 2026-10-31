@@ -1,11 +1,11 @@
 import type { Sort } from "@/lib/types";
 import { cn } from "@/lib/cn";
 
-const DATE_FMT = new Intl.DateTimeFormat("fr-FR", {
-  day: "numeric",
-  month: "long",
-  year: "numeric",
-});
+const DATE_OPTS = { day: "numeric", month: "long", year: "numeric" } as const;
+/** A calendar date (« 2026-10-30 ») is shown as is; an instant is shown as the day in Paris. */
+const DATE_FMT = new Intl.DateTimeFormat("fr-FR", { ...DATE_OPTS, timeZone: "UTC" });
+const INSTANT_FMT = new Intl.DateTimeFormat("fr-FR", { ...DATE_OPTS, timeZone: "Europe/Paris" });
+const DATE_ONLY = /^\d{4}-\d{2}-\d{2}$/;
 
 const NUM_FMT = new Intl.NumberFormat("fr-FR");
 
@@ -14,7 +14,7 @@ export function formatDate(value: string | undefined): string {
   if (!value) return "";
   const d = new Date(value);
   if (Number.isNaN(d.getTime())) return value;
-  return DATE_FMT.format(d);
+  return (DATE_ONLY.test(value) ? DATE_FMT : INSTANT_FMT).format(d);
 }
 
 export function formatNumber(value: number | undefined): string {

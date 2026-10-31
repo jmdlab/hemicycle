@@ -23,7 +23,7 @@ import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 
 import { PATHS, readJson, writeJsonAtomic } from '../server/data/store.mjs';
-import { SOURCES, NO_CACHE } from '../server/data/sources.mjs';
+import { SOURCES, NO_CACHE, freshUrl, isNewer } from '../server/data/sources.mjs';
 
 const execFileP = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -36,7 +36,7 @@ const log = (...a) => console.log(new Date().toISOString(), ...a);
 /** Remote validators for one archive, or null when the HEAD failed. */
 async function head(source) {
   try {
-    const res = await fetch(source.url, {
+    const res = await fetch(freshUrl(source.url), {
       method: 'HEAD',
       headers: NO_CACHE,
       signal: AbortSignal.timeout(30_000),
@@ -48,14 +48,8 @@ async function head(source) {
   }
 }
 
-/** Same comparison as refresh-data.mjs: either validator matching means unchanged. */
-export function isChanged(remote, cached) {
-  if (!remote) return false; // HEAD failed: retry next quarter hour rather than download blind
-  if (!cached) return true;
-  if (remote.etag && remote.etag === cached.etag) return false;
-  if (remote.lastModified && remote.lastModified === cached.lastModified) return false;
-  return true;
-}
+/** A change = the AN serves a copy newer than ours (a stale cache node is not a change). */
+export const isChanged = isNewer;
 
 /** Numbers of the normalised scrutins on disk. */
 function numerosOnDisk() {
@@ -88,7 +82,9 @@ async function main() {
   const scrutinsRemote = remotes[SOURCES.findIndex((s) => s.key === 'scrutins')];
 
   const nextState = { ...state, checkedAt, headFailed: failed };
-  if (scrutinsRemote?.lastModified) nextState.remoteScrutinsLastModified = scrutinsRemote.lastModified;
+  if (scrutinsRemote?.lastModified && isNewer(scrutinsRemote, { lastModified: state.remoteScrutinsLastModified })) {
+    nextState.remoteScrutinsLastModified = scrutinsRemote.lastModified;
+  }
 
   if (process.argv.includes('--check')) {
     log(`· --check : changé = ${changed.join(', ') || 'rien'} · HEAD en échec = ${failed.join(', ') || 'aucun'}`);
@@ -118,6 +114,7 @@ async function main() {
     log(`✗ daily.mjs en échec : ${tail.slice(0, 400) || err.message}`);
   }
 
+  const built = readJson(PATHS.cacheManifest, {}).scrutins?.lastModified || null;
   const fresh = [...numerosOnDisk()].filter((n) => !before.has(n)).sort((a, b) => a - b);
   const liveAt = new Date().toISOString();
   const lines = [];
@@ -126,7 +123,7 @@ async function main() {
     lines.push({
       numero,
       voteDate: doc.date || null,
-      anLastModified: scrutinsRemote?.lastModified ? new Date(scrutinsRemote.lastModified).toISOString() : null,
+      anLastModified: built ? new Date(built).toISOString() : null,
       seenAt: checkedAt,
       liveAt,
     });

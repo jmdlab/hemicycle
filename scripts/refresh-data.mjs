@@ -30,7 +30,7 @@ import { buildSearchIndex } from '../server/data/search.mjs';
 import { buildLawIndex } from '../server/data/law.mjs';
 import { verify } from '../server/data/qa.mjs';
 import { extractBill } from '../server/data/text.mjs';
-import { SOURCES, NO_CACHE } from '../server/data/sources.mjs';
+import { SOURCES, NO_CACHE, freshUrl, isNewer } from '../server/data/sources.mjs';
 
 
 const argv = new Set(process.argv.slice(2));
@@ -61,10 +61,10 @@ async function sync(source, manifest) {
 
   if (exists && cached && !FORCE) {
     try {
-      const head = await fetch(source.url, { method: 'HEAD', headers: NO_CACHE });
+      const head = await fetch(freshUrl(source.url), { method: 'HEAD', headers: NO_CACHE });
       const etag = head.headers.get('etag');
       const lastModified = head.headers.get('last-modified');
-      if ((etag && etag === cached.etag) || (lastModified && lastModified === cached.lastModified)) {
+      if (!isNewer({ etag, lastModified }, cached)) {
         log(`  · ${source.file}: unchanged (${etag || lastModified}), skipping download`);
         return { ...cached, changed: false, path: dest };
       }
@@ -73,8 +73,15 @@ async function sync(source, manifest) {
     }
   }
 
-  const res = await fetch(source.url, { headers: NO_CACHE });
+  const res = await fetch(freshUrl(source.url), { headers: NO_CACHE });
   if (!res.ok) throw new Error(`${source.url} -> HTTP ${res.status}`);
+  const got = { etag: res.headers.get('etag'), lastModified: res.headers.get('last-modified') };
+  // A cache node can still hand back an older copy than the one on disk: keep ours.
+  if (exists && cached && !FORCE && !isNewer(got, cached) && got.etag !== cached.etag) {
+    await res.body?.cancel();
+    log(`  · ${source.file}: copie servie plus ancienne (${got.lastModified}) que la nôtre (${cached.lastModified}), gardée`);
+    return { ...cached, changed: false, path: dest };
+  }
   const buf = Buffer.from(await res.arrayBuffer());
 
   // Write via a temp file so an interrupted run cannot leave a truncated ZIP.
@@ -84,8 +91,8 @@ async function sync(source, manifest) {
 
   log(`  · ${source.file}: downloaded ${(buf.length / 1048576).toFixed(1)} MB`);
   return {
-    etag: res.headers.get('etag'),
-    lastModified: res.headers.get('last-modified'),
+    etag: got.etag,
+    lastModified: got.lastModified,
     bytes: buf.length,
     fetchedAt: new Date().toISOString(),
     changed: true,

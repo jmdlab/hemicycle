@@ -17,3 +17,11 @@ test('HEAD failed → not treated as a change', () => {
 test('never downloaded → changed', () => {
   assert.equal(isChanged({ etag: '"a"' }, undefined), true);
 });
+test('stale cache node (older Last-Modified, other ETag) → not a change', () => {
+  const ours = { etag: '"new"', lastModified: 'Fri, 30 Oct 2026 23:25:29 GMT' };
+  assert.equal(isChanged({ etag: '"old"', lastModified: 'Fri, 30 Oct 2026 17:25:51 GMT' }, ours), false);
+});
+test('newer Last-Modified → change', () => {
+  const ours = { etag: '"a"', lastModified: 'Fri, 30 Oct 2026 17:25:51 GMT' };
+  assert.equal(isChanged({ etag: '"b"', lastModified: 'Fri, 30 Oct 2026 23:25:29 GMT' }, ours), true);
+});

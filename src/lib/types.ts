@@ -173,6 +173,25 @@ export interface Synthese {
  * false — a ballot whose figures don't reconcile gets the explanation and the
  * group table, but no card and nothing copyable.
  */
+export interface AmendementContexte {
+  numero: number;
+  numeroLong: string | null;
+  sousAmendement: boolean;
+  identiques: boolean;
+  /** « après l’article 15 » */
+  article: string | null;
+  auteur: { nom: string; groupe: string | null; groupeNom?: string | null; slug: string | null } | null;
+  /** The amendment on the Assemblée's site. */
+  url: string;
+  /** Subject, e.g. « Taxe sur les données numériques ». Null until read. */
+  titre: string | null;
+  /** 2–4 neutral sentences. Null until read, or when nothing passed the checks. */
+  resume: string | null;
+  /** « modele »: written by Claude Sonnet then checked; « regle »: a fixed sentence (deletions). */
+  redige: "modele" | "regle" | null;
+  etat: "ok" | "absent" | "ecarte" | "attente";
+}
+
 export interface ScrutinPageData {
   /** This ballot's bill page (/loi/<slug>), when the title names a bill. */
   loi?: { slug: string } | null;
@@ -182,6 +201,8 @@ export interface ScrutinPageData {
   consequence?: string | null;
   /** The AN document the mechanism was read from. */
   texteSource?: { ref: string; url: string } | null;
+  /** When the ballot is on an amendment: what it changes, read from its own text. */
+  amendement?: AmendementContexte | null;
   numero: number;
   legislature: number;
   date: string;
@@ -253,6 +274,8 @@ export type LatestPage = {
   /** Ballots matching the current filter, all pages together. */
   total: number;
   offset: number;
+  /** Ballots after this page; null when the server did not say. */
+  remaining: number | null;
   years: YearFacet[];
 };
 

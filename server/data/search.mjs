@@ -22,13 +22,15 @@ const FINAL_VOTE_BOOST = 2.5;
  * Build the BM25 postings from normalized records.
  * Kept next to the scorer so indexing and querying can never drift apart.
  */
-export function buildSearchIndex(records) {
+export function buildSearchIndex(records, extra = () => '') {
   const docs = [];
   const postings = Object.create(null);
   let totalLen = 0;
 
   records.forEach((rec, i) => {
-    const terms = tokenize(`${rec.titre} ${rec.dossierTitre || ''}`);
+    // `extra`: words the official title lacks — for an amendment ballot, its subject
+    // and the names people use for it (« taxe Go »), from the amendment cache.
+    const terms = tokenize(`${rec.titre} ${rec.dossierTitre || ''} ${extra(rec) || ''}`);
     totalLen += terms.length;
 
     const tf = new Map();

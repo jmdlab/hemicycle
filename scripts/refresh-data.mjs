@@ -27,6 +27,7 @@ import { iterateZip } from '../server/data/zip.mjs';
 import { buildGroupRegistry } from '../server/data/groups.mjs';
 import { normalize } from '../server/data/normalize.mjs';
 import { buildSearchIndex } from '../server/data/search.mjs';
+import { motsPourRecherche } from '../server/amendement.mjs';
 import { buildLawIndex } from '../server/data/law.mjs';
 import { verify } from '../server/data/qa.mjs';
 import { extractBill } from '../server/data/text.mjs';
@@ -186,7 +187,7 @@ async function main() {
   log(`  · scrutins normalisés: ${records.length} (${written} écrits, ${unchanged} inchangés)`);
 
   // 5. Indexes ----------------------------------------------------------------
-  const searchIndex = buildSearchIndex(records);
+  const searchIndex = buildSearchIndex(records, motsPourRecherche);
   const laws = buildLawIndex(dossiers, scrutinsByDossier);
   const lawsWithBallot = Object.values(laws).filter((l) => l.scrutins.length).length;
 

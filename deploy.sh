@@ -3,6 +3,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")" && pwd)"; cd "$ROOT"
 echo "── install (frontend) ──"; npm install --silent
 echo "── install (server) ──";   (cd server && npm install --silent)
+echo "── tests ──";              npm test 2>&1 | grep -E "^not ok|^# (pass|fail)"; test "${PIPESTATUS[0]}" -eq 0
 echo "── build ──";              npm run build
 echo "── restart backend ──";    sudo systemctl restart hemicycle.service
 sleep 1; systemctl --no-pager --lines=0 status hemicycle.service | head -4

@@ -139,6 +139,9 @@ export function dispositifHash(html) {
   return t ? createHash('sha256').update(t).digest('hex').slice(0, 16) : null;
 }
 
+/** An amendment uid as the AN writes it; anything else never reaches a URL or a file name. */
+export const AMENDEMENT_UID_RE = /^AMANR5L\d+PO\d+[0-9A-Z]+$/;
+
 /** One amendment JSON (as published) → the few fields Hémicycle uses. */
 export function slimAmendement(json, dossier) {
   const a = json?.amendement ?? json;
@@ -148,7 +151,7 @@ export function slimAmendement(json, dossier) {
   const div = a?.pointeurFragmentTexte?.division ?? {};
   const parent = nil(a?.amendementParentRef);
   return {
-    uid: a?.uid ?? null,
+    uid: AMENDEMENT_UID_RE.test(String(a?.uid ?? '')) ? a.uid : null,
     dossier: dossier ?? null,
     texte: str(a?.texteLegislatifRef),
     numero: Number(id.numeroOrdreDepot) || null,

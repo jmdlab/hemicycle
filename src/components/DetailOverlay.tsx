@@ -14,7 +14,16 @@ import { useEffect, useRef, type ReactNode } from "react";
  * that happens to be drawn as an overlay — a shared link opens the same view,
  * and the browser's own back button dismisses it.
  */
-export function DetailOverlay({ onClose, children }: { onClose: () => void; children: ReactNode }) {
+export function DetailOverlay({
+  onClose,
+  children,
+  label = "Détail du scrutin",
+}: {
+  onClose: () => void;
+  children: ReactNode;
+  /** What the dialog announces itself as. */
+  label?: string;
+}) {
   const panel = useRef<HTMLDivElement | null>(null);
 
   // Escape closes, and the page underneath must not scroll while it is covered:
@@ -38,7 +47,7 @@ export function DetailOverlay({ onClose, children }: { onClose: () => void; chil
   }, [onClose]);
 
   return (
-    <div className="overlay" role="dialog" aria-modal="true" aria-label="Détail du scrutin">
+    <div className="overlay" role="dialog" aria-modal="true" aria-label={label}>
       {/* Clicking the scrim dismisses. The panel stops the event so a click
           inside — selecting text, hitting a button — never closes the view. */}
       <div className="overlay-scrim" onClick={onClose} aria-hidden />

@@ -7,6 +7,7 @@ import {
 } from "react";
 import type { Candidate, YearFacet } from "@/lib/types";
 import { fetchLatest } from "@/lib/api";
+import { groupRuns, mergeHead, type Run } from "@/lib/runs";
 import { SortStatus, VoteCountsInline, formatDate, formatNumber } from "./Meta";
 
 type Props = {
@@ -15,6 +16,12 @@ type Props = {
 };
 
 const PAGE = 20;
+// Pages that only lengthen a closed run add nothing on screen, so the sentinel
+// stays in view and asks again. Those pages are fetched larger, and only so
+// many in a row before the reader is asked (a 400-vote budget text would
+// otherwise pull the archive down with no scrolling at all).
+const RUN_PAGE = 50;
+const MAX_SILENT_PAGES = 10;
 const POLL_MS = 15_000;
 
 /**
@@ -28,6 +35,10 @@ const POLL_MS = 15_000;
  * the old "Plus de scrutins" link out to the Assemblée's own list was an
  * admission that this page stopped at twenty. It now pages as the reader
  * reaches the bottom — no button, no page count, nothing to decide.
+ *
+ * Consecutive votes on one text (JM, 31/10: « garde la dernière ») show only
+ * the newest as a card; the earlier ones sit in a closed disclosure under it,
+ * opened in place — no inner scroller.
  */
 export function LatestList({ onPick, busy }: Props) {
   const [rows, setRows] = useState<Candidate[] | null>(null);
@@ -36,6 +47,28 @@ export function LatestList({ onPick, busy }: Props) {
   const [total, setTotal] = useState(0);
   const [loadingMore, setLoadingMore] = useState(false);
   const [failed, setFailed] = useState(false);
+  // More ballots after the loaded ones (from the server's `remaining`).
+  const [more, setMore] = useState(false);
+  // Auto-loaded pages in a row that added no visible row; at the cap, wait for the reader.
+  const silent = useRef(0);
+  const [paused, setPaused] = useState(false);
+  // « Chargement… » is read aloud only for a page the reader asked for, not for silent auto-fill.
+  const [announce, setAnnounce] = useState(false);
+  // Open runs, by ballot number: a run's set of ballots only grows (a newer
+  // vote on top, an older page below), so the flag can never move to another
+  // run — a run key counted from the top shifts when a vote lands elsewhere.
+  const [open, setOpen] = useState<Set<number>>(() => new Set());
+  const numerosOf = (run: Run<Candidate>) => [run.head.numero, ...run.rest.map((r) => r.numero)];
+  const isRunOpen = (run: Run<Candidate>) => numerosOf(run).some((n) => open.has(n));
+  const toggle = (run: Run<Candidate>) =>
+    setOpen((prev) => {
+      const next = new Set(prev);
+      if (numerosOf(run).some((n) => next.has(n))) for (const n of numerosOf(run)) next.delete(n);
+      else next.add(run.head.numero);
+      return next;
+    });
+  // Bumped on every filter change: a page requested for the old filter is dropped on arrival.
+  const gen = useRef(0);
 
   const timer = useRef<number | undefined>(undefined);
   const sentinel = useRef<HTMLDivElement | null>(null);
@@ -49,14 +82,23 @@ export function LatestList({ onPick, busy }: Props) {
   useEffect(() => {
     const ctrl = new AbortController();
     let stopped = false;
+    let first = true;
     setRows(null);
     setFailed(false);
+    setOpen(new Set());
+    gen.current++;
+    silent.current = 0;
+    setPaused(false);
 
     const load = () => {
       fetchLatest(PAGE, ctrl.signal, { year })
         .then((r) => {
           if (stopped || ctrl.signal.aborted) return;
-          setRows(r.scrutins);
+          // A re-poll lays the fresh first page over what is loaded rather than
+          // replacing it: a reader deep in the list keeps their place.
+          setRows((prev) => mergeHead(r.scrutins, prev));
+          if (first) setMore(r.remaining === null ? r.scrutins.length < r.total : r.remaining > 0);
+          first = false;
           setTotal(r.total);
           if (r.years.length) setYears(r.years);
           if (r.summarizing) timer.current = window.setTimeout(load, POLL_MS);
@@ -74,32 +116,47 @@ export function LatestList({ onPick, busy }: Props) {
     };
   }, [year]);
 
-  const loadMore = useCallback(() => {
-    if (inFlight.current || !rows || rows.length >= total) return;
+  const loadMore = useCallback((byReader = false) => {
+    const last = rows?.[rows.length - 1];
+    if (inFlight.current || !rows || !last || !more) return;
+    if (byReader) {
+      silent.current = 0;
+      setPaused(false);
+    }
     inFlight.current = true;
+    const mine = gen.current;
     setLoadingMore(true);
+    setAnnounce(byReader);
     setFailed(false);
-    fetchLatest(PAGE, undefined, { offset: rows.length, year })
+    const shown = groupRuns(rows).length;
+    // By ballot number, not offset: the nightly refresh can add or drop a
+    // ballot under a reader mid-scroll, and a shifted offset skips a row.
+    const before = last.numero;
+    fetchLatest(silent.current ? RUN_PAGE : PAGE, undefined, { before, year })
       .then((r) => {
-        // Append by ballot number, not blindly: the nightly refresh can shift
-        // offsets under a reader mid-scroll, and a duplicated row is how that
-        // shows up.
+        if (gen.current !== mine) return;
+        const seen = new Set(rows.map((c) => c.numero));
+        const next = [...rows, ...r.scrutins.filter((c) => !seen.has(c.numero))];
         setRows((prev) => {
-          const seen = new Set((prev ?? []).map((c) => c.numero));
-          return [
-            ...(prev ?? []),
-            ...r.scrutins.filter((c) => !seen.has(c.numero)),
-          ];
+          if (!prev) return prev;
+          const have = new Set(prev.map((c) => c.numero));
+          return [...prev, ...r.scrutins.filter((c) => !have.has(c.numero))];
         });
         setTotal(r.total);
+        const hasMore = r.remaining === null ? next.length < r.total : r.remaining > 0;
+        setMore(hasMore);
+        if (groupRuns(next).length > shown) silent.current = 0;
+        else if (++silent.current >= MAX_SILENT_PAGES && hasMore) setPaused(true);
       })
-      .catch(() => setFailed(true))
+      .catch(() => {
+        if (gen.current === mine) setFailed(true);
+      })
       .finally(() => {
         inFlight.current = false;
         setLoadingMore(false);
       });
     // Note: a failed page shows a retry line (below) rather than dead-ending.
-  }, [rows, total, year]);
+  }, [rows, more, year]);
 
   // Ask for the next page as the end of the list comes into view.
   useEffect(() => {
@@ -107,7 +164,7 @@ export function LatestList({ onPick, busy }: Props) {
     if (!node) return;
     const io = new IntersectionObserver(
       (entries) => {
-        if (entries.some((e) => e.isIntersecting)) loadMore();
+        if (!paused && entries.some((e) => e.isIntersecting)) loadMore();
       },
       // Fetch before the reader actually reaches the bottom, so the next rows
       // are usually already there.
@@ -115,11 +172,12 @@ export function LatestList({ onPick, busy }: Props) {
     );
     io.observe(node);
     return () => io.disconnect();
-  }, [loadMore]);
+  }, [loadMore, paused]);
 
   if (failed && !rows) return null;
 
-  const done = rows !== null && rows.length >= total;
+  const done = rows !== null && !more;
+  const runs = rows ? groupRuns(rows) : [];
 
   return (
     <section className="mt-16" aria-label="Scrutins">
@@ -167,86 +225,39 @@ export function LatestList({ onPick, busy }: Props) {
         </ul>
       ) : (
         <ul className="mt-4">
-          {rows.map((s, i) => {
-            // Same text as the row above (newest first, so that one is the most
-            // recent vote on it): show only what tells this vote apart. Computed
-            // over the whole loaded list, so a group cut by a page boundary
-            // stays folded when the next page is appended.
-            const prev = i > 0 ? rows[i - 1] : undefined;
-            const follow = !!s.dossierRef && prev?.dossierRef === s.dossierRef;
+          {runs.map((run, i) => {
+            const isOpen = isRunOpen(run);
+            const panel = `run-${run.head.numero}`;
+            // The last loaded run may continue on the next page: its count is a floor until then.
+            const floor = more && i === runs.length - 1;
             return (
-              <li key={s.numero} className={follow ? "row row-follow" : "row"}>
-                {/* The whole row is the control. A separate "Voir" button made the
-                  affordance a 60px target next to 60ch of text that looked
-                  clickable and was not. */}
-                <button
-                  type="button"
-                  className="row-hit"
-                  disabled={busy}
-                  onClick={() => onPick(s)}
-                >
-                  <div
-                    className={
-                      follow ? "min-w-0 flex-1 pl-6" : "min-w-0 flex-1"
-                    }
-                  >
-                    {follow ? null : (
-                      <p className="max-w-[58ch] text-base leading-[1.45] text-[color:var(--ink)]">
-                        {s.resume ?? s.titre}
-                      </p>
-                    )}
-                    {/* What the text actually changes, and for whom — the title
-                      alone names a subject without saying what is in it. */}
-                    {s.detail ? (
-                      <p
-                        className={
-                          follow
-                            ? "max-w-[62ch] text-[0.8125rem] leading-[1.5] text-[color:var(--ink-2)]"
-                            : "mt-1 max-w-[62ch] text-[0.9375rem] leading-[1.5] text-[color:var(--ink-2)]"
-                        }
-                      >
-                        {s.detail}
-                      </p>
-                    ) : follow ? null : s.contextDetail ? (
-                      // Procedural ballot: the description belongs to the parent
-                      // text, so say so rather than letting it read as this vote's.
-                      <p className="mt-1 max-w-[62ch] text-[0.9375rem] leading-[1.5] text-[color:var(--ink-2)]">
-                        <span className="ui text-[0.75rem] text-[color:var(--ink-3)]">
-                          Texte concerné —{" "}
-                        </span>
-                        {s.contextDetail}
-                      </p>
-                    ) : null}
-                    <p
-                      className={
-                        (follow ? (s.detail ? "mt-1 " : "") : "mt-2 ") +
-                        "ui flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.8125rem] leading-[1.4] tracking-[0.01em] text-[color:var(--ink-3)]"
-                      }
+              <ScrutinRow key={run.key} s={run.head} follow={false} busy={busy} onPick={onPick}>
+                {run.rest.length > 0 ? (
+                  <div className="run">
+                    <button
+                      type="button"
+                      className="run-toggle"
+                      aria-expanded={isOpen}
+                      aria-controls={isOpen ? panel : undefined}
+                      onClick={() => toggle(run)}
                     >
-                      <span className="num">n° {s.numero}</span>
-                      <span aria-hidden>·</span>
-                      <span>{formatDate(s.date)}</span>
-                      {/* Separator tied to the pill: SortStatus renders nothing
-                        for an unknown result, which would leave "date · · 245". */}
-                      {s.sort ? <span aria-hidden>·</span> : null}
-                      <SortStatus sort={s.sort} />
-                      <span aria-hidden>·</span>
-                      <VoteCountsInline
-                        pour={s.pour}
-                        contre={s.contre}
-                        abstentions={s.abstentions}
-                      />
-                    </p>
-                    {/* A folded row stays one click target; repeating the link
-                        under each of 60 amendments only made the column longer. */}
-                    {follow ? null : (
-                      <p className="mt-2 ui text-[0.8125rem] leading-[1.4] tracking-[0.01em] text-[color:var(--ink-2)]">
-                        Plus de détails <span aria-hidden>→</span>
-                      </p>
-                    )}
+                      <span className="run-chevron" aria-hidden />
+                      <span>
+                        {floor ? "Au moins " : ""}
+                        <span className="num">{formatNumber(run.rest.length)}</span>{" "}
+                        {run.rest.length > 1 ? "autres votes" : "autre vote"} sur ce texte
+                      </span>
+                    </button>
+                    {isOpen ? (
+                      <ul id={panel}>
+                        {run.rest.map((r) => (
+                          <ScrutinRow key={r.numero} s={r} follow busy={busy} onPick={onPick} />
+                        ))}
+                      </ul>
+                    ) : null}
                   </div>
-                </button>
-              </li>
+                ) : null}
+              </ScrutinRow>
             );
           })}
         </ul>
@@ -261,10 +272,14 @@ export function LatestList({ onPick, busy }: Props) {
           aria-live="polite"
         >
           {loadingMore ? (
-            "Chargement…"
+            <span aria-hidden={!announce}>Chargement…</span>
           ) : failed ? (
-            <button type="button" className="btn-row" onClick={loadMore}>
+            <button type="button" className="btn-row" onClick={() => loadMore(true)}>
               Chargement interrompu — réessayer
+            </button>
+          ) : paused ? (
+            <button type="button" className="btn-row" onClick={() => loadMore(true)}>
+              Charger les votes suivants
             </button>
           ) : done ? (
             "Fin de la liste."
@@ -272,6 +287,82 @@ export function LatestList({ onPick, busy }: Props) {
         </p>
       ) : null}
     </section>
+  );
+}
+
+/**
+ * One ballot. `follow` = an earlier vote on the text of the card above, shown
+ * inside its accordion: indented, smaller, no title, no « Plus de détails »
+ * (the whole row stays one click target).
+ */
+function ScrutinRow({
+  s,
+  follow,
+  busy,
+  onPick,
+  children,
+}: {
+  s: Candidate;
+  follow: boolean;
+  busy: boolean;
+  onPick: (candidate: Candidate) => void;
+  /** Under the card, inside its item: the disclosure of earlier votes on the text. */
+  children?: ReactNode;
+}) {
+  return (
+    <li className={follow ? "row row-follow" : "row"}>
+      <button type="button" className="row-hit" disabled={busy} onClick={() => onPick(s)}>
+        <div className={follow ? "min-w-0 flex-1 pl-6" : "min-w-0 flex-1"}>
+          {follow ? null : (
+            <p className="max-w-[58ch] text-base leading-[1.45] text-[color:var(--ink)]">
+              {s.resume ?? s.titre}
+            </p>
+          )}
+          {/* What the text actually changes, and for whom — the title alone
+            names a subject without saying what is in it. */}
+          {s.detail ? (
+            <p
+              className={
+                follow
+                  ? "max-w-[62ch] text-[0.8125rem] leading-[1.5] text-[color:var(--ink-2)]"
+                  : "mt-1 max-w-[62ch] text-[0.9375rem] leading-[1.5] text-[color:var(--ink-2)]"
+              }
+            >
+              {s.detail}
+            </p>
+          ) : follow ? null : s.contextDetail ? (
+            // Procedural ballot: the description belongs to the parent text,
+            // so say so rather than letting it read as this vote's.
+            <p className="mt-1 max-w-[62ch] text-[0.9375rem] leading-[1.5] text-[color:var(--ink-2)]">
+              <span className="ui text-[0.75rem] text-[color:var(--ink-3)]">Texte concerné — </span>
+              {s.contextDetail}
+            </p>
+          ) : null}
+          <p
+            className={
+              (follow ? (s.detail ? "mt-1 " : "") : "mt-2 ") +
+              "ui flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.8125rem] leading-[1.4] tracking-[0.01em] text-[color:var(--ink-3)]"
+            }
+          >
+            <span className="num">n° {s.numero}</span>
+            <span aria-hidden>·</span>
+            <span>{formatDate(s.date)}</span>
+            {/* Separator tied to the pill: SortStatus renders nothing for an
+              unknown result, which would leave "date · · 245". */}
+            {s.sort ? <span aria-hidden>·</span> : null}
+            <SortStatus sort={s.sort} />
+            <span aria-hidden>·</span>
+            <VoteCountsInline pour={s.pour} contre={s.contre} abstentions={s.abstentions} />
+          </p>
+          {follow ? null : (
+            <p className="mt-2 ui text-[0.8125rem] leading-[1.4] tracking-[0.01em] text-[color:var(--ink-2)]">
+              Plus de détails <span aria-hidden>→</span>
+            </p>
+          )}
+        </div>
+      </button>
+      {children}
+    </li>
   );
 }
 

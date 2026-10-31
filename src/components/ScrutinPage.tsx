@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import { ApiError, fetchScrutinPage, isAbort } from "@/lib/api";
 import { canCopyImage, copyImage } from "@/lib/clipboard";
-import type { ScrutinPageData } from "@/lib/types";
+import type { AmendementContexte, ScrutinPageData } from "@/lib/types";
 import { CopyButton } from "./CopyButton";
 import { ShareButton } from "./ShareButton";
 import { SortStatus, VoteCountsInline, formatDate } from "./Meta";
@@ -11,6 +11,8 @@ type Props = {
   numero: number;
   /** Open this ballot's bill page (/loi/<slug>) — all votes on the same text. */
   onOpenLoi?: (slug: string) => void;
+  /** Open a deputy's page (the amendment's author). */
+  onOpenDepute?: (slug: string) => void;
 };
 
 /**
@@ -39,9 +41,9 @@ function isSentence(detail: string | null): boolean {
   return /[.!?]$/.test(detail.trim()) && detail.trim().length > 40;
 }
 
-function SectionTitle({ children }: { children: ReactNode }) {
+function SectionTitle({ children, id }: { children: ReactNode; id?: string }) {
   return (
-    <h2 className="ui text-[0.8125rem] font-medium leading-[1.2] tracking-[0.02em] text-[color:var(--ink-2)]">
+    <h2 id={id} className="ui text-[0.8125rem] font-medium leading-[1.2] tracking-[0.02em] text-[color:var(--ink-2)]">
       {children}
     </h2>
   );
@@ -94,7 +96,7 @@ function cardAlt(page: ScrutinPageData): string {
   return parts.join(" ");
 }
 
-export function ScrutinPage({ numero, onOpenLoi }: Props) {
+export function ScrutinPage({ numero, onOpenLoi, onOpenDepute }: Props) {
   const [state, setState] = useState<State>({ k: "loading" });
   const imageCopy = useMemo(() => canCopyImage(), []);
 
@@ -120,7 +122,11 @@ export function ScrutinPage({ numero, onOpenLoi }: Props) {
   useEffect(() => {
     const previous = document.title;
     document.title =
-      state.k === "ready" ? `${state.page.resume} — Scrutin` : `Scrutin n° ${numero}`;
+      state.k !== "ready"
+        ? `Scrutin n° ${numero}`
+        : state.page.amendement?.titre
+          ? `${state.page.amendement.titre} — amendement n° ${state.page.amendement.numero}`
+          : `${state.page.resume} — Scrutin`;
     return () => {
       document.title = previous;
     };
@@ -142,7 +148,7 @@ export function ScrutinPage({ numero, onOpenLoi }: Props) {
       ) : null}
 
       {state.k === "ready" ? (
-        <Body page={state.page} imageCopy={imageCopy} onOpenLoi={onOpenLoi} />
+        <Body page={state.page} imageCopy={imageCopy} onOpenLoi={onOpenLoi} onOpenDepute={onOpenDepute} />
       ) : null}
     </main>
   );
@@ -152,10 +158,12 @@ function Body({
   page,
   imageCopy,
   onOpenLoi,
+  onOpenDepute,
 }: {
   page: ScrutinPageData;
   imageCopy: boolean;
   onOpenLoi?: (slug: string) => void;
+  onOpenDepute?: (slug: string) => void;
 }) {
   // A sentence-shaped detail belongs in the analysis; a label-shaped one stays meta.
   const proseDetail = isSentence(page.detail) ? page.detail : null;
@@ -163,13 +171,21 @@ function Body({
   const fileName = `scrutin-${page.legislature}-${page.numero}.png`;
   const failedChecks = page.qa.checks.filter((c) => !c.ok);
   const t = page.turnout;
+  const am = page.amendement ?? null;
 
   return (
     <>
       {/* 1 — what was voted, in French anyone can read. */}
       <header className="mt-6">
+        {/* An amendment ballot leads with what the amendment is about; the bill
+            it amends moves to a small line above. */}
+        {am?.titre ? (
+          <p className="ui mb-2 text-[0.8125rem] leading-[1.4] text-[color:var(--ink-3)]">
+            {page.resume}
+          </p>
+        ) : null}
         <h1 className="font-heading max-w-[26ch] text-[1.75rem] leading-[1.15] tracking-[-0.015em] text-[color:var(--ink)] sm:text-[2.125rem]">
-          {page.resume}
+          {am?.titre ?? page.resume}
         </h1>
         <p className="ui mt-4 flex flex-wrap items-center gap-x-2 gap-y-2 text-[0.8125rem] leading-[1.4] text-[color:var(--ink-3)]">
           <span className="num">n° {page.numero}</span>
@@ -201,6 +217,8 @@ function Body({
           </p>
         ) : null}
       </header>
+
+      {am ? <AmendementSection am={am} page={page} onOpenDepute={onOpenDepute} /> : null}
 
       {/* 2 — the visual, high on the page: it is both the fastest read of the
              result and the thing people actually share. */}
@@ -367,5 +385,102 @@ function Body({
           The numbers are already in the image, and the link to the law itself
           sits with the analysis it supports. */}
     </>
+  );
+}
+
+/** « Adopté par 11 voix contre 10 · 35 votants sur 574 sièges ». */
+function resultLine(page: ScrutinPageData): string | null {
+  const y = page.synthese;
+  if (!y) return null;
+  const head = page.sort
+    ? `${page.sort === "adopté" ? "Adopté" : "Rejeté"} par ${y.pour} voix contre ${y.contre}`
+    : `${y.pour} voix pour, ${y.contre} contre`;
+  const abst = y.abstention ? `, ${y.abstention} abstention${y.abstention > 1 ? "s" : ""}` : "";
+  const t = page.turnout;
+  return `${head}${abst}${t ? ` · ${t.votants} votants sur ${t.sieges} sièges` : ""}`;
+}
+
+/**
+ * What the amendment changes — at the top, because the official title of an
+ * amendment ballot says who tabled it and where, never what it does.
+ */
+/** French typography: a figure never wraps away from its unit (« 15 % », « 0,055 € », « 10 Md€ »). */
+function insecable(text: string): string {
+  return text.replace(/(\d) (?=%|€|Md€|M€|euros?\b)/g, "$1\u00a0");
+}
+
+function AmendementSection({
+  am,
+  page,
+  onOpenDepute,
+}: {
+  am: AmendementContexte;
+  page: ScrutinPageData;
+  onOpenDepute?: (slug: string) => void;
+}) {
+  const result = resultLine(page);
+  const fallback =
+    am.etat === "absent"
+      ? "Le texte de l’amendement n’est pas encore publié par l’Assemblée nationale."
+      : am.etat === "attente"
+        ? "Le résumé de cet amendement n’est pas encore rédigé."
+        : am.etat === "ecarte"
+          ? "Aucun résumé fiable n’a pu être rédigé à partir du texte de cet amendement."
+          : null;
+  const who = am.auteur;
+  return (
+    <section className="mt-6" aria-labelledby="amendement-titre">
+      {result ? (
+        <p className="ui text-[0.9375rem] font-medium leading-[1.4] text-[color:var(--ink)]">{result}</p>
+      ) : null}
+      <div className="mt-6 border-t border-[color:var(--rule)] pt-6">
+        <SectionTitle id="amendement-titre">Ce que l’amendement change</SectionTitle>
+        {am.resume ? (
+          <p className="mt-3 max-w-[62ch] leading-[1.6] text-[color:var(--ink)]">{insecable(am.resume)}</p>
+        ) : (
+          <p className="mt-3 max-w-[62ch] leading-[1.6] text-[color:var(--ink-2)]">{fallback}</p>
+        )}
+        <p className="ui mt-4 max-w-[62ch] text-[0.8125rem] leading-[1.5] text-[color:var(--ink-2)]">
+          {am.sousAmendement ? "Sous-amendement" : "Amendement"} n° {am.numero}
+          {who ? (
+            <>
+              {" "}déposé par{" "}
+              {who.slug ? (
+                <a
+                  className="link-quiet underline underline-offset-2"
+                  href={`/depute/${who.slug}`}
+                  onClick={(e) => {
+                    if (!onOpenDepute || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+                    e.preventDefault();
+                    onOpenDepute(who.slug!);
+                  }}
+                >
+                  {who.nom}
+                </a>
+              ) : (
+                who.nom
+              )}
+              {who.groupe ? (
+                <abbr title={who.groupeNom ?? undefined} className="no-underline"> ({who.groupe})</abbr>
+              ) : null}
+            </>
+          ) : null}
+          {am.article ? `, ${am.article}` : ""}
+          {am.identiques ? ", mis aux voix avec des amendements identiques" : ""}.
+        </p>
+        <p className="mt-3 text-[0.9375rem] leading-[1.55] text-[color:var(--ink-3)]">
+          <a className="link-quiet underline underline-offset-2" href={am.url} target="_blank" rel="noreferrer">
+            Lire l’amendement sur assemblee-nationale.fr
+          </a>
+        </p>
+        {am.resume && am.redige === "modele" ? (
+          <p className="ui mt-4 max-w-[62ch] text-[0.75rem] leading-[1.5] text-[color:var(--ink-3)]">
+            Résumé rédigé automatiquement (modèle Claude Sonnet) à partir du texte de
+            l’amendement et de l’exposé de ses auteurs, puis vérifié contre ce texte : aucun
+            chiffre qui n’y figure. En cas de doute, le texte officiel fait foi.
+          </p>
+        ) : null}
+      </div>
+    </section>
   );
 }

@@ -158,10 +158,10 @@ function coverage(claimTokens, sourceTokens, n) {
  * Is the mechanism attested in the articles?
  * @returns {{ok:boolean, unigram:number, bigram:number}}
  */
-export function checkAnchoring(mecanisme, articles) {
+export function checkAnchoring(mecanisme, articles, { minSource = 40 } = {}) {
   const claim = anchorTokens(mecanisme);
   const src = anchorTokens(articles);
-  if (claim.length < 4 || src.length < 40) return { ok: false, unigram: 0, bigram: 0 };
+  if (claim.length < 4 || src.length < minSource) return { ok: false, unigram: 0, bigram: 0 };
   const unigram = coverage(claim, src, 1);
   const bigram = coverage(claim, src, 2);
   return { ok: unigram >= ANCHOR_MIN_UNIGRAM && bigram >= ANCHOR_MIN_BIGRAM, unigram, bigram };

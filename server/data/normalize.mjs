@@ -84,7 +84,9 @@ export function normalize(raw, ctx = {}) {
       abstention,
       nonVotant,
       absent: membres - pour - contre - abstention - nonVotant,
-      positionMajoritaire: (g.vote && g.vote.positionMajoritaire) || null,
+      // The AN fills this even for a group that cast no vote at all (« pour »
+      // with 0 pour, 0 contre, 0 abstention — 31/10, n° 9336). No vote, no position.
+      positionMajoritaire: pour + contre + abstention > 0 ? (g.vote && g.vote.positionMajoritaire) || null : null,
     };
   });
 

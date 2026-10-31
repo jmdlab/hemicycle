@@ -15,48 +15,10 @@ import { BillPage } from "@/components/BillPage";
 import { DeputePage } from "@/components/DeputePage";
 import { DeputesIndex } from "@/components/DeputesIndex";
 import Intersession from "@/components/Intersession";
+import { BASE_PATH, canonicalPath, pathForRoute, routeFromPath, type PathRoute, type Route } from "@/lib/route";
 
 /** A single high-confidence hit skips the picker: number/reference = one action. */
 const AUTO_PICK_SCORE = 0.85;
-
-/** Where the SPA lives — nginx falls back to its index.html for anything below. */
-const BASE_PATH = "/";
-
-/** The four path-based views. Everything else is the landing page (null). */
-type Route =
-  | { k: "scrutin"; numero: number }
-  | { k: "loi"; slug: string }
-  | { k: "depute"; slug: string }
-  | { k: "deputes" };
-
-/** `/8431` → scrutin, `/loi/<slug>` → bill, `/depute/<slug>` / `/deputes` → deputies. */
-function routeFromPath(pathname: string): Route | null {
-  const mNum = /^\/(\d+)\/?$/.exec(pathname);
-  if (mNum?.[1]) {
-    const n = Number(mNum[1]);
-    return Number.isInteger(n) && n > 0 ? { k: "scrutin", numero: n } : null;
-  }
-  const mLoi = /^\/loi\/([a-z0-9][a-z0-9-]*)\/?$/.exec(pathname);
-  if (mLoi?.[1]) return { k: "loi", slug: mLoi[1] };
-  const mDep = /^\/depute\/([a-z0-9][a-z0-9-]*)\/?$/.exec(pathname);
-  if (mDep?.[1]) return { k: "depute", slug: mDep[1] };
-  if (/^\/deputes\/?$/.test(pathname)) return { k: "deputes" };
-  return null;
-}
-
-/** The URL a route lives at — single source for push/replaceState. */
-function pathForRoute(route: Route): string {
-  switch (route.k) {
-    case "scrutin":
-      return `/${route.numero}`;
-    case "loi":
-      return `/loi/${route.slug}`;
-    case "depute":
-      return `/depute/${route.slug}`;
-    case "deputes":
-      return "/deputes";
-  }
-}
 
 /** Deep-link state lives in the query string only — no router. */
 function syncUrl(params: Record<string, string> | null): void {
@@ -105,7 +67,7 @@ export default function App() {
   );
 
   /** Open a routed page (ballot, bill, deputy…). Real navigation, so back/forward work. */
-  const openRoute = useCallback((next: Route) => {
+  const openRoute = useCallback((next: PathRoute) => {
     abortRef.current?.abort();
     // The pushed entry carries a flag: closing can then history.back() over it
     // instead of pushing a second entry — otherwise the browser back button
@@ -169,6 +131,15 @@ export default function App() {
     const last = lastRun.current;
     if (last?.kind === "resolve") void run(last.query);
   }, [run]);
+
+  // An alias such as `/scrutin/9336` is shown at its canonical address.
+  // Same for `/index.html` → `/`; a not-found address is left as typed.
+  useEffect(() => {
+    const canonical = canonicalPath(window.location.pathname);
+    if (canonical) {
+      window.history.replaceState(window.history.state, "", `${canonical}${window.location.search}${window.location.hash}`);
+    }
+  }, [route]);
 
   const backToList = useCallback(() => {
     // Came from the list (our pushed entry): step back over it, so the entry
@@ -249,9 +220,9 @@ export default function App() {
           like navigation rather than a page swap; the URL and history are real
           either way. */}
       {route !== null ? (
-        <DetailOverlay onClose={backToList}>
+        <DetailOverlay onClose={backToList} label={OVERLAY_LABEL[route.k]}>
           {route.k === "scrutin" ? (
-            <ScrutinPage numero={route.numero} onOpenLoi={openLoi} />
+            <ScrutinPage numero={route.numero} onOpenLoi={openLoi} onOpenDepute={openDepute} />
           ) : route.k === "loi" ? (
             <BillPage slug={route.slug} onOpenScrutin={openScrutin} onOpenLoi={openLoi} onOpenDepute={openDepute} />
           ) : route.k === "depute" ? (
@@ -261,8 +232,10 @@ export default function App() {
               onOpenDepute={openDepute}
               onOpenDeputes={openDeputes}
             />
-          ) : (
+          ) : route.k === "deputes" ? (
             <DeputesIndex onOpenDepute={openDepute} />
+          ) : (
+            <NotFound onHome={backToList} />
           )}
         </DetailOverlay>
       ) : null}
@@ -363,5 +336,52 @@ export default function App() {
         </footer>
       </main>
     </div>
+  );
+}
+
+/** What the overlay announces itself as, per view. */
+const OVERLAY_LABEL: Record<Route["k"], string> = {
+  scrutin: "Détail du scrutin",
+  loi: "Texte de loi",
+  depute: "Fiche du député",
+  deputes: "Liste des députés",
+  introuvable: "Page introuvable",
+};
+
+/** Unknown address: say so, and give the way home (the list). */
+function NotFound({ onHome }: { onHome: () => void }) {
+  // The tab title is the first thing a screen reader says, and a soft 404 must not be indexed.
+  useEffect(() => {
+    const previous = document.title;
+    document.title = "Page introuvable — Hémicycle";
+    const robots = document.createElement("meta");
+    robots.name = "robots";
+    robots.content = "noindex";
+    document.head.appendChild(robots);
+    return () => {
+      document.title = previous;
+      robots.remove();
+    };
+  }, []);
+  return (
+    <main aria-labelledby="introuvable-titre" className="mx-auto w-full max-w-[48rem] px-6 pb-24 pt-8 sm:px-8 sm:pt-12">
+      <h1 id="introuvable-titre" className="font-heading text-[1.5rem] leading-[1.2] text-[color:var(--ink)]">
+        Page introuvable
+      </h1>
+      <p className="mt-3 max-w-[58ch] text-base leading-[1.5] text-[color:var(--ink-2)]">
+        Cette adresse ne correspond à aucun scrutin, texte ou député.
+      </p>
+      <a
+        href={BASE_PATH}
+        className="btn-row"
+        onClick={(e) => {
+          if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+          e.preventDefault();
+          onHome();
+        }}
+      >
+        Retour à l’accueil
+      </a>
+    </main>
   );
 }

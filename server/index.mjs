@@ -24,6 +24,7 @@ import { summarize, readCached, mechanicalHeat } from "./summarize.mjs";
 import { plainSummary, plainDetail, keywordSalience } from "./plain.mjs";
 import { glossaryFor, plainOutcome, plainTurnout, groupBreakdown } from "./explain.mjs";
 import { readCachedConsequence } from "./consequence.mjs";
+import { amendementPourPage } from "./amendement.mjs";
 import { remuneration } from "./remuneration.mjs";
 import { payloadHash } from "./data/cardhash.mjs";
 import { SITE, frDate, shorten, clipWord, esc, tag, metaName, ldJson } from "./seo.mjs";
@@ -181,7 +182,15 @@ app.get("/api/hemicycle/latest", async (req, res) => {
       .filter((d) => !year || String(d.date).slice(0, 4) === year)
       .sort((a, b) => b.numero - a.numero);
     const total = all.length;
-    const docs = all.slice(offset, offset + limit);
+    // Cursor: rows strictly older than `before`. Offsets shift when the nightly
+    // refresh drops or adds a ballot under a reader mid-scroll, and a shifted
+    // offset silently skips a row; a ballot number never moves.
+    const before = parseInt(req.query.before ?? "", 10);
+    const from = Number.isSafeInteger(before) && before > 0
+      ? (() => { const i = all.findIndex((d) => d.numero < before); return i < 0 ? all.length : i; })()
+      : offset;
+    const docs = all.slice(from, from + limit);
+    const remaining = Math.max(0, all.length - from - docs.length);
 
     const summaries = LLM
       ? await Promise.all(
@@ -208,8 +217,9 @@ app.get("/api/hemicycle/latest", async (req, res) => {
       // Pagination state. `total` is what lets the client stop asking rather
       // than discover the end by receiving an empty page.
       total,
-      offset,
+      offset: from,
       limit,
+      remaining,
       years: yearCounts(ix),
       stats: computeStats(ix),
       scrutins: docs.map((d, i) => {
@@ -524,6 +534,10 @@ app.get("/api/hemicycle/og/:numero", async (req, res) => {
     ? `<h2>Comment a voté chaque groupe</h2><table><thead><tr><th scope="col">Groupe</th><th scope="col">Pour</th><th scope="col">Contre</th><th scope="col">Abstention</th><th scope="col">Absents</th></tr></thead><tbody>${rows}</tbody></table>`
     : "";
   const clair = detail ? `<h2>Le texte, en clair</h2><p>${esc(detail)}</p>` : "";
+  const am = amendementPourPage(s);
+  const amHtml = am?.resume
+    ? `<h2>Ce que l’amendement change</h2><p><strong>${esc(am.titre ?? "")}</strong></p><p>${esc(am.resume)}</p>`
+    : "";
   const conseqHtml = conseq?.mecanisme
     ? `<h2>Ce que le texte change</h2><p>${esc(conseq.mecanisme)}</p>${conseq.consequence ? `<p>${esc(conseq.consequence)}</p>` : ""}`
     : "";
@@ -594,6 +608,7 @@ ${name("twitter:title", ogTitle)}${name("twitter:description", desc)}${name("twi
 <p>${esc(turnout.phrase)}</p>
 ${table}
 ${clair}
+${amHtml}
 ${conseqHtml}
 ${billHtml}
 ${relHtml}
@@ -649,6 +664,8 @@ app.get("/api/hemicycle/page/:numero", async (req, res) => {
     mecanisme: conseq?.mecanisme ?? null,
     consequence: conseq?.consequence ?? null,
     texteSource: conseq?.mecanisme ? (conseq.source ?? null) : null,
+    // What the amendment put to the vote does (cache only — never a model call here).
+    amendement: amendementPourPage(s),
   };
 
   // The visual is the other half of the page; a QA-refused ballot gets the

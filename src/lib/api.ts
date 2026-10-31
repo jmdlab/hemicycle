@@ -1,4 +1,5 @@
 import type {
+  AmendementContexte,
   BillPageData,
   Candidate,
   DeputePageData,
@@ -320,10 +321,11 @@ async function post(url: string, body: unknown, signal?: AbortSignal): Promise<u
 export async function fetchLatest(
   limit = 20,
   signal?: AbortSignal,
-  opts: { offset?: number; year?: string | null } = {},
+  opts: { offset?: number; before?: number; year?: string | null } = {},
 ): Promise<LatestPage> {
   const q = new URLSearchParams({ limit: String(limit) });
   if (opts.offset) q.set("offset", String(opts.offset));
+  if (opts.before) q.set("before", String(opts.before));
   if (opts.year) q.set("year", opts.year);
   const res = await fetch(`/api/hemicycle/latest?${q}`, {
     signal,
@@ -354,6 +356,7 @@ export async function fetchLatest(
     stats: normalizeStats(payload.stats),
     total: num(payload.total, scrutins.length),
     offset: num(payload.offset),
+    remaining: typeof payload.remaining === "number" ? payload.remaining : null,
     years,
   };
 }
@@ -447,6 +450,41 @@ function normalizeSynthese(raw: unknown): Synthese | null {
  * The image fields are missing whenever QA refused the ballot — the caller must
  * render the explanation without a card rather than treat it as an error.
  */
+const AMENDEMENT_ETATS = ["ok", "absent", "ecarte", "attente"] as const;
+
+/** The amendment a ballot is on, as the server read it; null when the ballot is not on one. */
+function normalizeAmendement(value: unknown): AmendementContexte | null {
+  if (!value || typeof value !== "object") return null;
+  const a = asRecord(value);
+  const numero = num(a.numero);
+  const url = str(a.url);
+  // Only the Assemblée's own site is linked from here.
+  if (!numero || !/^https:\/\/www\.assemblee-nationale\.fr\//.test(url)) return null;
+  const who = a.auteur && typeof a.auteur === "object" ? asRecord(a.auteur) : null;
+  const slug = who ? str(who.slug) : "";
+  const etat = AMENDEMENT_ETATS.find((e) => e === a.etat) ?? "attente";
+  return {
+    numero,
+    numeroLong: str(a.numeroLong) || null,
+    sousAmendement: a.sousAmendement === true,
+    identiques: a.identiques === true,
+    article: str(a.article).trim() || null,
+    auteur: who && str(who.nom)
+      ? {
+          nom: str(who.nom),
+          groupe: str(who.groupe) || null,
+          groupeNom: str(who.groupeNom) || null,
+          slug: /^[a-z0-9][a-z0-9-]*$/.test(slug) ? slug : null,
+        }
+      : null,
+    url,
+    titre: etat === "ok" ? str(a.titre).trim() || null : null,
+    resume: etat === "ok" ? str(a.resume).trim() || null : null,
+    redige: etat === "ok" ? (a.redige === "regle" ? "regle" : "modele") : null,
+    etat,
+  };
+}
+
 export async function fetchScrutinPage(
   numero: number,
   signal?: AbortSignal,
@@ -497,6 +535,7 @@ export async function fetchScrutinPage(
       label: str(source.label) || "Assemblée nationale",
     },
     qa: normalizeQa(payload.qa),
+    amendement: normalizeAmendement(payload.amendement),
   };
 
   const preview = normalizeImage(payload.preview);

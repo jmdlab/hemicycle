@@ -168,7 +168,10 @@ export async function refresh({ force = false, deadline = 30 * 60_000 } = {}) {
     const buf = await r.range(start, Math.min(end, total - 1));
     for (const e of list) {
       try {
-        fresh.set(e.uid, slimAmendement(JSON.parse(inflateEntry(buf, start, e)), e.dossier));
+        const rec = slimAmendement(JSON.parse(inflateEntry(buf, start, e)), e.dossier);
+        // The file must be the amendment its archive entry names (and a well-formed one).
+        if (!rec.uid || rec.uid !== e.uid) throw new Error('uid du fichier différent de son entrée');
+        fresh.set(e.uid, rec);
       } catch (err) {
         // One bad entry must not freeze every dossier: skip its dossier this run, retry it next run.
         log(`✗ amendements : ${e.uid} illisible (${err.message}) — dossier ${e.dossier} gardé tel quel`);

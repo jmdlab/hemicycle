@@ -2,7 +2,7 @@
 
 > One French National Assembly vote → one 16:9 image ready to paste into a social post, plus a short neutral text; a public product at hemicycle.app, no account, no auth.
 
-**Status:** live · **Last verified:** 2026-09-21
+**Status:** live · **Last verified:** 2026-11-01
 
 This file is the entry point for any AI model or engineer taking over this project.
 It is written to be publishable: no secrets, no internal topology, no personal data.
@@ -20,6 +20,9 @@ this file is the operational entry point.
   copyable is shown.
 - Public pages per vote (SEO, Open Graph image), a "latest votes" feed, suggestions, and a
   plain-language "what the text changes" section built from the bill itself.
+- Votes on a single amendment also get a plain-language "what the amendment changes" note,
+  read from the amendment's own text. Pages only read its cache; a visitor never triggers a
+  model call.
 
 ## Stack
 Front: Vite + React + strict TypeScript + Tailwind, design tokens from one stylesheet. Server:
@@ -47,11 +50,14 @@ must stay a **single action**: never add a confirmation screen for a confident m
 | `src/` | SPA; component-by-component table in `README.md` |
 | `server/index.mjs` | Express app; the public API surface |
 | `server/data/` | Index loading, search, normalisation, QA, card hash, store (has its own README) |
+| `server/data/sources.mjs` | The three open-data archives and the freshness helpers (cache-busting URL, "is the remote copy newer") shared by the refresh and the poll |
 | `server/{tweet,neutrality,plain,explain,summarize,consequence,texte,loi}.mjs` | Text generation and its validators |
+| `server/amendement.mjs` | "What the amendment changes": matches a vote to its amendment, reads the amendment's own file, gates the model output (neutrality, figures, anchoring), caches per amendment in `storage/amendements-contexte/` |
 | `server/{seo,depute,remuneration}.mjs` | Public pages, member data, reference figures |
 | `render/` | Python card renderer, rasteriser, overflow check, fonts, theme |
 | `scripts/daily.mjs` | The whole freshness pipeline, single cron entry point |
 | `scripts/backfill-consequences.mjs` | Catch-up reader for bills missing their "what changes" section |
+| `scripts/backfill-amendements-contexte.mjs` | Writer of the amendment notes: walks amendment votes (the bill under debate first, then newest first), resumable, stops at its deadline, rebuilds the search index after writing |
 | `scripts/{refresh-data,build-*,pregenerate}.mjs` | Pipeline steps called by `daily.mjs` |
 | `scripts/poll.mjs` | Cheap change check every 15 min; runs `daily.mjs` when the AN archives moved |
 | `scripts/refresh-amendements.mjs` | Floor amendments from `Amendements.json.zip` by HTTP Range (central directory + changed entries only) → `storage/amendements/<DLR>.json` (gitignored) |
@@ -77,7 +83,7 @@ Everything runs without secrets: the LLM pass is off unless `SCRUTIN_LLM=on`.
 `dist/` is gitignored here.
 
 ## Deploy
-`./deploy.sh`: install (front, server) → build → restart `hemicycle.service` → test and
+`./deploy.sh`: install (front, server) → tests (`npm test`; a failure stops the deploy) → build → restart `hemicycle.service` → test and
 reload the proxy → request the health route locally. Verify with
 `GET /api/hemicycle/health`. Roll back: check out the previous commit, run the script again.
 A fresh deployment must run `scripts/daily.mjs` once, because derived indexes are not in git.
@@ -104,6 +110,9 @@ See `server/.env.example`.
 - `storage/cards/` — SVG is canonical and never pruned; PNG/WebP are derivatives.
 - Per-document caches of the "what changes" text are the backfill's state: a cached
   reference is skipped, a failure is logged and retried in the next batch.
+- `storage/amendements-contexte/` — one cached note per amendment, the amendment backfill's
+  state. A refusal is an answer and is kept; a "not yet published" answer is asked again
+  after 12 h; answers made under older checks are redone once the checks change.
 
 ## Scheduled jobs
 | Job | Schedule (UTC) | Script | Lock | Log |
@@ -118,6 +127,9 @@ See `server/.env.example`.
   amendments (non-fatal) → bill reading (concurrency 2) → SVG pre-generation (concurrency 3).
 - The backfill sweeps the **whole** index, not just the daily window, concurrency 1,
   bounded batch (`--limit`, default 25). It is a safety net, not a permanent workload.
+- The amendment-note backfill (`scripts/backfill-amendements-contexte.mjs`) is short by
+  design: bounded batch (`--limit`, default 20), stops at `--deadline` (default 12 min)
+  because other jobs wait for the shared lock. Its schedule is deployment-specific.
 - The shared lock exists so the two jobs never read bills at the same time.
 - Pruning deletes rasters not served for `--days` (default 30) and caps the cache at
   `--max-mb` (default 500); a pruned raster is rebuilt from its SVG on the next request.
@@ -156,8 +168,8 @@ And four operational ones:
 - An untracked `pnpm-lock.yaml` sits beside the tracked `package-lock.json`; `deploy.sh` uses npm.
 - The raw backup and its schedule live outside this repository, so a clone alone does not
   reveal them.
-- Tests: `node --test tests/*.test.mjs` (poll change detection, amendments zip reader and show-of-hands join on real PLF 2027
-  cases). Rendering correctness still rests on the runtime QA and `render/check_overflow.py`.
+- Tests: `npm test` (= `node --test tests/*.test.mjs`, also run by `deploy.sh`): poll change detection, amendments zip reader and show-of-hands join on real PLF 2027
+  cases. Rendering correctness still rests on the runtime QA and `render/check_overflow.py`.
 
 ## How to update this file
 Hand-written. Route count: `grep -cE "^app\.(get|post)" server/index.mjs`. Schedules are

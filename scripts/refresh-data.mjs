@@ -24,6 +24,7 @@ import path from 'node:path';
 
 import { PATHS, ensureDirs, readJson, writeJsonAtomic } from '../server/data/store.mjs';
 import { iterateZip } from '../server/data/zip.mjs';
+import { downloadResumable } from '../server/data/download.mjs';
 import { buildGroupRegistry } from '../server/data/groups.mjs';
 import { normalize } from '../server/data/normalize.mjs';
 import { buildSearchIndex } from '../server/data/search.mjs';
@@ -74,16 +75,27 @@ async function sync(source, manifest) {
     }
   }
 
-  const res = await fetch(freshUrl(source.url), { headers: NO_CACHE });
-  if (!res.ok) throw new Error(`${source.url} -> HTTP ${res.status}`);
-  const got = { etag: res.headers.get('etag'), lastModified: res.headers.get('last-modified') };
-  // A cache node can still hand back an older copy than the one on disk: keep ours.
-  if (exists && cached && !FORCE && !isNewer(got, cached) && got.etag !== cached.etag) {
-    await res.body?.cancel();
-    log(`  · ${source.file}: copie servie plus ancienne (${got.lastModified}) que la nôtre (${cached.lastModified}), gardée`);
+  // The AN host drops long downloads mid-transfer: resume with byte ranges instead of one fetch.
+  let older = null;
+  const dl = await downloadResumable(() => freshUrl(source.url), {
+    headers: NO_CACHE,
+    log: (m) => log(`  · ${source.file}: ${m}`),
+    // A cache node can still hand back an older copy than the one on disk: keep ours.
+    accept: (res) => {
+      const got = { etag: res.headers.get('etag'), lastModified: res.headers.get('last-modified') };
+      if (exists && cached && !FORCE && !isNewer(got, cached) && got.etag !== cached.etag) {
+        older = got;
+        return false;
+      }
+      return true;
+    },
+  });
+  if (!dl.buf) {
+    log(`  · ${source.file}: copie servie plus ancienne (${older?.lastModified}) que la nôtre (${cached.lastModified}), gardée`);
     return { ...cached, changed: false, path: dest };
   }
-  const buf = Buffer.from(await res.arrayBuffer());
+  const got = { etag: dl.etag, lastModified: dl.lastModified };
+  const buf = dl.buf;
 
   // Write via a temp file so an interrupted run cannot leave a truncated ZIP.
   const tmp = `${dest}.tmp-${process.pid}`;

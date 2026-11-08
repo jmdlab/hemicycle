@@ -2,7 +2,7 @@
 
 > One French National Assembly vote → one 16:9 image ready to paste into a social post, plus a short neutral text; a public product at hemicycle.app, no account, no auth.
 
-**Status:** live · **Last verified:** 2026-11-01
+**Status:** live · **Last verified:** 2026-11-08
 
 This file is the entry point for any AI model or engineer taking over this project.
 It is written to be publishable: no secrets, no internal topology, no personal data.
@@ -51,6 +51,7 @@ must stay a **single action**: never add a confirmation screen for a confident m
 | `server/index.mjs` | Express app; the public API surface |
 | `server/data/` | Index loading, search, normalisation, QA, card hash, store (has its own README) |
 | `server/data/sources.mjs` | The three open-data archives and the freshness helpers (cache-busting URL, "is the remote copy newer") shared by the refresh and the poll |
+| `server/data/download.mjs` | `downloadResumable()`: whole-file download that survives the upstream host cutting a transfer mid-way. Resumes with `Range`, tied to the same file version by `If-Range` (a changed file restarts from zero), checks the announced length, and lets the caller decline a full response (`accept`). Used by `scripts/refresh-data.mjs` |
 | `server/{tweet,neutrality,plain,explain,summarize,consequence,texte,loi}.mjs` | Text generation and its validators |
 | `server/amendement.mjs` | "What the amendment changes": matches a vote to its amendment, reads the amendment's own file, gates the model output (neutrality, figures, anchoring), caches per amendment in `storage/amendements-contexte/` |
 | `server/{seo,depute,remuneration}.mjs` | Public pages, member data, reference figures |
@@ -123,7 +124,9 @@ See `server/.env.example`.
 | Raster pruning | `40 4 * * 0` | `scripts/prune-rasters.mjs` | none | `logs/prune.log` |
 | Raw-source cold backup | monthly | deployment-specific; not part of this repository | — | — |
 
-- The daily runs, in order: open data → bill index → members → sitemap → delegations →
+- The daily runs, in order: open data (resumable download: an interrupted transfer is
+  continued by byte range, up to 40 requests per archive, and the step fails if the file
+  stays incomplete) → bill index → members → sitemap → delegations →
   amendments (non-fatal) → bill reading (concurrency 2) → SVG pre-generation (concurrency 3).
 - The backfill sweeps the **whole** index, not just the daily window, concurrency 1,
   bounded batch (`--limit`, default 25). It is a safety net, not a permanent workload.
@@ -169,7 +172,7 @@ And four operational ones:
 - The raw backup and its schedule live outside this repository, so a clone alone does not
   reveal them.
 - Tests: `npm test` (= `node --test tests/*.test.mjs`, also run by `deploy.sh`): poll change detection, amendments zip reader and show-of-hands join on real PLF 2027
-  cases. Rendering correctness still rests on the runtime QA and `render/check_overflow.py`.
+  cases. Rendering correctness still rests on the runtime QA and `render/check_overflow.py`. The resumable downloader has no test yet.
 
 ## How to update this file
 Hand-written. Route count: `grep -cE "^app\.(get|post)" server/index.mjs`. Schedules are

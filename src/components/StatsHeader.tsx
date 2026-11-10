@@ -8,8 +8,37 @@ import { formatNumber } from "./Meta";
  * arithmetic, and characterising them ("faible", "en baisse") is exactly the
  * editorialising this app refuses everywhere else.
  */
-export function StatsHeader({ stats }: { stats: Stats | null }) {
-  if (!stats || !stats.scrutins) return null;
+/**
+ * Stand-in drawn while the figures load: the same markup, invisible and hidden
+ * from assistive tech, so the block keeps its height and the search form below
+ * it does not jump when the real numbers arrive (CLS). Values are only there to
+ * give the text its usual length: twelve groups, full-year counts.
+ */
+const PLACEHOLDER: Stats = {
+  // Digit counts as in a full year: 4-digit total and missed, 3-digit taken
+  // part and delegated (a derived count of 0 would shorten the line).
+  scrutins: 8888,
+  prisMoyenne: 888,
+  prisEnPersonneMoyenne: 444,
+  participationAvg: 0.5,
+  groupes: Array.from({ length: 12 }, (_, i) => ({
+    abbrev: `G${i}`,
+    nom: "",
+    membres: 88,
+    presence: 0.5,
+    absents: 8888,
+  })),
+  lastScrutin: null,
+} as unknown as Stats;
+
+export function StatsHeader({ stats, loading = false }: { stats: Stats | null; loading?: boolean }) {
+  if (!stats || !stats.scrutins) {
+    return loading ? <StatsBody stats={PLACEHOLDER} placeholder /> : null;
+  }
+  return <StatsBody stats={stats} />;
+}
+
+function StatsBody({ stats, placeholder = false }: { stats: Stats; placeholder?: boolean }) {
   const year = stats.lastScrutin
     ? new Date(stats.lastScrutin.date).getFullYear()
     : new Date().getFullYear();
@@ -35,8 +64,10 @@ export function StatsHeader({ stats }: { stats: Stats | null }) {
 
   return (
     <section
-      className="mt-10 border-y border-[color:var(--rule)] py-5"
-      aria-label="Chiffres de la législature"
+      className={`mt-10 border-y border-[color:var(--rule)] py-5${placeholder ? " invisible" : ""}`}
+      aria-label={placeholder ? undefined : "Chiffres de la législature"}
+      aria-hidden={placeholder || undefined}
+      inert={placeholder || undefined}
     >
       {/* One number, said the way a school report says it: X out of Y.
           A rate needs decoding ("20 % present" — of what? per vote? per day?);

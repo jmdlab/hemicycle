@@ -32,6 +32,9 @@ function syncUrl(params: Record<string, string> | null): void {
 
 export default function App() {
   const [stats, setStats] = useState<Stats | null>(null);
+  // True until the first figures answer (or fail): the stats block keeps its
+  // place meanwhile instead of pushing the search form down when it lands.
+  const [statsLoading, setStatsLoading] = useState(true);
   const [phase, setPhase] = useState<Phase>({ k: "idle" });
   const [query, setQuery] = useState("");
   const [note, setNote] = useState<string | undefined>(undefined);
@@ -207,7 +210,8 @@ export default function App() {
     const ctrl = new AbortController();
     fetchLatest(1, ctrl.signal)
       .then((r) => { if (!ctrl.signal.aborted) setStats(r.stats); })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => { if (!ctrl.signal.aborted) setStatsLoading(false); });
     return () => ctrl.abort();
   }, []);
 
@@ -252,7 +256,7 @@ export default function App() {
           </p>
         </header>
 
-        <StatsHeader stats={stats} />
+        <StatsHeader stats={stats} loading={statsLoading} />
         <Remuneration />
 
         {phase.k !== "done" ? (

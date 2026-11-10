@@ -25,18 +25,37 @@ const millions = (v: number) =>
  * one recorded vote in six is cast by a colleague holding a delegation. A "cost
  * of absenteeism" built on that would look rigorous and measure nothing.
  */
+/**
+ * Stand-in drawn while the figures load: same markup, invisible, hidden from
+ * assistive tech, so the block keeps its height and the search form below does
+ * not jump when the data lands (CLS). Values only set the usual text length.
+ */
+const PLACEHOLDER = {
+  indemnite: { net: 8888 },
+  source: { url: "", maj: "00/00/0000" },
+  sieges: 577,
+  coutMensuel: 88888,
+  depuisJanvier: { annee: 2000, total: 88_800_000 },
+  sansVotePersonnel: { total: 88_800_000 },
+} as unknown as Data;
+
 export function Remuneration() {
   const [data, setData] = useState<Data | null>(null);
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
     const ctrl = new AbortController();
     fetchRemuneration(ctrl.signal)
       .then((d) => { if (!ctrl.signal.aborted) setData(d); })
-      .catch(() => {});
+      .catch(() => { if (!ctrl.signal.aborted) setFailed(true); });
     return () => ctrl.abort();
   }, []);
 
-  if (!data) return null;
+  if (!data) return failed ? null : <RemunerationBody data={PLACEHOLDER} placeholder />;
+  return <RemunerationBody data={data} />;
+}
+
+function RemunerationBody({ data, placeholder = false }: { data: Data; placeholder?: boolean }) {
   const { indemnite, source, sieges, coutMensuel, depuisJanvier, sansVotePersonnel } =
     data;
 
@@ -63,7 +82,12 @@ export function Remuneration() {
   }
 
   return (
-    <section className="mt-10 border-b border-[color:var(--rule)] pb-5" aria-label="Rémunération">
+    <section
+      className={`mt-10 border-b border-[color:var(--rule)] pb-5${placeholder ? " invisible" : ""}`}
+      aria-label={placeholder ? undefined : "Rémunération"}
+      aria-hidden={placeholder || undefined}
+      inert={placeholder || undefined}
+    >
       <dl className="flex flex-col gap-3">
         {lines.map((l) => (
           <div key={l.label}>

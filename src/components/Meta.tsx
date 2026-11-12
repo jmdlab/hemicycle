@@ -38,7 +38,7 @@ export function SortStatus({ sort, className }: { sort: Sort | null | undefined;
   );
 }
 
-/** Pour / Contre / Abstentions — big numerals in Noto Serif, never mono. */
+/** Pour / Contre / Abstentions — big numerals in Geist Serif, never mono. */
 export function VoteCounts({
   pour,
   contre,

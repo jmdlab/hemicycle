@@ -1,8 +1,6 @@
 @import "tailwindcss";
-@import "@fontsource-variable/inter";
-@import "@fontsource/noto-serif/400.css";
-@import "@fontsource/noto-serif/500.css";
-@import "@fontsource/noto-serif/400-italic.css";
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
 @import "../../shared/design-system.css";
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -11,7 +9,7 @@
    Serif carries MEANING (title, summaries, captions, big numerals); sans
    carries the FURNITURE (meta, labels, buttons, counts). Serif-everything
    works for a page with no controls; this one has an input, twenty actions
-   and stacked figures, and Noto Serif at 13px in a button is mush.
+   and stacked figures, and Geist Serif at 13px in a button is mush.
 
    Deliberate constraints, each measured rather than assumed:
    · No oldstyle figures and no small caps — neither shipped font has `onum`
@@ -23,11 +21,19 @@
    · No box-shadow anywhere, including focus states.
    ───────────────────────────────────────────────────────────────────────── */
 
+@font-face {
+  font-family: "Geist Serif";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('./assets/fonts/GeistSerif-Regular-1.9.2.woff2') format("woff2");
+}
+
 :root {
   color-scheme: light;
 
-  --font-serif: "Noto Serif", Georgia, "Times New Roman", serif;
-  --font-sans-ui: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Geist Serif", Georgia, serif;
+  --font-sans-ui: "Geist Variable", "Geist", "Inter", system-ui, sans-serif;
 
   /* Warm near-white: invisible as a colour, visible as a temperature. */
   --bg: #fcfcfb;
@@ -56,8 +62,8 @@
 }
 
 @theme inline {
-  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-heading: "Noto Serif", Georgia, "Times New Roman", serif;
+  --font-sans: "Geist Variable", "Geist", "Inter", system-ui, sans-serif;
+  --font-heading: "Geist Serif", Georgia, serif;
   --color-background: var(--bg);
   --color-foreground: var(--ink);
   --color-border: var(--rule);
@@ -73,7 +79,7 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-serif);
-  font-size: 1.0625rem;      /* 17px — Noto Serif's x-height already runs large */
+  font-size: 1.0625rem;      /* 17px — Geist Serif's x-height already runs large */
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

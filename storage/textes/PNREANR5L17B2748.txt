@@ -1,0 +1,596 @@
+                                   N° 2748
+                                          _____
+
+         ASSEMBLÉE NATIONALE
+                   CONSTITUTION DU 4 OCTOBRE 1958
+                              DIX-SEPTIÈME LÉGISLATURE
+
+             Enregistré à la Présidence de l’Assemblée nationale le 5 mai 2026.
+
+
+
+
+ PROPOSITION DE RÉSOLUTION
+        EUROPÉENNE
+en faveur d’un traité juridiquement contraignant prévoyant des interdictions
+ et des réglementations aux systèmes d’armes autonomes et de l’élaboration
+              d’une position commune européenne sur ce sujet,
+
+
+                     (Renvoyée à la commission des affaires européennes)
+
+
+
+
+                                      présentée par
+M. Pierre PRIBETICH, Mme Anna PIC, M. Boris VALLAUD, M. Olivier FAURE,
+M. Stéphane HABLOT, M. Thierry SOTHER, Mme Dieynaba DIOP, Mme Pascale
+GOT, M. François HOLLANDE, M. Alain DAVID, Mme Marietta KARAMANLI,
+M. Aurélien ROUSSEAU, M. Hervé SAULIGNAC, M. Mickaël BOULOUX,
+Mme Colette CAPDEVIELLE,
+                                  députés et députées.
+                                    –2–
+
+                          EXPOSÉ DES MOTIFS
+
+       MESDAMES, MESSIEURS,
+
+    À la faveur des progrès rapides de l’intelligence artificielle, un
+nouveau chapitre de la conduite de la guerre est en train de s’ouvrir.
+Des systèmes d’armes, marqué par :
+
+    – la prolifération de robots tueurs ;
+
+    – l’autonomisation des systèmes d’armes et du champ de bataille ;
+
+    – l’accélération exponentielle du rythme de la guerre.
+
+     Des systèmes d’armes, notamment les drones, sont désormais capables
+d’intégrer des fonctions de plus en plus avancées d’autonomie, allant
+jusqu’à l’identification, la sélection et, potentiellement, l’engagement de la
+force létale, sans intervention humaine directe. Dans un avenir proche, sans
+cadre juridique clair, l’être humain pourrait être totalement exclu de la
+chaîne décisionnelle, y compris pour une décision aussi fondamentale que
+celle de donner la mort.
+
+     Le contexte international actuel, marqué par la brutalisation des
+rapports de force et la multiplication des conflits engendre une course
+à l’armement favorable au déploiement de ces technologies autonomes.
+La tentation est forte, pour les acteurs étatiques comme non étatiques, de
+pousser toujours plus loin la conception et le déploiement de ces
+technologies.
+
+     L’absence actuelle de cadre juridique international contraignant
+renforce les inquiétudes quant à l’encadrement de leur prolifération et à
+leurs usages futurs. Pour autant, si le temps presse, les États disposent
+encore d’une marge de manœuvre pour élaborer un instrument juridique
+qui préservera un contrôle humain significatif.
+
+     Derrière le débat sur l’autonomie des armes émergent en réalité des
+questions fondamentales d’ordre éthique, humanitaire, juridique,
+opérationnel, moral et sécuritaire. En effet, notre rapport au contrôle de
+l’usage de la force est directement questionné. Car autonomie et contrôle
+entretiennent, par nature, une relation de tension : renforcer le contrôle
+humain revient nécessairement à limiter l’autonomie du système ; accepter
+davantage d’autonomie implique, en retour, de relâcher ce contrôle.
+                                    –3–
+
+     Parce qu’elle remet en cause le contrôle exercé sur les armes,
+l’autonomie transforme notre conception même de ce qu’est un usage
+légitime, approprié et responsable de la force. Elle ne pose pas seulement
+une question d’efficacité ou de technologie, mais un véritable cas de
+conscience : sommes-nous prêts à admettre qu’une part du jugement
+humain – et avec lui de la responsabilité morale et juridique – puisse
+être transférée à un système d’armes ?
+
+    Dès lors, la prolifération de systèmes d’armes de plus en plus
+autonomes constitue une menace pour le droit international humanitaire
+(notamment vis-à-vis des règles de distinction et de proportionnalité) et
+pour la protection des civils.
+
+    C’est cette ligne de fracture qui impose de fixer des limites claires et
+de préserver, en toute hypothèse, le principe d’un contrôle humain
+significatif.
+
+     Aujourd’hui, ce qui freine les États dans leur volonté de s’accorder sur
+un cadre contraignant, c’est cette crainte insidieuse : accepter des limites,
+alors que d’autres s’en affranchissent, reviendrait à s’imposer un retard
+technologique et un affaiblissement stratégique aux conséquences durables.
+
+     Ces arguments ne sauraient justifier l’inaction. Le droit international,
+patiemment construit depuis soixante-dix ans, n’est pas un handicap
+stratégique. Il est une force, une boussole et un levier d’influence.
+L’histoire montre que les normes internationales produisent des effets
+au-delà du cercle de leurs signataires immédiats : elles créent des standards,
+structurent les comportements, façonnent les pratiques industrielles et
+exercent une pression politique croissante sur les États qui s’en écartent.
+Nous devons, au contraire, engager cette dynamique normative et politique
+indispensable.
+
+    L’intelligence artificielle (IA) comme          rupture technologique
+majeure, jusque sur le champ de bataille
+
+    L’intelligence artificielle irrigue l’ensemble de nos sociétés. Le
+domaine militaire n’est pas exempt. Elle offre des perspectives importantes
+en matière de renseignement, de planification, de logistique ou d’aide à la
+décision, que nos armées doivent être en mesure de maîtriser afin de
+préserver notre autonomie stratégique et notre capacité d’action et de
+défense. Dans un contexte de brutalisation du monde, de retour des conflits
+de haute intensité et de montée des menaces, notamment aux frontières de
+                                     –4–
+
+l’Union européenne, il est indispensable d’intégrer ces évolutions pour
+éviter tout décrochage technologique.
+
+     L’intégration de l’IA présente des avantages opérationnels
+indéniables : une capacité de traitement de données sans précédent, une
+rapidité d’exécution accrue et une faculté d’adaptation en temps réel de nos
+armées sur des théâtres d’opérations complexes. Elle permet également de
+limiter l’exposition des soldats, de réduire le coût financier des opérations
+et d’optimiser la conduite des opérations militaires ainsi que leurs objectifs.
+
+    L’IA et l’autonomie théorique des armes : l’irruption des SALA
+
+     Les progrès de l’IA ouvrent aussi la voie à une autonomie
+potentielle des systèmes d’armes sans précédent. Les systèmes
+d’armement létaux autonomes (SALA) désignent, dans leur acception la
+plus largement retenue, des systèmes capables, une fois activés, de
+sélectionner une cible et de recourir à la force létale sans intervention
+humaine directe dans l’exécution de ces tâches. Ils marquent une rupture
+fondamentale : pour la première fois, la perspective est ouverte que le
+discernement humain puisse être exclu de la décision d’employer la force
+létale.
+
+     Le débat sur les SALA est souvent brouillé par une confusion entre
+automatisation et autonomie. L’automatisation renvoie à l’exécution
+d’actions programmées à l’avance, selon des règles fixées par un opérateur.
+L’autonomie, elle, suppose qu’un système puisse déterminer lui-même
+les modalités de son action, voire s’assigner sa propre mission, adapter
+ses objectifs ou s’écarter de l’intention initiale. C’est cette perspective
+qui soulève les préoccupations les plus graves.
+
+     Si cette autonomie pleine demeure, à ce stade, au mieux théorique,
+au pire très peu utilisée, la dynamique engagée est réelle. L’intégration
+progressive de segments autonomes dans les systèmes d’armes transforme
+déjà la place de l’humain dans la conduite des hostilités. Nous ne pouvons
+éviter les interrogations philosophiques, éthiques, humaines et juridiques
+majeures que les SALA nous posent. Même si l’existence opérationnelle
+des SALA n’a pas été formellement prouvée, il est clair que la technologie
+permettant à un système d’armes de sélectionner et d’engager des cibles de
+manière autonome existe déjà.
+                                                –5–
+
+     Les conflits actuels montrent que la question n’est pas purement
+spéculative. Une enquête récente du Times (1) a révélé que lors de
+l’invasion américaine de l’Irak en 2003, une unité de renseignement
+d’environ 2 000 personnes était mobilisée pour analyser les données du
+champ de bataille et identifier les cibles. Aujourd’hui, dans l’opération
+« Epic Fury » menée contre l’Iran, une vingtaine de soldats peuvent
+accomplir la même mission. Et ce, grâce à des logiciels qui utilisent
+l’intelligence artificielle pour analyser d’immenses volumes de données et
+proposer des cibles militaires. Satellites, drones, capteurs au sol, avions de
+surveillance : toutes ces informations sont agrégées et analysées par des
+algorithmes capables de détecter des schémas, hiérarchiser les menaces et
+proposer des plans d’action.
+
+      Les armes autonomes contre le droit international humanitaire
+
+     L’essor des systèmes d’armement létaux autonomes soulève une
+difficulté plus fondamentale encore : leur incompatibilité avec les
+principes du droit international humanitaire.
+
+     Le droit international humanitaire repose sur des principes structurants
+et fondamentaux : le principe d’humanité, de distinction, de précaution, de
+proportionnalité et d’interdiction des maux superflus et des souffrances
+inutiles. Ils encadrent l’usage de la force armée et visent à protéger les
+populations civiles ainsi qu’à limiter les effets de la guerre. Or ces
+principes supposent, dans leur mise en œuvre, un jugement contextualisé,
+une capacité d’interprétation et une appréciation humaine que les
+systèmes autonomes ne sont pas en mesure de reproduire.
+
+     La déshumanisation numérique est inhérente à l’assistance de l’IA, qui
+réduit les êtres humains à des points de données, triés et évalués pour être
+intégrés à des profils de cibles et traités en vue de leur élimination.
+
+      Les biais d’automatisation, propres aux systèmes d’intelligence
+artificielle, reproduisent les biais présents dans les données sur lesquelles
+ils sont entraînés. Ces systèmes compromettent le respect du principe de
+distinction. Plus largement, tout système ayant un taux d’erreur, même
+statistiquement faible, peut produire, lorsque ce système opère à grande
+vitesse et à grande échelle, des conséquences humaines massives que nous
+ne pouvons pas accepter.
+
+
+
+
+(1) https://www.thetimes.com/world/middle-east/article/palantir-ai-software-us-iran-war-lwld892z9
+                                             –6–
+
+     Au regard du droit international, les SALA se situent dans un flou
+juridique en matière de responsabilité. Si une décision létale résulte, en tout
+ou partie, d’un système autonome, l’imputabilité de violations du droit
+international humanitaire devient incertaine : entre concepteur,
+programmeur, opérateur, chaîne de commandement ou État utilisateur, le
+risque d’une dilution de la responsabilité est incompatible avec le Droit
+international humanitaire. Sans possibilité d’identifier un ou des
+responsables, comment lutter contre l’impunité ? Et comment, dès
+lors, attendre des institutions internationales qu’elles nous
+prémunissent des crimes liés à l’utilisation de tels systèmes ?
+
+    Les vives inquiétudes quant au développement des SALA
+
+     Si certains États et experts alertent depuis plusieurs décennies sur les
+risques liés aux SALA, ces inquiétudes se renforcent aujourd’hui à mesure
+que les capacités technologiques progressent et que leurs usages militaires
+se rapprochent d’applications concrètes.
+
+     Dès 2018, lors du Paris Peace Forum, le secrétaire général des Nations
+Unies, M. António Guterres, qualifiait les SALA de « politiquement
+inacceptables et moralement révoltantes », appelant à leur interdiction. Ces
+inquiétudes s’expriment également au sein même du secteur privé, y
+compris chez les acteurs développant des technologies basées sur l’IA
+susceptibles d’alimenter ces systèmes. Il en est ainsi de , qui a résisté aux
+pressions du Pentagone qui souhaitait utiliser son IA pour développer des
+armes autonomes. Le président-directeur général (PDG) de l’entreprise
+Anthropic a justifié, dans un communiqué de presse (2) que deux domaines
+devaient, selon lui, demeurer exclus des recherches en IA : la « surveillance
+intérieure de masse » et les « armes complètement autonomes ». Ajoutant
+que, dans certains cas, l’intelligence artificielle peut « saper, plutôt que
+défendre, les valeurs démocratiques ».
+
+     À ces préoccupations éthiques s’ajoute un risque de prolifération
+particulièrement préoccupant. Les armes autonomes se caractérisent par
+un coût réduit et une accessibilité technique croissante. Leur
+développement ne suppose pas nécessairement des infrastructures
+comparables à celles requises pour des armements conventionnels
+sophistiqués ; des logiciels disponibles dans le commerce et des capacités
+algorithmiques relativement accessibles peuvent suffire à produire des
+systèmes rudimentaires mais létaux. Cette relative démocratisation accroît
+le risque que de tels outils soient acquis ou développés par des groupes
+
+2   https://www.anthropic.com/news/statement-department-of-war
+                                     –7–
+
+armés non étatiques, milices ou organisations criminelles, mais aussi que
+ces technologies soient utilisées par des gouvernements non démocratiques
+dans le maintien de l’ordre, le contrôle aux frontières ou la répression de
+manifestations.
+
+     L’IA présente de véritables défis en termes de risques d’escalade.
+Des travaux récents montrent les comportements déstabilisateurs de
+certains modèles d’intelligence artificielle lorsqu’ils sont exposés à des
+scénarios de conflit. Une étude menée par Kenneth Payne au King’s
+College de Londres indique que les principaux modèles développés par
+OpenAI, Anthropic et Google choisissent de recourir à l’arme nucléaire
+dans 95 % des cas de conflits auxquels ils sont exposés.
+
+    La frontière entre autonomie de l’arme et arme autonome devient de
+plus en plus ténue
+
+     L’inquiétude tient aussi au brouillage progressif de la frontière entre
+systèmes d’aide à la décision et véritable autonomie létale. La différence
+entre un système qui recommande une cible avec une implication humaine
+minimale – tel que l’on peut le voir durant les frappes américaines et
+israéliennes en Iran – et un système qui choisit des cibles et exécute des
+frappes sans contrôle humain significatif devient extrêmement mince.
+
+     Avec l’accélération de l’intelligence artificielle, qui augmente
+notamment la cadence de prise de décision, on observe un basculement de
+la place de l’humain, qui a tendance à passer d’une position dite « dans la
+boucle » (caractérisé par sa participation active à la décision) à une position
+dite « sur la boucle », où son rôle tend à se limiter à une simple
+supervision, marquant un effacement progressif de l’intervention humaine.
+
+    Les discussions internationales sur l’interdiction des SALA peinent à
+avancer
+
+     Le débat sur la régulation des SALA s’est institutionnalisé dès 2013,
+d’abord au Conseil des droits de l’homme de l’ONU, puis dans le cadre de
+la Convention sur certaines armes classiques (CCAC). En 2016, un Groupe
+d’experts gouvernementaux (GGE) a été créé avec pour mandat
+d’ » explorer et de se mettre d’accord sur des recommandations possibles et
+des options liées aux technologies émergentes dans le domaine des
+systèmes d’armes létales autonomes ». Ce processus s’inscrit dans le cadre
+de l’article 36 du premier protocole additionnel aux Conventions de
+Genève, qui impose aux États de vérifier que toute nouvelle arme ou
+méthode de guerre est conforme au droit international humanitaire.
+                                    –8–
+
+    Depuis, un consensus normatif s’est dégagé autour de la nécessité de
+maintenir un contrôle humain significatif sur l’usage de la force. Mais les
+discussions internationales peinent à avancer. Les États-Unis, la Russie et
+la Corée du Sud bloquent systématiquement toute avancée vers un mandat
+de négociation, réduisant le GGE à un forum de discussion sans pouvoir
+décisionnel.
+
+     Les raisons de cette impasse restent multiples : désaccords sur la
+définition des SALA, questions de responsabilité en cas de dommages, et
+ambiguïtés sur la place de l’humain dans la boucle décisionnelle.
+
+     La fin du mandat accordé au GGE arrivant en novembre 2026, le
+moment est opportun d’ouvrir des négociations internationales sur la base
+de leur accord présenté dans le rolling text du 12 mai 2025.
+
+    L’urgence d’un traité international : l’Union européenne doit agir
+
+     Plus d’une centaine d’États se sont positionnés en faveur de
+l’interdiction des SALA. Cette position est partagée par une part croissante
+des industries de l’armement, ce qui crée une pression grandissante sur les
+États réticents. Quand les industries se questionnent, cela bouscule les
+gouvernements. L’instauration d’un instrument contraignant crée une
+dynamique vertueuse, y compris à l’égard des États non-signataires. Ils
+peuvent se trouver contraints, de fait sinon de droit, d’en respecter les
+principes, sous peine de s’exposer à la condamnation de la communauté
+internationale.
+
+     Une immense majorité des États respecte déjà les normes du DIH et du
+droit international. Réaffirmer ces principes face aux SALA n’est pas
+seulement une question de morale, mais de cohérence juridique et
+politique. Certains gouvernements commencent à prendre leurs
+responsabilités : révision des accords militaires avec des États comme
+Israël, suspension des transferts d’armes vers des acteurs qui violent le
+DIH, etc. Le non-respect d’une règle ne peut se faire en toute impunité.
+
+    Ici l’absence de cadre clair et juridiquement contraignante laisse
+la porte ouverte à l’impunité et ne permet pas de condamner ce qui
+sera défini universellement comme étant des dérives : il faut établir
+une ligne rouge indépassable, un cadre juridique universel et
+contraignant qui définisse sans ambiguïté ce qui est acceptable et ce
+qui ne l’est pas. À chaque État, à chaque chef d’État, reviendra alors le
+choix de se placer du côté du respect des valeurs fondamentales
+communes ou d’assumer la responsabilité de les transgresser.
+                                   –9–
+
+     L’Union européenne doit être en capacité de se saisir de ce sujet.
+Plusieurs États membres, parmi lesquels la Belgique, l’Autriche et la
+France, apparaissent leaders. Le Parlement européen a déjà eu l’occasion
+de se prononcer deux fois sur le sujet des SALA.
+
+     Dans une première résolution du 12 septembre 2018, le Parlement
+européen demande aux États membres et au Conseil de l’Union européenne
+(UE) d’œuvrer au lancement de négociations internationales pour un
+instrument juridiquement contraignant qui interdise les SALA dont les
+fonctions critiques (choix et attaque des cibles) échappent à un contrôle
+humain significatif. Les eurodéputés appellent à une position commune
+européenne garantissant un contrôle humain sur les fonctions critiques des
+SALA, et à une voix unifiée de l’UE dans les forums internationaux.
+
+     Dans sa résolution sur les principes juridiques pour les systèmes
+d’armes létales autonomes du 20 janvier 2021, le Parlement européen a
+réaffirmé la nécessité d’un cadre normatif mondial pour les SALA, axé sur
+des définitions claires, des concepts précis et des caractéristiques
+techniques des technologies émergentes. Il insiste sur l’importance de
+limiter l’utilisation des SALA à des cas précis, avec des procédures
+d’autorisation détaillées et accessibles au public (ou au moins aux
+parlements nationaux). La résolution souligne que, malgré l’absence de
+réglementation internationale spécifique, les règles existantes du droit
+international et de l’UE doivent être adaptées pour encadrer ces
+technologies.
+
+    La France a été particulièrement impliquée dès le début des
+discussions internationales sur les SALA, moteur au sein des négociations
+lancées à Genève dès 2012 et a rapidement mis l’accent sur la question de
+la responsabilité humaine dans l’usage de la force. Elle a également
+développé une réflexion nationale à travers le comité d’éthique de la
+défense, qui a rendu un premier avis considérant les armes entièrement
+autonomes comme inacceptables et contraires aux principes fondamentaux
+du droit de la guerre.
+
+    Il est fondamental de poursuivre et renforcer cette dynamique.
+
+     L’Europe doit faire entendre la voix de la diplomatie et réaffirmer
+ses valeurs
+
+    Les SALA interrogent l’essence même des valeurs sur lesquelles
+l’Europe s’est construite. Liberté, démocratie, responsabilité, dignité
+humaine – ces principes fondateurs sont directement mis à l’épreuve par
+                                    – 10 –
+
+l’émergence d’armes capables de décider de la vie ou de la mort sans
+intervention humaine. Face à cette possible rupture, l’Europe a une
+opportunité historique : se fixer un standard ambitieux, non pas comme une
+contrainte, mais bien comme un cap, un horizon éthique et politique qui
+donne sens à son action commune.
+
+     Se fixer un standard, c’est affirmer ce qui nous définit, dans un monde
+où l’intelligence artificielle évolue à une vitesse exponentielle, tandis que
+nos institutions, nos traités peinent à suivre ce rythme effréné. L’Europe
+peut choisir de ne pas simplement courir après le train de l’innovation et
+peut, au contraire, définir les règles du jeu avant que le jeu ne nous
+échappe. Réguler l’IA, surtout dans son application militaire, n’est pas une
+course perdue : c’est un combat pour la préservation de ce qui fait et fera
+notre humanité. Même si les avancées technologiques semblent
+inarrêtables, cette prise de conscience collective est indispensable : celle
+des enjeux profonds qui lient ces technologies aux valeurs humaines, et de
+la nécessité d’une agrégation des volontés politiques, scientifiques et
+citoyennes pour encadrer leur développement.
+
+     Pour y parvenir, l’Europe doit impulser cette réglementation, en
+associant tous les acteurs : États membres, chercheurs, industriels, société
+civile. L’éthique de l’IA ne peut pas être un simple appendice : elle doit
+être le fondement même de chaque décision, de chaque ligne de code, de
+chaque protocole militaire. Cela passe par un dialogue permanent – entre
+les États membres, avec nos alliés de l’Organisation du traité de
+l'Atlantique nord (OTAN), avec les pays du Sud global, souvent les
+premières victimes des dérives technologiques, et avec les citoyens, dont
+les attentes en matière de sécurité et de respect des droits humains ne
+cessent de grandir.
+
+     Loin d’entraver la construction d’une stratégie militaire efficace,
+l’établissement d’un cadre international encadrant les capacités de
+l’intelligence artificielle dans le domaine des armements constitue au
+contraire une condition de maîtrise et de souveraineté. Fixer des limites
+claires à ce que ces systèmes peuvent faire, y compris en l’absence d’un
+consensus immédiat des grandes puissances, permet d’engager une
+dynamique normative et politique indispensable. Il convient de l’affirmer
+avec force : le discernement humain ne peut être absent lors de
+l’engagement d’une force létale décidant de la vie ou de la mort d’êtres
+humains. Il est des lignes rouges que nous devons inscrire dans le
+marbre de nos lois internationales. Laisser un vide juridique s’installer et
+la recherche technologique s’emballer est contraire aux valeurs qui ont été
+                                 – 11 –
+
+patiemment construites et défendues au cours des soixante-dix dernières
+années. Assumer cette position ne comporte aucun risque stratégique ; au
+contraire, c’est en affirmant ces principes que nous consolidons notre
+posture. Nous ne sortons jamais affaiblis de la défense de nos valeurs.
+
+     C’est dans ce contexte, marqué par l’urgence d’une réponse
+coordonnée et ambitieuse, que s’inscrit la présente proposition de
+résolution européenne.
+                                         – 12 –
+
+               PROPOSITION DE RÉSOLUTION EUROPÉENNE
+
+
+                                   Article unique
+
+        L’Assemblée nationale,
+
+        Vu l’article 88-4 de la Constitution,
+
+        Vu l’article 151-5 du Règlement de l’Assemblée nationale,
+
+         Vu le traité sur l’Union                européenne,   notamment   ses
+     articles 2, 3, 21, 24, 25, 28, 34, 42,
+
+        Vu le traité sur le fonctionnement de l’Union européenne, et
+     notamment son article 2,
+
+        Vu la Charte des droits fondamentaux de l’Union européenne,
+     notamment son préambule et son article 2,
+
+         Vu la Convention européenne de sauvegarde des droits de l’homme et
+     des libertés fondamentales, notamment son article 2,
+
+         Vu la Convention sur l’interdiction ou la limitation de l’emploi de
+     certaines armes classiques qui peuvent être considérées comme produisant
+     des effets traumatiques excessifs ou comme frappant sans discrimination,
+     signée le 10 octobre 1980 à Genève et ratifiée le 2 novembre 1988 par la
+     France,
+
+         Vu l’article 36 du protocole additionnel aux conventions de Genève du
+     12 août 1949 relatif à la protection des victimes des conflits armés
+     internationaux, dit « protocole I », du 8 juin 1977,
+
+        Vu la résolution 51/22 relative aux incidences sur les droits de
+     l’homme des technologies nouvelles et émergentes dans le domaine
+     militaire, adoptée à l’unanimité par le Conseil des droits de l’homme de
+     l’Organisation des Nations unies le 7 octobre 2022,
+
+       Vu les résolutions du 18 octobre 2024 et du 1er décembre 2025
+     adoptées par l’Organisation des Nations Unies,
+
+        Vu les résolutions du Parlement européen du 12 septembre 2018 et du
+     20 janvier 2021,
+                                         – 13 –
+
+         Considérant que, selon le Groupe d’experts gouvernementaux sur les
+     technologies émergentes dans le domaine des systèmes d’armes létales
+     autonomes, dans le cadre de la Convention sur certaines armes classiques,
+     un système d’arme autonome létal peut être défini comme une combinaison
+     intégrée d’une ou plusieurs armes et de composants technologiques,
+     capable de sélectionner et d’engager une cible sans intervention d’un
+     utilisateur humain dans l’exécution de ces tâches ;
+
+        Considérant que cette rupture scientifique majeure doit nous interroger
+     collectivement sur le sens et les finalités que nous souhaitons donner aux
+     avancées technologiques ;
+
+        Considérant que les techniques de guerre doivent en toutes
+     circonstances être mises en regard des exigences du droit international
+     humanitaire, notamment les principes de distinction, de proportionnalité et
+     de précaution, ainsi que de l’impératif de protection des populations
+     civiles ;
+
+         Considérant l’augmentation significative du recours à l’intelligence
+     artificielle sur les champs de bataille, laissant imaginer l’émergence, dans
+     un avenir très proche, de systèmes d’armes létales autonomes ;
+
+         Considérant les défis et les préoccupations majeurs que soulèvent les
+     applications technologiques nouvelles et émergentes liées à l’intelligence
+     artificielle et à l’autonomie des systèmes d’armes, du point de vue
+     humanitaire, juridique, éthique et sécuritaire ;
+
+        Considérant que l’intégration de l’intelligence artificielle dans les
+     systèmes d’armement soulève des enjeux juridiques majeurs en matière de
+     responsabilité, dans la mesure où la délégation partielle ou totale de la prise
+     de décision à un système d’arme est susceptible de créer une dilution, voire
+     une absence d’imputabilité de responsabilité en cas de violation du droit
+     international ;
+
+        Considérant que les systèmes d’intelligence artificielle appliqués à la
+     défense ne présentent pas, à ce jour, des garanties suffisantes de fiabilité,
+     notamment en raison de leurs limites face à des environnements complexes
+     et imprévisibles ;
+
+       Considérant le caractère autodestructeur pour l’humanité que portent
+     en eux les systèmes d’armes létaux autonomes, et les réflexions qu’ils
+     suscitent, en beaucoup de points comparables à celles provoquées par
+                                         – 14 –
+
+     l’avènement de l’arme nucléaire au cours de la seconde moitié des
+     années 1940 ;
+
+        Considérant les appels répétés d’organisations internationales et
+     non-gouvernementales et de la société civile française et européenne en
+     faveur de la conclusion urgente des négociations relatives à un instrument
+     juridiquement contraignant prévoyant des interdictions et des
+     réglementations concernant les systèmes d’armes autonomes ;
+
+        Considérant les engagements de la France en matière de respect et de
+     promotion des droits humains, du droit international humanitaire et du droit
+     international, qui impliquent le maintien d’un contrôle humain effectif sur
+     toute décision de recours à la force létale ;
+
+        Considérant que les systèmes d’armement létaux autonomes
+     interrogent l’essence même des valeurs fondamentales sur lesquelles
+     l’Union européenne s’est construite, comme celles qu’elle entend défendre
+     à l’avenir ;
+
+        Considérant enfin que le mandat du Groupe d’experts
+     gouvernementaux sur les technologies émergentes dans le domaine des
+     systèmes d’armes létales autonomes dans le cadre de la Convention sur
+     certaines armes classiques arrive à échéance à la fin de l’année 2026 ;
+
+        Rappelle l’engagement de l’Union européenne et de la France vis-à-vis
+     de la défense et de la protection du droit international humanitaire et de ses
+     principes fondamentaux notamment de protection des populations civiles ;
+
+       Rappelle que toute arme, y compris les systèmes d’armes autonomes,
+     qui ne peut être utilisée dans le respect du droit international humanitaire
+     ne peut pas être utilisée ;
+
+        Affirme son soutien aux nombreuses voix venues d’experts et de la
+     société civile rappelant l’urgence d’élaborer un instrument juridiquement
+     contraignant prévoyant des interdictions et des réglementations concernant
+     les systèmes d’armes autonomes ;
+
+        Appelle les institutions européennes à se saisir de l’impératif d’ouvrir
+     des négociations dans le but d’instaurer un instrument juridiquement
+     contraignant prévoyant des interdictions et des réglementations concernant
+     les systèmes d’armes autonomes ;
+
+        Demande au Gouvernement français de mettre ce sujet à l’agenda des
+     institutions européennes ;
+                                         – 15 –
+
+       Invite le Gouvernement français ainsi que les États européens parties à
+     la Convention sur certaines armes classiques à promouvoir l’ouverture de
+     négociations, dans le cadre de cette convention, sur la base du texte évolutif
+     du 12 mai 2025, qui constitue un socle de consensus entre ses membres ;
+
+        Appelle la France, en sa qualité de membre permanent du Conseil de
+     sécurité des Nations unies et au regard de son attachement aux valeurs
+     humanistes universelles, à soutenir toute initiative portée dans cette
+     enceinte visant l’interdiction et la réglementation des systèmes d’armement
+     létaux autonomes ;
+
+       Appelle à la tenue d’une conférence internationale visant à rassembler
+     des États partageant la même approche afin de déclarer une intention
+     commune de lancer des négociations ;
+
+        Invite le Gouvernement français et les institutions européennes à
+     établir une doctrine sur l’usage et les objectifs d’intégration de l’autonomie
+     dans les armements.
+
